@@ -25,6 +25,7 @@
   "institution": "INSTITUTION_UUID",
   "name": "md5_VERSION",
   "aliases": ["cgap:md5_VERSION",
+              "cgap:md5_v26",
               "cgap:md5_v25",
               "cgap:md5_v24"],
   "steps": [
