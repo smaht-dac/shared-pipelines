@@ -1,2 +1,3 @@
 # cgap-pipeline-base
-base pipeline components
+
+Base pipeline components.
