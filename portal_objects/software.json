@@ -1,0 +1,13 @@
+[
+    {
+        "project": "PROJECT_UUID",
+        "institution": "INSTITUTION_UUID",
+        "name": "fastqc",
+        "software_type": [
+            "quality metric generator"
+        ],
+        "title": "fastqc_0.11.9",
+        "uuid": "efdac7ec-7da3-4f23-9056-7a04abbc5e8b",
+        "version": "0.11.9"
+    }
+]
