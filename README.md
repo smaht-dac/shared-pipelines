@@ -6,5 +6,11 @@ Base components for CGAP pipeline.
 
 ## Components
 
+General:
+
   - md5
   - fastq
+
+Format manipulation:
+
+  - cram2fastq

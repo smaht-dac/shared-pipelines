@@ -1,0 +1,108 @@
+{
+  "name": "base_cram2fastq",
+  "title": "CRAM to FASTQ VERSION",
+  "version": "VERSION",
+  "accession": "GAPKWL5J12B2",
+  "uuid": "d26bc9f9-3ea4-46f0-b5e6-f5d370881e1a",
+  "project": "PROJECT_UUID",
+  "institution": "INSTITUTION_UUID",
+  "input": [
+    {
+      "argument_name": "crams",
+      "argument_type": "file"
+    },
+    {
+      "argument_name": "reference_fa",
+      "argument_type": "file",
+      "files": [{"file": "1936f246-22e1-45dc-bb5c-9cfd55537fe7"}]
+    },
+    {
+      "argument_name": "reference_md5_list",
+      "argument_type": "file",
+      "files": [{"file": "db00cc5a-d7bc-424c-8560-e53827a52db9"}]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "workflow_cram2fastq",
+      "workflow": "7bbf3487-a1fc-4073-952a-d5771973e875",
+      "config": {
+        "instance_type": "c5.4xlarge",
+        "ebs_size": "30x",
+        "EBS_optimized": true,
+        "spot_instance": true,
+        "run_name": "run_workflow_cram2fastq",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "custom_pf_fields": {
+          "fastq1": {
+              "file_type": "reads (from .cram)",
+              "description": "Reads (from .cram)"
+          },
+          "fastq2": {
+              "file_type": "reads (from .cram)",
+              "description": "Reads (from .cram)"
+          }
+      },
+      "input": [
+        {
+          "argument_name": "cram",
+          "argument_type": "file",
+          "mount": false,
+          "scatter": 1,
+          "source_argument_name": "crams"
+        },
+        {
+          "argument_name": "reference_fasta",
+          "argument_type": "file",
+          "source_argument_name": "reference_fa"
+        },
+        {
+          "argument_name": "reference_md5_list",
+          "argument_type": "file",
+          "source_argument_name": "reference_md5_list"
+        }
+      ]
+    },
+    {
+      "name": "fastqc-r1",
+      "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
+      "config": {
+        "instance_type": "t3.large",
+        "ebs_size": "1.1x",
+        "EBS_optimized": true,
+        "spot_instance": false,
+        "run_name": "run_fastqc-r1",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_fastq",
+          "argument_type": "file",
+          "source_argument_name": "fastq1",
+          "source": "workflow_cram2fastq"
+        }
+      ]
+    },
+    {
+      "name": "fastqc-r2",
+      "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
+      "config": {
+        "instance_type": "t3.large",
+        "ebs_size": "1.1x",
+        "EBS_optimized": true,
+        "spot_instance": false,
+        "run_name": "run_fastqc-r2",
+        "behavior_on_capacity_limit": "wait_and_retry"
+      },
+      "input": [
+        {
+          "argument_name": "input_fastq",
+          "argument_type": "file",
+          "source_argument_name": "fastq2",
+          "source": "workflow_cram2fastq"
+        }
+      ]
+    }
+  ]
+}

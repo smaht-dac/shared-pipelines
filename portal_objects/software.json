@@ -9,5 +9,41 @@
         "title": "fastqc_0.11.9",
         "uuid": "efdac7ec-7da3-4f23-9056-7a04abbc5e8b",
         "version": "0.11.9"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "samtools",
+        "software_type": [
+            "file format converter"
+        ],
+        "source_url": "https://github.com/samtools/samtools",
+        "title": "samtools_1.9",
+        "uuid": "3f2d3b0e-0365-4212-9468-c16ad9531c4d",
+        "version": "1.9"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "cramtools",
+        "software_type": [
+            "file format converter"
+        ],
+        "source_url": "https://github.com/enasequence/cramtools",
+        "title": "cramtools_0b5c9ec",
+        "uuid": "72b0ca58-0cca-4344-8dd5-974a49c5a931",
+        "commit": "0b5c9ec"
+    },
+    {
+        "project": "12a92962-8265-4fc0-b2f8-cf14f05db58b",
+        "institution": "828cd4fe-ebb0-4b36-a94a-d2e3a36cc989",
+        "name": "pigz",
+        "software_type": [
+            "compressor"
+        ],
+        "source_url": "https://zlib.net/pigz/",
+        "title": "pigz_pigz-2.6",
+        "uuid": "c730b361-1b4d-4d29-8eff-8f7576d776e2",
+        "version": "2.6"
     }
 ]
