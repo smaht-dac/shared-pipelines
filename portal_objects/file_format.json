@@ -99,5 +99,15 @@
         "institution": "INSTITUTION_UUID",
         "status": "shared",
         "valid_item_types": ["FileReference"]
+    },
+    {
+        "file_format": "cram",
+        "standard_file_extension": "cram",
+        "description": "cram alignment format",
+        "uuid": "d363c5f9-7159-45b1-b516-e5ec433f9b86",
+        "project": "PROJECT_UUID",
+        "institution": "INSTITUTION_UUID",
+        "status": "shared",
+        "valid_item_types": ["FileProcessed"]
     }
 ]

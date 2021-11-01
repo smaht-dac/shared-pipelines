@@ -3,6 +3,7 @@
   "title": "CRAM to FASTQ VERSION",
   "version": "VERSION",
   "accession": "GAPKWL5J12B2",
+  "description" : "Convert a cram file to paired-fastqs",
   "uuid": "d26bc9f9-3ea4-46f0-b5e6-f5d370881e1a",
   "project": "PROJECT_UUID",
   "institution": "INSTITUTION_UUID",
