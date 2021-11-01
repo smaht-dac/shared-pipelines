@@ -1,6 +1,8 @@
-# cgap-pipeline-base
+<img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/master/docs/images/cgap_logo.png" width="200" align="right">
 
-Base pipeline components.
+# CGAP Base Pipeline
+
+Base components for CGAP pipeline.
 
 ## Components
 
