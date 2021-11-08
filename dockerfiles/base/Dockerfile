@@ -86,7 +86,8 @@ RUN git clone https://github.com/nh13/pbgzip && \
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # cram2fastq scripts
-COPY md5_to_fasta.py .
+COPY scripts/md5_to_fasta.py .
+
 COPY cram_to_fastq.sh .
 RUN chmod +x cram_to_fastq.sh
 
