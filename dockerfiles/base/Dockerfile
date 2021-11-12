@@ -91,6 +91,10 @@ COPY scripts/md5_to_fasta.py .
 COPY cram_to_fastq.sh .
 RUN chmod +x cram_to_fastq.sh
 
+# bam integrity check script
+COPY integrity-check.sh .
+RUN chmod +x integrity-check.sh
+
 # env paths
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/pigz/:$PATH
