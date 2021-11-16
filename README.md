@@ -9,7 +9,7 @@ Base components for CGAP pipeline.
 General:
 
   - md5
-  - fastq
+  - FastQC
 
 Format manipulation:
 
