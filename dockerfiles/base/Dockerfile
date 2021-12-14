@@ -38,7 +38,7 @@ RUN apt-get update -y && apt-get install -y \
 WORKDIR /usr/local/bin
 
 # conda & python libraries
-RUN conda install -c bioconda -y python=3.6.8 && \
+RUN conda install -c bioconda -y python=3.6.8 openjdk==8.0.152 && \
     conda clean -a -y -f
 
 # samtools
