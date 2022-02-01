@@ -2,7 +2,7 @@
 
 # CGAP Base Pipeline
 
-Base components for CGAP pipeline.
+Base components for CGAP pipeline. For more details check the [*documentation*](https://cgap-pipeline-main.readthedocs.io/en/latest/Pipelines/Base/index-base.html "base pipeline").
 
 ## Components
 
