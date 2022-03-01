@@ -1,16 +1,17 @@
 {
   "name": "base_cram2fastq",
-  "title": "CRAM to FASTQ VERSION",
+  "title": "cram to fastq VERSION",
   "version": "VERSION",
   "accession": "GAPKWL5J12C6",
-  "description" : "Convert a cram file to paired-fastqs",
+  "description" : "Convert a cram file to paired fastq files",
   "uuid": "3793fa72-a847-4594-add4-fc61d93728ec",
   "project": "PROJECT_UUID",
   "institution": "INSTITUTION_UUID",
   "input": [
     {
       "argument_name": "input_crams",
-      "argument_type": "file"
+      "argument_type": "file",
+      "dimensionality": 1
     },
     {
       "argument_name": "reference_fa",
@@ -39,19 +40,18 @@
           "fastq1": {
               "file_type": "reads (from .cram)",
               "description": "reads (from .cram) in fastq format",
-              "linkto_location": "Sample"
+              "linkto_location": ["Sample"]
           },
           "fastq2": {
               "file_type": "reads (from .cram)",
               "description": "reads (from .cram) in fastq format",
-              "linkto_location": "Sample"
+              "linkto_location": ["Sample"]
           }
       },
       "input": [
         {
           "argument_name": "cram",
           "argument_type": "file",
-          "mount": false,
           "scatter": 1,
           "source_argument_name": "input_crams"
         },
