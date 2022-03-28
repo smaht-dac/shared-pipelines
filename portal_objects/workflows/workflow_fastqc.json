@@ -1,5 +1,5 @@
 {
-    "accession": "GAPBH36DY72P",
+    "accession": "GAPBH36DY72Z",
     "app_name": "fastqc",
     "app_version": "VERSION",
     "arguments": [
@@ -32,13 +32,8 @@
     "cwl_child_filenames": [],
     "cwl_directory_url_v1": "s3://CWLBUCKET/PIPELINE/VERSION",
     "cwl_pointer": "",
-    "docker_image_name": "ACCOUNT/fastqc:VERSION",
-    "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
     "name": "fastqc_VERSION",
-    "aliases": ["cgap:fastq_VERSION",
-                "cgap:fastq_v26",
-                "cgap:fastq_v25",
-                "cgap:fastq_v2"],
+    "aliases": ["cgap:fastq_VERSION"],
     "steps": [
         {
             "meta": {
@@ -86,5 +81,7 @@
         }
     ],
     "title": "FastQC",
-    "uuid": "49e96b51-ed6c-4418-a693-d0e9f79adfa5"
+    "uuid": "6e2c94f5-c1ba-4f6e-9743-d1e1f71226d2",
+    "previous_version": ["49e96b51-ed6c-4418-a693-d0e9f79adfa5"],
+    "version_upgrade_log": "Updated docker"
 }

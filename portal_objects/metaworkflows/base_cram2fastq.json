@@ -27,7 +27,7 @@
   "workflows": [
     {
       "name": "workflow_cram2fastq",
-      "workflow": "7bbf3487-a1fc-4073-952a-d5771973e875",
+      "workflow": "d60a7dcc-9501-4989-ba1c-58268dc007cd",
       "config": {
         "instance_type": "c5.4xlarge",
         "ebs_size": "30x",
@@ -69,7 +69,7 @@
     },
     {
       "name": "fastqc-r1",
-      "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
+      "workflow": "6e2c94f5-c1ba-4f6e-9743-d1e1f71226d2",
       "config": {
         "instance_type": "t3.large",
         "ebs_size": "1.1x",
@@ -89,7 +89,7 @@
     },
     {
       "name": "fastqc-r2",
-      "workflow": "49e96b51-ed6c-4418-a693-d0e9f79adfa5",
+      "workflow": "6e2c94f5-c1ba-4f6e-9743-d1e1f71226d2",
       "config": {
         "instance_type": "t3.large",
         "ebs_size": "1.1x",

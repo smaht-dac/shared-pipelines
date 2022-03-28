@@ -26,6 +26,7 @@ For more details check the [*documentation*](https://cgap-pipeline-main.readthed
 #### v1.0.0
 * v27 -> v1.0.0, we are starting a new more comprehensive versioning system
 * Added some change in metaworkflows to accomodate the changes in foursight
+* Updated ubuntu version in docker to 20.04, python to py3.8
 
 #### v27
 * This repo starts from the v26 release of [*cgap-pipeline*](https://github.com/dbmi-bgm/cgap-pipeline) and contains basic utilities steps and the steps to manipulate formats

@@ -1,21 +1,25 @@
-## source file for md5 image
+#######################################################################
+#     Basic image
+#######################################################################
+FROM cgap/cgap-ubuntu2004-py-38:0.0.1
+MAINTAINER Michele Berselli (berselli.michele@gmail.com)
 
-FROM ubuntu:16.04
-MAINTAINER Soo Lee (duplexa@gmail.com), Michele Berselli (berselli.michele@gmail.com)
-
-# general updates & installing necessary Linux components
-RUN apt-get update -y && apt-get install -y wget unzip less vim bzip2 make gcc zlib1g-dev libncurses-dev git libkrb5-3 libpng12-0
-
-# download tools
+#######################################################################
+#     Setting working env
+#######################################################################
 WORKDIR /usr/local/bin
+
+#######################################################################
+#     Software
+#######################################################################
 COPY downloads.sh .
 RUN . downloads.sh
 
-# set path
-
-# wrapper
+#######################################################################
+#     Scripts
+#######################################################################
+## md5sum run
 COPY run.sh .
 RUN chmod +x run.sh
 
-# default command
 CMD ["run.sh"]

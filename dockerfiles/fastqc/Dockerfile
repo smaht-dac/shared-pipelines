@@ -1,41 +1,43 @@
-## source file for fastqc image
+#######################################################################
+#     Basic image
+#######################################################################
+FROM cgap/cgap-ubuntu2004-py-38:0.0.1
+MAINTAINER Michele Berselli (berselli.michele@gmail.com)
 
-FROM ubuntu:16.04
-MAINTAINER Soo Lee (duplexa@gmail.com), Michele Berselli (berselli.michele@gmail.com)
-
-# general updates & installing necessary Linux components
+#######################################################################
+#     General updates & installing necessary Linux components
+#       - libncurses-dev
+#       - default-jdk for nozzle
+#######################################################################
 RUN apt-get update -y && apt-get install -y \
-    bzip2 \
-    gcc \
-    git \
-    less \
     libncurses-dev \
-    make \
-    time \
-    unzip \
-    vim \
-    wget \
-    zlib1g-dev \
-    liblz4-tool
+    default-jdk
 
-# installing java (for nozzle) - latest java version
-RUN apt-get update -y && apt-get install -y default-jdk
-
-# download tools
+#######################################################################
+#     Setting working env
+#######################################################################
 WORKDIR /usr/local/bin
+
+#######################################################################
+#     Software
+#######################################################################
 COPY downloads.sh .
 RUN . downloads.sh
 
-# set path
+#######################################################################
+#     Setting env variables
+#######################################################################
 ENV PATH=/usr/local/bin/FastQC/:$PATH
 
-# supporting UTF-8
+## Supporting UTF-8
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-# wrapper
+#######################################################################
+#     Scripts
+#######################################################################
+## FastQC run
 COPY run.sh .
 RUN chmod +x run.sh
 
-# default command
 CMD ["bash"]

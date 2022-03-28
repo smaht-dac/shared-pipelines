@@ -1,5 +1,5 @@
 {
-  "accession": "GAPWFBH24DOI",
+  "accession": "GAPWFBH24DOX",
   "app_name": "workflow_cram2fastq",
   "app_version": "VERSION",
   "arguments": [
@@ -40,25 +40,9 @@
   "cwl_main_filename": "cram2fastq.cwl",
   "cwl_pointer": "",
   "description": "Convert cram to fastq files",
-  "docker_image_name": "ACCOUNT/base:VERSION",
-  "docker_registry_url": "https://console.aws.amazon.com/ecr/repositories/",
   "institution": "INSTITUTION_UUID",
   "name": "workflow_cram2fastq_VERSION",
-  "aliases": ["cgap:workflow_cram2fastq_VERSION",
-              "cgap:workflow_cram2fastq_v26",
-              "cgap:workflow_cram2fastq_v25",
-              "cgap:workflow_cram2fastq_v24",
-              "cgap:workflow_cram2fastq_v23",
-              "cgap:workflow_cram2fastq_v22",
-              "cgap:workflow_cram2fastq_v21",
-              "cgap:workflow_cram2fastq_v20",
-              "cgap:workflow_cram2fastq_v19",
-              "cgap:workflow_cram2fastq_v18",
-              "cgap:workflow_cram2fastq_v17",
-              "cgap:workflow_cram2fastq_v16",
-              "cgap:workflow_cram2fastq_v15",
-              "cgap:workflow_cram2fastq_v14",
-              "cgap:workflow_cram2fastq_v13"],
+  "aliases": ["cgap:workflow_cram2fastq_VERSION"],
   "steps": [
       {
           "inputs": [
@@ -161,8 +145,9 @@
           ]
       }
   ],
-  "previous_version": ["3258380c-608b-4fb6-89ef-249d1692f492"],
   "version_upgrade_log": "faster fastq compression using pigz",
   "title": "cram to fastq",
-  "uuid": "7bbf3487-a1fc-4073-952a-d5771973e875"
+  "uuid": "d60a7dcc-9501-4989-ba1c-58268dc007cd",
+  "previous_version": ["7bbf3487-a1fc-4073-952a-d5771973e875"],
+  "version_upgrade_log": "Updated docker"
 }
