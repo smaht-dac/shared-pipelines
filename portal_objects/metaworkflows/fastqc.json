@@ -10,7 +10,8 @@
   "input": [
     {
       "argument_name": "fastqs",
-      "argument_type": "file"
+      "argument_type": "file",
+      "dimensionality": 2
     }
   ],
   "workflows": [
