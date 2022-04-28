@@ -40,12 +40,14 @@
           "fastq1": {
               "file_type": "reads (from .cram)",
               "description": "reads (from .cram) in fastq format",
-              "linkto_location": ["Sample"]
+              "linkto_location": ["Sample"],
+              "paired_end": "1"
           },
           "fastq2": {
               "file_type": "reads (from .cram)",
               "description": "reads (from .cram) in fastq format",
-              "linkto_location": ["Sample"]
+              "linkto_location": ["Sample"],
+              "paired_end": "2"
           }
       },
       "input": [
