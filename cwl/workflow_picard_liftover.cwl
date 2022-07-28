@@ -9,8 +9,6 @@ requirements:
 inputs:
   - id: input_vcf
     type: File
-    secondaryFiles:
-      - .tbi
     doc: expect the path to the vcf gz file
 
   - id: chain
@@ -25,7 +23,7 @@ inputs:
     doc: expect the path to the fa reference file
 
   - id: sample_names
-    type: string
+    type: string[]
     doc: list of sample IDs
 
 outputs:

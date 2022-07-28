@@ -9,15 +9,15 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: ACCOUNT/sv_germline_granite:VERSION
+    dockerPull: picard_liftover:1.0.0 
 
-baseCommand: [python3, preprocess_liftover.py]
+baseCommand: [python3, /usr/local/bin/preprocess_liftover.py]
 
 inputs:
   - id: vcf
     type: File
     inputBinding:
-      prefix: -i
+      prefix: -i 
 
     doc: expect the path to the input vcf
 

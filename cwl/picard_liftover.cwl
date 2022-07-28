@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: ACCOUNT/picard_liftover_vcf:VERSION
+    dockerPull: picard_liftover:1.0.0 
 
 baseCommand: [gatk, LiftoverVcf]
 
@@ -22,10 +22,13 @@ inputs:
     doc: expect the path to the input vcf
 
   - id: reference_sequence
-    type: string
+    type: File
     inputBinding:
         prefix: -R
     
+    secondaryFiles:
+      - ^.dict
+      - .fai    
     doc: the reference sequence for the target genome build
   
   - id: reject

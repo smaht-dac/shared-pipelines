@@ -16,6 +16,8 @@ WORKDIR /usr/local/bin
 RUN conda install -c bioconda -y gatk4==4.2.6.1 picard==2.26.11 && \
     conda clean -a -y -f
 
+## granite
+RUN pip install granite-suite==0.2.0
 
 COPY scripts/preprocess_liftover.py .
 RUN chmod +x preprocess_liftover.py
