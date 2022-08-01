@@ -2,7 +2,7 @@
 #     Basic image
 #######################################################################
 FROM cgap/cgap-ubuntu2004-py-38:0.0.1
-LABEL mainainers="Dominika Maziec (dominika.maziec@hms.harvard.edu),  Michele Berselli (berselli.michele@gmail.com)"
+LABEL mainainers="Michele Berselli (berselli.michele@gmail.com), Dominika Maziec (dominika.maziec@hms.harvard.edu)"
 
 #######################################################################
 #     Setting working env

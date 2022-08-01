@@ -47,7 +47,7 @@ steps:
     out: [output]
 
   vcf_liftover:
-      run: picard_liftover.cwl
+      run: gatk_liftover.cwl
       in:
         vcf:
           source: preprocess/output
@@ -61,4 +61,4 @@ steps:
 
 doc: |
   run preprocess_liftover |
-  run picard_liftover
+  run gatk_liftover

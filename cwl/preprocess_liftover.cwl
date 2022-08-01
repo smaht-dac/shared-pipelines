@@ -9,7 +9,8 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: picard_liftover:1.0.0 
+    dockerPull: ACCOUNT/gatk_liftover:VERSION
+
 
 baseCommand: [python3, /usr/local/bin/preprocess_liftover.py]
 

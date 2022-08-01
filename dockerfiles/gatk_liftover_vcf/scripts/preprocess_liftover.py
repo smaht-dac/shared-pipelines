@@ -18,7 +18,6 @@ import argparse
 std_chromosomes = list(map(str, list(range(1,23)))) + ["X", "Y"]
 
 
-
 ################################################
 #   Functions
 ################################################
@@ -40,7 +39,7 @@ def main(args):
         raise ValueError(sample_names_err)
     else:
         for id in vcf_sample_names:
-            if id not in args['sample_names']:
+            if id not in sample_names:
                 raise ValueError(sample_names_err)
     
     with open(output_file, "w") as output:
@@ -57,8 +56,6 @@ def main(args):
                     vnt.CHROM = f"chr{vnt.CHROM}"
                 
                 vcf.write_variant(output, vnt)
-
-
 
     
 ################################################

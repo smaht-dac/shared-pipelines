@@ -33,7 +33,7 @@ inputs:
   
   - id: reject
     type: string
-    default: "reject.vcf"
+    default: "reject.vcf.gz"
     inputBinding:
         prefix: --REJECT
     
@@ -41,7 +41,7 @@ inputs:
 
   - id: output_vcf 
     type: string
-    default: "output.vcf"
+    default: "output.vcf.gz"
     inputBinding:
       prefix: -O
 
@@ -59,11 +59,15 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output_vcf)
+    secondaryFiles:
+      - .tbi
 
   - id: output_reject
     type: File
     outputBinding:
       glob: $(inputs.reject)
+    secondaryFiles:
+      - .tbi
 
 doc: |
 
