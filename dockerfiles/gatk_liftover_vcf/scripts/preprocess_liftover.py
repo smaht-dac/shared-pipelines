@@ -14,9 +14,12 @@
 from granite.lib import vcf_parser
 import argparse
 
-#list of standard chromosomes
-std_chromosomes = list(map(str, list(range(1,23)))) + ["X", "Y"]
+#Constants 
+CHR_PREFIX = 'chr'
 
+#list of standard chromosomes
+std_chromosomes =  [str(chrom) for chrom in list(range(1,23))] + ["X", "Y"]
+std_chromosomes += [CHR_PREFIX + chrom for chrom in std_chromosomes]
 
 ################################################
 #   Functions
@@ -33,7 +36,7 @@ def main(args):
     # 1. Check if sample names match genotype IDs
     sample_names = args['sample_names']
     vcf_sample_names = vcf.header.IDs_genotypes
-    sample_names_err = f"Sample names {sample_names} do not match sample identifies in the VCF {vcf_sample_names}"
+    sample_names_err = f"Sample names {sample_names} do not match sample identifires in the VCF {vcf_sample_names}"
     
     if len(sample_names) != len(vcf_sample_names):
         raise ValueError(sample_names_err)
@@ -47,13 +50,12 @@ def main(args):
         vcf.write_header(output)
 
         for vnt in vcf.parse_variants():
-
             # 2. Exclude non standard chromosomes
             if vnt.CHROM in std_chromosomes:
 
                 # 3. Add 'chr' to CHROM if not present
-                if vnt.CHROM.startswith("chr") == False:
-                    vnt.CHROM = f"chr{vnt.CHROM}"
+                if vnt.CHROM.startswith(CHR_PREFIX) == False:
+                    vnt.CHROM = f"{CHR_PREFIX}{vnt.CHROM}"
                 
                 vcf.write_variant(output, vnt)
 

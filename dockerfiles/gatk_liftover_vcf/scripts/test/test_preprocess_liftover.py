@@ -16,7 +16,7 @@ def test_non_standard_chromosomes(tmp_path):
 
     # Variables and Run
     args = {
-        "inputfile": "test/files/liftover_vcf_non_standard_chrom_in.vcf",
+        "inputfile": "test/files/liftover_vcf_non_standard_chrom_in.vcf.gz",
         "outputfile": f"{tmp_path}/output.vcf",
         "sample_names": ["SAMPLE1"],
     }
@@ -31,7 +31,7 @@ def test_missing_chr(tmp_path):
 
     # Variables and Run
     args = {
-        "inputfile": "test/files/liftover_vcf_chr_missing_in.vcf",
+        "inputfile": "test/files/liftover_vcf_chr_missing_in.vcf.gz",
         "outputfile": f"{tmp_path}/output.vcf",
         "sample_names": ["SAMPLE1"],
     }
@@ -46,7 +46,7 @@ def test_wrong_sample_ids(tmp_path):
     """
     # Variables and Run
     args = {
-        "inputfile": "test/files/liftover_vcf_chr_missing_in.vcf",
+        "inputfile": "test/files/liftover_vcf_chr_missing_in.vcf.gz",
         "outputfile": f"{tmp_path}/output.vcf",
         "sample_names": ["SAMPLE1", "SAMPLE2"],
     }
@@ -55,12 +55,12 @@ def test_wrong_sample_ids(tmp_path):
         preprocess.main(args)
     
     
-    assert "Sample names ['SAMPLE1', 'SAMPLE2'] do not match sample identifies in the VCF ['SAMPLE1']" in str(exc.value)
+    assert "Sample names ['SAMPLE1', 'SAMPLE2'] do not match sample identifires in the VCF ['SAMPLE1']" in str(exc.value)
 
 
         
     args = {
-        "inputfile": "test/files/liftover_vcf_chr_missing_in.vcf",
+        "inputfile": "test/files/liftover_vcf_chr_missing_in.vcf.gz",
         "outputfile": f"{tmp_path}/output.vcf",
         "sample_names": ["SAMPLE2"],
     }
@@ -70,11 +70,11 @@ def test_wrong_sample_ids(tmp_path):
         preprocess.main(args)
     
     
-    assert "Sample names ['SAMPLE2'] do not match sample identifies in the VCF ['SAMPLE1']" in str(exc.value)
+    assert "Sample names ['SAMPLE2'] do not match sample identifires in the VCF ['SAMPLE1']" in str(exc.value)
 
 
     args = {
-        "inputfile": "test/files/liftover_vcf_two_samples_in.vcf",
+        "inputfile": "test/files/liftover_vcf_two_samples_in.vcf.gz",
         "outputfile": f"{tmp_path}/output.vcf",
         "sample_names": ["SAMPLE3"],
     }
@@ -84,7 +84,7 @@ def test_wrong_sample_ids(tmp_path):
         preprocess.main(args)
     
     
-    assert "Sample names ['SAMPLE3'] do not match sample identifies in the VCF ['SAMPLE1', 'SAMPLE2']" in str(exc.value)
+    assert "Sample names ['SAMPLE3'] do not match sample identifires in the VCF ['SAMPLE1', 'SAMPLE2']" in str(exc.value)
 
 
 

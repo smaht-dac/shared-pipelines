@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: picard_liftover:1.0.0 
+    dockerPull: ACCOUNT/gatk_liftover_vcf:VERSION
 
 baseCommand: [gatk, LiftoverVcf]
 

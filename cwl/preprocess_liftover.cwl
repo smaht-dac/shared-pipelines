@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: ACCOUNT/gatk_liftover:VERSION
+    dockerPull: ACCOUNT/gatk_liftover_vcf:VERSION
 
 
 baseCommand: [python3, /usr/local/bin/preprocess_liftover.py]
