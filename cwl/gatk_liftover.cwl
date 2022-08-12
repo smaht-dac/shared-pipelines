@@ -18,40 +18,36 @@ inputs:
     type: File
     inputBinding:
       prefix: -I
-
     doc: expect the path to the input vcf
 
   - id: reference_sequence
     type: File
     inputBinding:
         prefix: -R
-    
     secondaryFiles:
       - ^.dict
       - .fai    
-    doc: the reference sequence for the target genome build
+    doc: reference sequence for the target genome build
   
   - id: reject
     type: string
     default: "reject.vcf.gz"
     inputBinding:
         prefix: --REJECT
-    
-    doc: file to which to write rejected records
+    doc: file to write variants that failed liftover
 
   - id: output_vcf 
     type: string
     default: "output.vcf.gz"
     inputBinding:
       prefix: -O
-
     doc: base name of output vcf file
 
   - id: chain
     type: File
     inputBinding:
         prefix: -C
-    doc:  the liftover chain file
+    doc: liftover chain file
 
 
 outputs:
