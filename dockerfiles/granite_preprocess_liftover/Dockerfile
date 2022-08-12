@@ -19,15 +19,12 @@ WORKDIR /usr/local/bin
 #######################################################################
 #     Software
 #######################################################################
-
 ## granite, pytest
 RUN pip install granite-suite==0.2.0 pytest==7.1.2
-
 
 #######################################################################
 #     Scripts
 #######################################################################
-
 ## preprocess_liftover
 COPY scripts/preprocess_liftover.py .
 RUN chmod +x preprocess_liftover.py
