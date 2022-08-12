@@ -11,7 +11,6 @@ hints:
   - class: DockerRequirement
     dockerPull: ACCOUNT/gatk_liftover_vcf:VERSION
 
-
 baseCommand: [python3, /usr/local/bin/preprocess_liftover.py]
 
 inputs:
@@ -19,14 +18,12 @@ inputs:
     type: File
     inputBinding:
       prefix: -i 
-
     doc: expect the path to the input vcf
 
   - id: sample_names
     type: string[]
     inputBinding:
         prefix: -s
-    
     doc: list of sample IDs
 
   - id: output_vcf 
@@ -34,9 +31,7 @@ inputs:
     default: "output.vcf"
     inputBinding:
       prefix: -o
-
     doc: base name of output vcf file
-
 
 outputs:
   - id: output
@@ -45,6 +40,5 @@ outputs:
       glob: $(inputs.output_vcf)
 
 doc: |
-
     run preprocess_liftover.py to validate input VCF file for the liftover step
 
