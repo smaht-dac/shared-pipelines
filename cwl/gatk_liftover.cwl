@@ -66,6 +66,5 @@ outputs:
       - .tbi
 
 doc: |
-
     run picard liftover vcf
 
