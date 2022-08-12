@@ -5,6 +5,13 @@ FROM cgap/cgap-ubuntu2004-py-38:0.0.1
 LABEL mainainers="Michele Berselli (berselli.michele@gmail.com), Dominika Maziec (dominika.maziec@hms.harvard.edu)"
 
 #######################################################################
+#     General updates & installing necessary Linux components
+#######################################################################
+RUN apt-get update -y && apt-get install -y \
+    locales \
+    tabix
+
+#######################################################################
 #     Setting working env
 #######################################################################
 WORKDIR /usr/local/bin
