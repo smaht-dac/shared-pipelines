@@ -41,14 +41,13 @@ inputs:
     default: "output.vcf.gz"
     inputBinding:
       prefix: -O
-    doc: base name of output vcf file
+    doc: name of output vcf file, compressed
 
   - id: chain
     type: File
     inputBinding:
         prefix: -C
     doc: liftover chain file
-
 
 outputs:
   - id: output
