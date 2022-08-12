@@ -16,4 +16,11 @@ WORKDIR /usr/local/bin
 RUN conda install -c bioconda -y gatk4==4.2.6.1 picard==2.26.11 && \
     conda clean -a -y -f
 
+#######################################################################
+#     Setting env variables
+#######################################################################
+## Supporting UTF-8
+RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
+ENV LC_ALL=en_US.UTF-8
+
 CMD ["bash"]
