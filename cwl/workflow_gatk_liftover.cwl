@@ -13,7 +13,7 @@ inputs:
 
   - id: chain
     type: File
-    doc: the liftover chain file
+    doc: liftover chain file
 
   - id: reference
     type: File
@@ -42,8 +42,7 @@ steps:
       vcf:
         source: input_vcf
       sample_names:
-        source: sample_names
-      
+        source: sample_names   
     out: [output]
 
   vcf_liftover:
@@ -54,10 +53,8 @@ steps:
         chain:
           source: chain
         reference_sequence:
-            source: reference
-        
+            source: reference    
       out: [output, output_reject]
-
 
 doc: |
   run preprocess_liftover |
