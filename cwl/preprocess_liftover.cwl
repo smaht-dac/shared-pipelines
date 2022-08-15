@@ -18,7 +18,7 @@ inputs:
     type: File
     inputBinding:
       prefix: -i 
-    doc: expect the path to the input vcf
+    doc: expect a path to the input uncompressed or gzip-compressed vcf
 
   - id: sample_names
     type: string[]
