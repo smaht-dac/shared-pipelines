@@ -9,7 +9,7 @@ requirements:
 inputs:
   - id: input_vcf
     type: File
-    doc: expect the path to the vcf gz file
+    doc: expect a path to the input uncompressed or gzip-compressed vcf
 
   - id: chain
     type: File

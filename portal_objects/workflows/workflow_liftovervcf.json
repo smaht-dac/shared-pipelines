@@ -77,7 +77,7 @@
                         "global": true,
                         "type": "reference file"
                     },
-                    "name": "reference_fasta",
+                    "name": "reference",
                     "source": [
                         {
                             "name": "reference"

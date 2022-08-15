@@ -18,7 +18,7 @@ inputs:
     type: File
     inputBinding:
       prefix: -I
-    doc: expect the path to the input vcf
+    doc: expect a path to the input uncompressed or gzip-compressed vcf
 
   - id: reference_sequence
     type: File
