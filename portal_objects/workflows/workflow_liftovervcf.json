@@ -1,0 +1,160 @@
+{
+    "accession": "GAPWFBH24FJK",
+    "app_name": "workflow_liftovervcf",
+    "app_version": "VERSION",
+    "arguments": [
+        {
+            "argument_format": "vcf_gz",
+            "argument_type": "Input file",
+            "workflow_argument_name": "input_vcf"
+        },
+        {
+            "argument_format": "fa",
+            "argument_type": "Input file",
+            "workflow_argument_name": "reference"
+        },
+        {
+            "argument_format": "chain",
+            "argument_type": "Input file",
+            "workflow_argument_name": "chain"
+        },
+        {
+            "argument_type": "parameter",
+            "workflow_argument_name": "sample_names"
+        },
+        {
+            "argument_format": "vcf_gz",
+            "argument_type": "Output processed file",
+            "workflow_argument_name": "vcf_lifted",
+            "secondary_file_formats": [
+                "vcf_gz_tbi"
+            ]
+        },
+        {
+            "argument_format": "vcf_gz",
+            "argument_type": "Output processed file",
+            "workflow_argument_name": "reject"
+        }
+    ],
+    "project": "PROJECT_UUID",
+    "category": [
+        "processing"
+    ],
+    "cwl_child_filenames": [
+        "preprocess_liftover.cwl",
+        "gatk_liftover.cwl"
+    ],
+    "cwl_directory_url_v1": "s3://CWLBUCKET/PIPELINE/VERSION",
+    "cwl_main_filename": "workflow_gatk_liftover.cwl",
+    "cwl_pointer": "",
+    "description": "Lifts over a VCF file",
+    "institution": "INSTITUTION_UUID",
+    "name": "workflow_liftovervcf_VERSION",
+    "aliases": [
+        "cgap:workflow_liftovervcf_VERSION"
+    ],
+    "steps": [
+        {
+            "inputs": [
+                {
+                    "meta": {
+                        "cardinality": "single",
+                        "file_format": "vcf_gz",
+                        "global": true,
+                        "type": "data file"
+                    },
+                    "name": "input_vcf",
+                    "source": [
+                        {
+                            "name": "input_vcf"
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "cardinality": "single",
+                        "file_format": "fa",
+                        "global": true,
+                        "type": "reference file"
+                    },
+                    "name": "reference",
+                    "source": [
+                        {
+                            "name": "reference"
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "cardinality": "single",
+                        "file_format": "chain",
+                        "global": true,
+                        "type": "reference file"
+                    },
+                    "name": "chain",
+                    "source": [
+                        {
+                            "name": "chain"
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "cardinality": "single",
+                        "global": true,
+                        "type": "parameter"
+                    },
+                    "name": "sample_names",
+                    "source": [
+                        {
+                            "name": "sample_names"
+                        }
+                    ]
+                }
+            ],
+            "meta": {
+                "analysis_step_types": [
+                    "format conversion"
+                ],
+                "software_used": [
+                    "/softwares/7b86efcc-60c4-442b-b803-eeccc63ff175",
+                    "/softwares/04e57a90-471b-431d-a5ec-b94b3dacf219",
+                    "/softwares/0c17c344-5949-4fe9-a494-8283724152c1"
+                ]
+            },
+            "name": "liftovervcf",
+            "outputs": [
+                {
+                    "meta": {
+                        "cardinality": "single",
+                        "file_format": "vcf_gz",
+                        "global": true,
+                        "type": "data file"
+                    },
+                    "name": "vcf_lifted",
+                    "target": [
+                        {
+                            "name": "vcf_lifted"
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "cardinality": "single",
+                        "file_format": "vcf_gz",
+                        "global": true,
+                        "type": "data file"
+                    },
+                    "name": "reject",
+                    "target": [
+                        {
+                            "name": "reject"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Liftover VCF",
+    "uuid": "cb916470-3ec5-4e33-8dcf-c6e147bf31a6"
+}

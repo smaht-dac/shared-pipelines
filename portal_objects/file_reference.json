@@ -33,5 +33,17 @@
       "extra_files": [],
       "status": "uploading",
       "accession": "GAPFIGWSGHNU"
-  }
+  },
+  {
+    "uuid": "47e4b517-d81c-4184-a4d2-e69b10197e9d",
+    "institution": "INSTITUTION_UUID",
+    "project": "PROJECT_UUID",
+    "file_format": "chain",
+    "description": "chain file for coordinates liftover, hg19 to hg38",
+    "aliases": [
+        "cgap:hg19-to-hg38-chain"
+    ],
+    "status": "uploading",
+    "accession": "GAPFIYPTQVC8"
+}
 ]
