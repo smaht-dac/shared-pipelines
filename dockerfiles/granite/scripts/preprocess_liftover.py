@@ -4,8 +4,8 @@
 #
 #       Script to validate input VCF file for the liftover step.
 #       It runs the following steps:
-#       1. Check if sample identifiers in the VCF matches provided sample names
-#       2. Exlcude non standard chromosomes i.e GL000225.1
+#       1. Check if sample identifiers in the VCF match provided sample names
+#       2. Exclude non standard chromosomes i.e GL000225.1
 #       3. If the VCF is not 'chr' based, add the prefix
 #
 ##################################################################################
