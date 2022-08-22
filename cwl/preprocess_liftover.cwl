@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: ACCOUNT/granite_preprocess_liftover:VERSION
+    dockerPull: ACCOUNT/granite:VERSION
 
 baseCommand: [python3, /usr/local/bin/preprocess_liftover.py]
 
@@ -17,7 +17,7 @@ inputs:
   - id: vcf
     type: File
     inputBinding:
-      prefix: -i 
+      prefix: -i
     doc: expect a path to the input uncompressed or gzip-compressed vcf
 
   - id: sample_names
@@ -26,7 +26,7 @@ inputs:
         prefix: -s
     doc: list of sample IDs
 
-  - id: output_vcf 
+  - id: output_vcf
     type: string
     default: "output.vcf"
     inputBinding:
@@ -41,4 +41,3 @@ outputs:
 
 doc: |
     run preprocess_liftover.py to validate input VCF file for the liftover step
-
