@@ -20,7 +20,7 @@ input:
 workflows:
 
   ## Workflow definition #####################
-  #   fastqc
+  #   wfl_fastqc
   ############################################
   wfl_fastqc:
 
@@ -30,9 +30,7 @@ workflows:
 
       input_fastq:
         argument_type: file.fastq
-        # Linking fields
         source_argument_name: fastqs
-        # Input dimension
         scatter: 2
 
     ## EC2 Configuration to use ########
