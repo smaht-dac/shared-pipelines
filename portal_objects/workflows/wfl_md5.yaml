@@ -1,0 +1,25 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: wfl_md5
+description: Calculate MD5 for an uncompressed file.
+
+runner:
+  language: cwl
+  main: md5.cwl
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  input_file:
+    argument_type: file.any
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  report:
+    argument_type: report.file

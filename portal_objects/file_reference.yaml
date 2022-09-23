@@ -1,0 +1,44 @@
+#***************************************************************
+# GENOME
+#***************************************************************
+################################################################
+# Complete reference fasta, hg38/GRCh38
+################################################################
+name: complete-reference-fasta
+description: Complete genome reference sequence, includes alt contigs and decoy sequences. |
+             Build hg38/GRCh38.
+format: fa
+version: hg38
+secondary_files:
+  - dict
+  - fa_fai
+# Required to enable sync with a reference bucket
+uuid: 1936f246-22e1-45dc-bb5c-9cfd55537fe7
+accession: GAPFIXRDPDK5
+
+---
+
+################################################################
+# Complete MD5 list, hg38/GRCh38
+################################################################
+name: complete-md5-list
+description: List of MD5 for complete genome reference sequence, includes alt contigs and decoy sequences. |
+             Build hg38/GRCh38.
+format: md5_list
+version: hg38
+# Required to enable sync with a reference bucket
+uuid: db00cc5a-d7bc-424c-8560-e53827a52db9
+accession: GAPFIGWSGHNU
+
+---
+
+################################################################
+# Liftover chain file, hg19/GRCh37 to hg38/GRCh38
+################################################################
+name: liftover-chain
+description: File with coordinates mapping for liftover from hg19/GRCh37 to hg38/GRCh38.
+format: chain
+version: hg19to38
+# Required to enable sync with a reference bucket
+uuid: 47e4b517-d81c-4184-a4d2-e69b10197e9d
+accession: GAPFIYPTQVC8
