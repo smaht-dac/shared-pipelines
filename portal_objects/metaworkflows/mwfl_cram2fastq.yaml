@@ -81,7 +81,7 @@ workflows:
         behavior_on_capacity_limit: wait_and_retry
 
   ## Workflow definition #####################
-  #   fastqc@r1
+  #   wfl_fastqc@r1
   ############################################
   wfl_fastqc@r1:
 
@@ -105,7 +105,7 @@ workflows:
         behavior_on_capacity_limit: wait_and_retry
 
   ## Workflow definition #####################
-  #   fastqc@r2
+  #   wfl_fastqc@r2
   ############################################
   wfl_fastqc@r2:
 
