@@ -1,41 +1,36 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: wfl_cram2fastq
-description: Convert a CRAM file to paired FASTQ files.
+name: fastqc
+description: Run FastQC for a FASTQ file.
 
 runner:
   language: cwl
-  main: cram2fastq.cwl
+  main: fastqc.cwl
 
 software:
-  - samtools@v1.9
-  - cramtools@0b5c9ec
+  - fastqc@v0.11.9
 
 ## Input information ########################################
 #     Input files and parameters
 #############################################################
 input:
 
-  cram:
-    argument_type: file.cram
-
-  reference_fasta:
-    argument_type: file.fa
-
-  reference_md5_list:
-    argument_type: file.md5_list
-
-  nthreads:
-    argument_type: parameter.integer
+  input_fastq:
+    argument_type: file.fastq
 
 ## Output information #######################################
 #     Output files and quality controls
 #############################################################
 output:
 
-  fastq1:
-    argument_type: file.fastq
-
-  fastq2:
-    argument_type: file.fastq
+  report_zip:
+    argument_type: qc.quality_metric_fastqc
+    argument_to_be_attached_to: input_fastq
+    html: True
+    table: True
+    zipped: True
+    html_in_zipped: fastqc_report.html
+    tables_in_zipped:
+      - summary.txt
+      - fastqc_data.txt

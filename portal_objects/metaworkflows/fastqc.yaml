@@ -1,7 +1,7 @@
 ## Pipeline information #####################################
 #     General information for the pipeline
 #############################################################
-name: mwfl_fastqc
+name: fastqc_pipeline
 description: Pipeline to run FastQC for a FASTQ file.
 
 ## General arguments ########################################
@@ -20,9 +20,9 @@ input:
 workflows:
 
   ## Workflow definition #####################
-  #   wfl_fastqc
+  #   fastqc
   ############################################
-  wfl_fastqc:
+  fastqc:
 
     ## Workflow arguments ##############
     ####################################
@@ -40,5 +40,5 @@ workflows:
         ebs_size: 1.1x
         EBS_optimized: True
         spot_instance: False
-        run_name: run_wfl_fastqc
+        run_name: run_fastqc
         behavior_on_capacity_limit: wait_and_retry

@@ -1,7 +1,7 @@
 ## Pipeline information #####################################
 #     General information for the pipeline
 #############################################################
-name: mwfl_cram2fastq
+name: cram2fastq_pipeline
 description: Convert a CRAM file to paired FASTQ files, |
              run FastQC on the generated files.
 
@@ -31,9 +31,9 @@ input:
 workflows:
 
   ## Workflow definition #####################
-  #   wfl_cram2fastq
+  #   cram2fastq
   ############################################
-  wfl_cram2fastq:
+  cram2fastq:
 
     ## Workflow arguments ##############
     ####################################
@@ -77,13 +77,13 @@ workflows:
         ebs_size: 30x
         EBS_optimized: True
         spot_instance: True
-        run_name: run_wfl_cram2fastq
+        run_name: run_cram2fastq
         behavior_on_capacity_limit: wait_and_retry
 
   ## Workflow definition #####################
-  #   wfl_fastqc@r1
+  #   fastqc@r1
   ############################################
-  wfl_fastqc@r1:
+  fastqc@r1:
 
     ## Workflow arguments ##############
     ####################################
@@ -92,7 +92,7 @@ workflows:
       input_fastq:
         argument_type: file.fastq
         source_argument_name: fastq1
-        source: wfl_cram2fastq
+        source: cram2fastq
 
     ## EC2 Configuration to use ########
     ####################################
@@ -101,13 +101,13 @@ workflows:
         ebs_size: 1.1x
         EBS_optimized: True
         spot_instance: True
-        run_name: run_wfl_fastqc-r1
+        run_name: run_fastqc-r1
         behavior_on_capacity_limit: wait_and_retry
 
   ## Workflow definition #####################
-  #   wfl_fastqc@r2
+  #   fastqc@r2
   ############################################
-  wfl_fastqc@r2:
+  fastqc@r2:
 
     ## Workflow arguments ##############
     ####################################
@@ -116,7 +116,7 @@ workflows:
       input_fastq:
         argument_type: file.fastq
         source_argument_name: fastq2
-        source: wfl_cram2fastq
+        source: cram2fastq
 
     ## EC2 Configuration to use ########
     ####################################
@@ -125,5 +125,5 @@ workflows:
         ebs_size: 1.1x
         EBS_optimized: True
         spot_instance: True
-        run_name: run_wfl_fastqc-r2
+        run_name: run_fastqc-r2
         behavior_on_capacity_limit: wait_and_retry

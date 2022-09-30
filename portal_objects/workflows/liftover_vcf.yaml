@@ -1,7 +1,7 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: wfl_liftover_vcf
+name: liftover_vcf
 description: Liftover coordinates for a VCF file.
 
 runner:

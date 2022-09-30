@@ -1,26 +1,41 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: wfl_md5
-description: Calculate MD5 Hash Value for file. |
-             If the file is compressed, also calculated MD5 Hash Value for uncompressed file content.
+name: cram2fastq
+description: Convert a CRAM file to paired FASTQ files.
 
 runner:
   language: cwl
-  main: md5.cwl
+  main: cram2fastq.cwl
+
+software:
+  - samtools@v1.9
+  - cramtools@0b5c9ec
 
 ## Input information ########################################
 #     Input files and parameters
 #############################################################
 input:
 
-  input_file:
-    argument_type: file.any
+  cram:
+    argument_type: file.cram
+
+  reference_fasta:
+    argument_type: file.fa
+
+  reference_md5_list:
+    argument_type: file.md5_list
+
+  nthreads:
+    argument_type: parameter.integer
 
 ## Output information #######################################
 #     Output files and quality controls
 #############################################################
 output:
 
-  report:
-    argument_type: report.file
+  fastq1:
+    argument_type: file.fastq
+
+  fastq2:
+    argument_type: file.fastq
