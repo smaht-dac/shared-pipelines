@@ -73,7 +73,9 @@ workflows:
     ## EC2 Configuration to use ########
     ####################################
     config:
-        instance_type: c5.4xlarge
+        instance_type:
+          - c5.4xlarge
+          - m5a.4xlarge
         ebs_size: 30x
         EBS_optimized: True
         spot_instance: True
