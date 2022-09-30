@@ -1,7 +1,7 @@
 ## Pipeline information #####################################
 #     General information for the pipeline
 #############################################################
-name: cram2fastq_pipeline
+name: cram2fastq
 description: Convert a CRAM file to paired FASTQ files, |
              run FastQC on the generated files.
 
