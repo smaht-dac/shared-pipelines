@@ -17,6 +17,7 @@ uuid: 0cd4e777-a596-4927-95c8-b07716121aa3
 name: tsv
 extension: tsv
 description: Format used to represent Tab-Separate Values (TSV).
+uuid: c369d5d6-2861-47ab-bc39-99083cfe48bd
 
 ---
 
@@ -50,6 +51,7 @@ uuid: 11ca3783-db6e-430e-997b-9cf0ca275814
 name: tar
 extension: tar
 description: Format used to represent an archive of files.
+uuid: 39866342-e4f8-4a50-87bf-b61a782549c8
 
 ---
 
@@ -117,6 +119,7 @@ extension: sam
 description: Format used to represent aligned sequences.
 file_types:
   - FileProcessed
+uuid: 3311fb05-a0df-43e5-b0af-234c82b6bee9
 
 ---
 
@@ -372,6 +375,7 @@ description: Format used to represent genomics variant sites, |
              GVCF has records for all sites (whether there is a variant call there or not).
 file_types:
   - FileProcessed
+uuid: f592a45e-3b8a-4bad-bfd4-52acf9fd663d
 
 ---
 
@@ -461,6 +465,7 @@ extension: wig
 description: Format used for display of dense continuous data with genomic coordinates.
 file_types:
   - FileReference
+uuid: 19e290b5-2743-4311-a860-5dfca41858b1
 
 ---
 
@@ -645,3 +650,4 @@ description: GFF (General Feature Format) Version 3, |
              used for storing genomic features as a text file.
 file_types:
   - FileReference
+uuid: f87864e0-7d55-46bd-a67a-fb8753ce87db
