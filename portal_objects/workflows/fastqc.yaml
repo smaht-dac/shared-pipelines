@@ -9,7 +9,7 @@ runner:
   main: fastqc.cwl
 
 software:
-  - fastqc@v0.11.9
+  - FastQC@v0.11.9
 
 ## Input information ########################################
 #     Input files and parameters
