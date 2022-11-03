@@ -9,8 +9,8 @@ runner:
   main: cram2fastq.cwl
 
 software:
-  - samtools@v1.9
-  - cramtools@0b5c9ec
+  - samtools@1.9
+  - CRAMTools@0b5c9ec
 
 ## Input information ########################################
 #     Input files and parameters

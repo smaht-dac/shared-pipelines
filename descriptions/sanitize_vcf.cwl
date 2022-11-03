@@ -11,20 +11,14 @@ hints:
   - class: DockerRequirement
     dockerPull: ACCOUNT/granite:VERSION
 
-baseCommand: [python3, /usr/local/bin/preprocess_liftover.py]
+baseCommand: [python3, /usr/local/bin/sanitize_vcf.py]
 
 inputs:
-  - id: vcf
+  - id: input_vcf
     type: File
     inputBinding:
       prefix: -i
     doc: expect a path to the input uncompressed or gzip-compressed vcf
-
-  - id: sample_names
-    type: string[]
-    inputBinding:
-        prefix: -s
-    doc: list of sample IDs
 
   - id: output_vcf
     type: string
@@ -34,10 +28,12 @@ inputs:
     doc: name of output vcf file
 
 outputs:
-  - id: output
+  - id: cleaned_vcf
     type: File
     outputBinding:
-      glob: $(inputs.output_vcf)
+      glob: $(inputs.output_vcf ".gz")
+    secondaryFiles:
+      - .tbi
 
 doc: |
-    run preprocess_liftover.py to validate input VCF file for the liftover step
+    run sanitize_vcf.py to clean header and annotation relative to INFO field
