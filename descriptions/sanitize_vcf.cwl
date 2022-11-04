@@ -31,7 +31,7 @@ outputs:
   - id: cleaned_vcf
     type: File
     outputBinding:
-      glob: $(inputs.output_vcf ".gz")
+      glob: $(inputs.output_vcf + ".gz")
     secondaryFiles:
       - .tbi
 

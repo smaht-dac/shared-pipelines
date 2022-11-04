@@ -21,8 +21,13 @@ Quality Control:
 
 Format Manipulation:
 
-  - cram2fastq
-  - bam2fastq
+  - CRAM to FASTQ
+  - BAM to FASTQ
+
+Utilities:
+
+  - LiftoverVcf (GATK)
+  - merge (BCFtools)
 
 For more details check the [*documentation*](https://cgap-pipeline-main.readthedocs.io/en/latest/Pipelines/Base/index-base.html "base pipeline").
 
