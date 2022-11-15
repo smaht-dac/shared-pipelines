@@ -2,6 +2,26 @@
 # GENOME
 #***************************************************************
 ################################################################
+# Complete reference index, hg38/GRCh38
+################################################################
+name: complete-reference-bwt
+description: Complete genome reference index, includes alt contigs and decoy sequences. |
+             Build hg38/GRCh38.
+format: bwt
+version: hg38
+secondary_files:
+  - ann
+  - amb
+  - sa
+  - pac
+  - alt
+# Required to enable sync with a reference bucket
+uuid: e91a59c0-c546-4bea-a407-df6ab5552f13
+accession: GAPFI91YVC12
+
+---
+
+################################################################
 # Complete reference fasta, hg38/GRCh38
 ################################################################
 name: complete-reference-fasta
