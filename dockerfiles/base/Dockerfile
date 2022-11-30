@@ -92,6 +92,10 @@ COPY scripts/md5_to_fasta.py .
 COPY cram_to_fastq.sh .
 RUN chmod +x cram_to_fastq.sh
 
+## bam2fastq
+COPY bam_to_fastq.sh .
+RUN chmod +x bam_to_fastq.sh
+
 ## bam integrity-check
 COPY integrity-check.sh .
 RUN chmod +x integrity-check.sh

@@ -1,0 +1,34 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: bam2fastq
+description: Convert a BAM file to paired FASTQ files.
+
+runner:
+  language: cwl
+  main: bam2fastq.cwl
+
+software:
+  - samtools@1.9
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  input_bam:
+    argument_type: file.bam
+
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  fastq1:
+    argument_type: file.fastq
+
+  fastq2:
+    argument_type: file.fastq

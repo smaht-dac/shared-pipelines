@@ -1,0 +1,113 @@
+## Pipeline information #####################################
+#     General information for the pipeline
+#############################################################
+name: bam2fastq
+description: Convert a BAM file to paired FASTQ files, |
+             run FastQC on the generated files.
+
+## General arguments ########################################
+#     Pipeline input, reference files, and general arguments
+#       define all arguments for the pipeline here
+#############################################################
+input:
+
+  input_bams:
+    argument_type: file.bam
+    dimensionality: 1
+
+## Workflows and dependencies ###############################
+#     Information for the workflows and their dependencies
+#############################################################
+workflows:
+
+  ## Workflow definition #####################
+  #   bam2fastq
+  ############################################
+  bam2fastq:
+
+    ## Workflow arguments ##############
+    ####################################
+    input:
+
+      input_bam:
+        argument_type: file.bam
+        source_argument_name: input_bams
+        scatter: 1
+
+    ## Output ##########################
+    ####################################
+    output:
+
+      fastq1:
+        description: reads (from .bam) in FASTQ format
+        file_type: reads (from .bam)
+        linkto_location:
+          - Sample
+        paired_end: "1"
+
+      fastq2:
+        description: reads (from .bam) in FASTQ format
+        file_type: reads (from .bam)
+        linkto_location:
+          - Sample
+        paired_end: "2"
+
+    ## EC2 Configuration to use ########
+    ####################################
+    config:
+        instance_type:
+          - c5.4xlarge
+          - m5a.4xlarge
+        ebs_size: 30x
+        EBS_optimized: True
+        spot_instance: True
+        run_name: run_bam2fastq
+        behavior_on_capacity_limit: wait_and_retry
+
+  ## Workflow definition #####################
+  #   fastqc@r1
+  ############################################
+  fastqc@r1:
+
+    ## Workflow arguments ##############
+    ####################################
+    input:
+
+      input_fastq:
+        argument_type: file.fastq
+        source_argument_name: fastq1
+        source: bam2fastq
+
+    ## EC2 Configuration to use ########
+    ####################################
+    config:
+        instance_type: t3.large
+        ebs_size: 1.1x
+        EBS_optimized: True
+        spot_instance: True
+        run_name: run_fastqc-r1
+        behavior_on_capacity_limit: wait_and_retry
+
+  ## Workflow definition #####################
+  #   fastqc@r2
+  ############################################
+  fastqc@r2:
+
+    ## Workflow arguments ##############
+    ####################################
+    input:
+
+      input_fastq:
+        argument_type: file.fastq
+        source_argument_name: fastq2
+        source: bam2fastq
+
+    ## EC2 Configuration to use ########
+    ####################################
+    config:
+        instance_type: t3.large
+        ebs_size: 1.1x
+        EBS_optimized: True
+        spot_instance: True
+        run_name: run_fastqc-r2
+        behavior_on_capacity_limit: wait_and_retry

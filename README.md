@@ -2,7 +2,7 @@
 
 # CGAP Base Pipeline
 
-This repository contains base components for CGAP Pipeline:
+This repository contains shared components for CGAP Pipeline:
 
   * CWL workflow descriptions
   * CGAP Portal *Workflow* and *MetaWorkflow* objects
@@ -17,20 +17,20 @@ General Processing:
 
 Quality Control:
 
-  - FastQC
+  - ``FastQC``
 
 Format Manipulation:
 
-  - CRAM to FASTQ
-  - BAM to FASTQ
+  - ``cram`` to ``fastq``
+  - ``bam`` to ``fastq``
 
 Utilities:
 
-  - LiftoverVcf (GATK)
-  - merge (BCFtools)
+  - ``LiftoverVcf`` (GATK)
+  - ``merge`` (BCFtools)
 
 For more details check the [*documentation*](https://cgap-pipeline-main.readthedocs.io/en/latest/Pipelines/Base/index-base.html "base pipeline").
 
 ## Other Components
 
-The respository also stores CGAP Portal objects that are shared across multiple pipelines.
+The respository also stores CGAP Portal objects that are shared by multiple pipelines.
