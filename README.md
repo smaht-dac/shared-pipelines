@@ -2,7 +2,7 @@
 
 # CGAP Base Pipeline
 
-This repository contains shared components for CGAP Pipeline:
+This repository contains shared components for CGAP pipelines and general processing pipelines:
 
   * CWL workflow descriptions
   * CGAP Portal *Workflow* and *MetaWorkflow* objects
