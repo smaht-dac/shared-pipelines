@@ -58,7 +58,7 @@ workflows:
         instance_type:
           - c5.4xlarge
           - m5a.4xlarge
-        ebs_size: 30x
+        ebs_size: "30x"
         EBS_optimized: True
         spot_instance: True
         run_name: run_bam2fastq
