@@ -53,7 +53,7 @@ source_url: https://github.com/vcftools/vcftools
 # BCFtools, 1.11
 ################################################################
 name: BCFtools
-commit: "1.11"
+version: "1.11"
 source_url: https://github.com/samtools/bcftools
 
 ---
