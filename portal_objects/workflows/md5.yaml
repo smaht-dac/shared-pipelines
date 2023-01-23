@@ -1,0 +1,26 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: md5
+description: Calculate MD5 Hash Value for file. |
+             If the file is compressed, also calculate MD5 Hash Value for uncompressed file content.
+
+runner:
+  language: cwl
+  main: md5.cwl
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  input_file:
+    argument_type: file.any
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  report:
+    argument_type: report.file

@@ -31,7 +31,7 @@ inputs:
     default: "output.vcf"
     inputBinding:
       prefix: -o
-    doc: base name of output vcf file
+    doc: name of output vcf file
 
 outputs:
   - id: output

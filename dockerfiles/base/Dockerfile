@@ -47,6 +47,16 @@ RUN git clone https://github.com/enasequence/cramtools && \
     git checkout 0b5c9ec && \
     cd ..
 
+## bcftools
+RUN wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2 && \
+    tar -xjf bcftools-1.11.tar.bz2 && \
+    rm -rf bcftools-1.11.tar.bz2 && \
+    cd bcftools-1.11 && \
+    ./configure && \
+    make && \
+    cd .. && \
+    ln -s bcftools-1.11 bcftools
+
 ## pigz
 RUN wget https://github.com/madler/pigz/archive/refs/tags/v2.6.tar.gz && \
     tar -xzf v2.6.tar.gz && \
@@ -75,11 +85,16 @@ RUN git clone https://github.com/nh13/pbgzip && \
 #######################################################################
 #     Scripts
 #######################################################################
-## cram2fastq
+## md5_to_fasta
 COPY scripts/md5_to_fasta.py .
 
+## cram2fastq
 COPY cram_to_fastq.sh .
 RUN chmod +x cram_to_fastq.sh
+
+## bam2fastq
+COPY bam_to_fastq.sh .
+RUN chmod +x bam_to_fastq.sh
 
 ## bam integrity-check
 COPY integrity-check.sh .
@@ -90,6 +105,7 @@ RUN chmod +x integrity-check.sh
 #######################################################################
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ENV PATH=/usr/local/bin/samtools/:$PATH
+ENV PATH=/usr/local/bin/bcftools/:$PATH
 ENV PATH=/usr/local/bin/pigz/:$PATH
 
 ## Supporting UTF-8

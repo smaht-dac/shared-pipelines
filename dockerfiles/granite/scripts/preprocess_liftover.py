@@ -65,7 +65,7 @@ def main(args):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="Preprocess to the liftover step.")
+    parser = argparse.ArgumentParser(description="Preprocess to the liftover step")
 
     parser.add_argument("-i", "--inputfile", help="input VCF file", required=True)
     parser.add_argument("-o", "--outputfile", help="output VCF file", required=True)

@@ -1,0 +1,36 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: fastqc
+description: Run FastQC for a FASTQ file.
+
+runner:
+  language: cwl
+  main: fastqc.cwl
+
+software:
+  - FastQC@v0.11.9
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  input_fastq:
+    argument_type: file.fastq
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  report_zip:
+    argument_type: qc.quality_metric_fastqc
+    argument_to_be_attached_to: input_fastq
+    html: True
+    table: True
+    zipped: True
+    html_in_zipped: fastqc_report.html
+    tables_in_zipped:
+      - summary.txt
+      - fastqc_data.txt

@@ -1,0 +1,152 @@
+#***************************************************************
+# GENOME
+#***************************************************************
+################################################################
+# Complete reference index, hg38/GRCh38
+################################################################
+name: complete-reference-bwt
+description: Complete genome reference index, includes alt contigs and decoy sequences. |
+             Build hg38/GRCh38.
+format: bwt
+version: hg38
+secondary_files:
+  - ann
+  - amb
+  - sa
+  - pac
+  - alt
+# Required to enable sync with a reference bucket
+uuid: e91a59c0-c546-4bea-a407-df6ab5552f13
+accession: GAPFI91YVC12
+
+---
+
+################################################################
+# Complete reference fasta, hg38/GRCh38
+################################################################
+name: complete-reference-fasta
+description: Complete genome reference sequence, includes alt contigs and decoy sequences. |
+             Build hg38/GRCh38.
+format: fa
+version: hg38
+secondary_files:
+  - dict
+  - fa_fai
+# Required to enable sync with a reference bucket
+uuid: 1936f246-22e1-45dc-bb5c-9cfd55537fe7
+accession: GAPFIXRDPDK5
+
+---
+
+################################################################
+# Complete MD5 list, hg38/GRCh38
+################################################################
+name: complete-md5-list
+description: List of MD5 for complete genome reference sequence, includes alt contigs and decoy sequences. |
+             Build hg38/GRCh38.
+format: md5_list
+version: hg38
+# Required to enable sync with a reference bucket
+uuid: db00cc5a-d7bc-424c-8560-e53827a52db9
+accession: GAPFIGWSGHNU
+
+---
+
+################################################################
+# Liftover chain file, hg19/GRCh37 to hg38/GRCh38
+################################################################
+name: liftover-chain
+description: File with coordinates mapping for liftover from hg19/GRCh37 to hg38/GRCh38.
+format: chain
+version: hg19to38
+# Required to enable sync with a reference bucket
+uuid: 47e4b517-d81c-4184-a4d2-e69b10197e9d
+accession: GAPFIYPTQVC8
+
+---
+
+################################################################
+# Liftover chain file, hg38/GRCh38 to hg19/GRCh37
+################################################################
+name: liftover-chain
+description: File with coordinates mapping for liftover from hg38/GRCh38 to hg19/GRCh37.
+format: chain
+version: hg38to19
+# Required to enable sync with a reference bucket
+uuid: 297c872a-5b6b-4fc3-83d3-f4a853f8805c
+accession: GAPFIYPTSAU8
+
+---
+
+################################################################
+# Chromosomes list with Y chromosome first, hg38/GRCh38
+#   Canonical chromosomes only
+################################################################
+name: chromosomes-list-chrY-first
+description: List of canonical chromosomes with Y chromosome first. |
+             Build hg38/GRCh38.
+format: txt
+version: hg38
+# Required to enable sync with a reference bucket
+uuid: a1d504ee-a313-4064-b6ae-65fed9738980
+accession: GAPFIGJVJDUY
+
+---
+
+################################################################
+# Chromosomes list excluding X and Y chromosomes, hg38/GRCh38
+#   Canonical chromosomes only
+################################################################
+name: chromosomes-list-noXY
+description: List of canonical chromosomes excluding X and Y chromosomes. |
+             Build hg38/GRCh38.
+format: txt
+version: hg38
+# Required to enable sync with a reference bucket
+uuid: 68b7f258-5442-4ab4-99a7-22ee2a28dabf
+accession: GAPFIU8HBMP2
+
+---
+
+################################################################
+# Exome regions from Ensembl 101, hg38/GRCh38
+################################################################
+name: exome-regions-ensembl
+description: Exome regions from Ensembl 101. |
+             Build hg38/GRCh38.
+format: bed
+version: "101"
+# Required to enable sync with a reference bucket
+uuid: 27cfd5ba-bb5f-4b60-914e-70332db875a4
+accession: GAPFITVOHD45
+
+---
+
+################################################################
+# List of genomic regions (10Mb), hg38/GRCh38
+#   Canonical chromosomes only
+################################################################
+name: 10Mb-genomic-regions
+description: List of 10Mb genomic regions for canonical chromosomes. |
+             Build hg38/GRCh38.
+format: txt
+version: hg38
+# Required to enable sync with a reference bucket
+uuid: 1c07a3aa-e2a3-498c-b838-15991c4a2f28
+accession: GAPFIBGEOI72
+
+---
+
+#***************************************************************
+# OTHER
+#***************************************************************
+################################################################
+# List of genes available in the portal, 0.4.6
+################################################################
+name: genes-list-ensid
+description: List of Ensembl IDs for genes available in the portal.
+format: txt
+version: 0.4.6
+# Required to enable sync with a reference bucket
+uuid: 84f2bb24-edd7-459b-ab89-0a21866d7826
+accession: GAPFI5MKCART

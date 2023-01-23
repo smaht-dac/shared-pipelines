@@ -1,5 +1,12 @@
 ### Version Updates
 
+#### v1.1.0
+* Conversion to YAML format for portal objects
+* Added sanitize_vcf script to clean ``vcf`` files
+* Added BCFtools ``merge`` to merge multiple ``vcf`` files
+* Added conversion from ``bam`` to ``fastq``
+* Added GATK ``LiftoverVcf``
+
 #### v1.0.0
 * v27 -> v1.0.0, we are starting a new more comprehensive versioning system
 * Added some change in metaworkflows to accomodate the changes in foursight

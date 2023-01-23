@@ -1,0 +1,30 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: sanitize_vcf
+description: Clean header and annotation relative to INFO field in input VCF file.
+
+runner:
+  language: cwl
+  main: sanitize_vcf.cwl
+
+software:
+  - granite@0.2.0
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  input_vcf:
+    argument_type: file.vcf_gz
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  cleaned_vcf:
+    argument_type: file.vcf_gz
+    secondary_files:
+      - vcf_gz_tbi

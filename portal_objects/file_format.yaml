@@ -1,0 +1,663 @@
+#***************************************************************
+# GENERAL
+#***************************************************************
+################################################################
+# JSON
+################################################################
+name: json
+extension: json
+description: Format used to represent JavaScript Object Notation (JSON).
+uuid: ff12517a-d51e-45a4-8f44-a1cfe418dba5
+
+---
+
+################################################################
+# TXT
+################################################################
+name: txt
+extension: txt
+description: Format used to represent plain text.
+uuid: 0cd4e777-a596-4927-95c8-b07716121aa3
+
+---
+
+################################################################
+# TSV
+################################################################
+name: tsv
+extension: tsv
+description: Format used to represent Tab-Separate Values (TSV).
+uuid: c369d5d6-2861-47ab-bc39-99083cfe48bd
+
+---
+
+################################################################
+# Compressed TSV tsv_gz_tbi
+################################################################
+name: tsv_gz_tbi
+extension: tsv.gz.tbi
+description: Companion format to compressed TSV. |
+             Format used to represent the index of a compressed TSV file (Tabix generated).
+uuid: 829ed303-e427-4d9a-a217-be75ad11317e
+
+---
+
+################################################################
+# Compressed TSV
+################################################################
+name: tsv_gz
+extension: tsv.gz
+description: Compressed version of a TSV file. |
+             Format used to represent Tab-Separate Values.
+secondary_formats:
+  - tsv_gz_tbi
+uuid: 11ca3783-db6e-430e-997b-9cf0ca275814
+
+---
+
+################################################################
+# TAR
+################################################################
+name: tar
+extension: tar
+description: Format used to represent an archive of files.
+uuid: 39866342-e4f8-4a50-87bf-b61a782549c8
+
+---
+
+################################################################
+# Compressed TAR
+################################################################
+name: tar_gz
+extension: tar.gz
+description: Compressed version of a TAR archive. |
+             Format used to represent an archive of files.
+uuid: f2ec3b9f-a898-4e6c-8da5-734a7a6410b8
+
+---
+
+################################################################
+# PNG
+################################################################
+name: png
+extension: png
+description: PNG (Portable Graphics Format). |
+             Format used to represent an uncompressed image.
+file_types:
+  - FileProcessed
+uuid: 7c525767-e142-45f6-b4c3-84f52bc6f4cc
+
+---
+
+################################################################
+# Rdata
+################################################################
+name: Rdata
+extension: Rdata
+description: Format used to represent R objects.
+file_types:
+  - FileProcessed
+uuid: ce424ef5-86c8-4522-aecf-6c1c98f365b5
+
+---
+
+#***************************************************************
+# SEQUENCE
+#***************************************************************
+################################################################
+# FASTQ
+################################################################
+name: fastq
+extension: fastq.gz
+description: Format used to represent short read sequence data, |
+             compressed.
+file_types:
+  - FileProcessed
+  - FileSubmitted
+uuid: c13d06cf-218e-4f61-aaf0-91f226248b2c
+
+---
+
+#***************************************************************
+# ALIGNMENT
+#***************************************************************
+################################################################
+# SAM
+################################################################
+name: sam
+extension: sam
+description: Format used to represent aligned sequences.
+file_types:
+  - FileProcessed
+uuid: 3311fb05-a0df-43e5-b0af-234c82b6bee9
+
+---
+
+################################################################
+# BAM bai
+#   TODO change it to bam_bai
+################################################################
+name: bai
+extension: bam.bai
+description: Companion format to BAM. |
+             Format used to represent the index of a BAM file.
+file_types:
+  - FileProcessed
+uuid: d13d06c1-218e-4f61-aaf0-91f226248b3c
+
+---
+
+################################################################
+# BAM
+################################################################
+name: bam
+extension: bam
+description: Binary version of a SAM file. |
+             Format used to represent aligned sequences.
+secondary_formats:
+  - bai
+file_types:
+  - FileProcessed
+uuid: d13d06cf-218e-4f61-aaf0-91f226248b3c
+
+---
+
+################################################################
+# CRAM
+################################################################
+name: cram
+extension: cram
+description: Compressed version of a BAM file. |
+             Format used to represent aligned sequences.
+file_types:
+  - FileProcessed
+uuid: d363c5f9-7159-45b1-b516-e5ec433f9b86
+
+---
+
+#***************************************************************
+# GENOME REFERENCE
+#***************************************************************
+################################################################
+# BWT ann
+################################################################
+name: ann
+extension: ann
+description: Companion format to BWT.
+file_types:
+  - FileReference
+uuid: 106199e5-5a85-4817-9a55-7b31698e1fda
+
+---
+
+################################################################
+# BWT amb
+################################################################
+name: amb
+extension: amb
+description: Companion format to BWT.
+file_types:
+  - FileReference
+uuid: 8db70ed6-0121-4fe1-a72e-d91dc5aa6cd3
+
+---
+
+################################################################
+# BWT pac
+################################################################
+name: pac
+extension: pac
+description: Companion format to BWT.
+file_types:
+  - FileReference
+uuid: 7373ca48-0b3e-467b-967a-80870846f89b
+
+---
+
+################################################################
+# BWT sa
+################################################################
+name: sa
+extension: sa
+description: Companion format to BWT.
+file_types:
+  - FileReference
+uuid: 11f2fc36-9a65-4d60-9365-d8ff241df4f7
+
+---
+
+################################################################
+# BWT alt
+################################################################
+name: alt
+extension: alt
+description: Companion format to BWT.
+file_types:
+  - FileReference
+uuid: 9ed3e9f9-fee2-47e3-bbe3-c63a52f8d3b8
+
+---
+
+################################################################
+# BWT
+################################################################
+name: bwt
+extension: bwt
+description: Format used to represent the genome index based on Burrows-Wheeler Transform (BWT).
+secondary_formats:
+  - ann
+  - amb
+  - pac
+  - sa
+  - alt
+file_types:
+  - FileReference
+uuid: 813b0001-5f3f-4e28-9203-4cdf261e19c4
+
+---
+
+################################################################
+# FASTA fa_fai
+################################################################
+name: fa_fai
+extension: fa.fai
+description: Companion format to FASTA.
+file_types:
+  - FileReference
+uuid: fb728bb4-bc56-46d5-8df5-a05562826b9a
+
+---
+
+################################################################
+# FASTA dict
+################################################################
+name: dict
+extension: dict
+description: Companion format to FASTA.
+file_types:
+  - FileReference
+uuid: 4ed9f7e0-2b2f-4aca-9533-a0a652b43442
+
+---
+
+################################################################
+# FASTA
+################################################################
+name: fa
+extension: fa
+description: FASTA format. |
+             Format used to represent the genome reference sequence.
+secondary_formats:
+  - dict
+  - fa_fai
+file_types:
+  - FileReference
+uuid: 5ced774b-a73e-4d1b-8186-d7fbbde7a3c2
+
+---
+
+#***************************************************************
+# GENOMIC VARIANTS
+#***************************************************************
+################################################################
+# VCF vcf_idx
+################################################################
+name: vcf_idx
+extension: vcf.idx
+description: Companion format to VCF. |
+             Format used to represent the index of a VCF file.
+file_types:
+  - FileProcessed
+  - FileReference
+  - FileSubmitted
+uuid: ec96f95a-cf13-4633-ab0d-c4a5138bbe0b
+
+---
+
+################################################################
+# VCF
+#   https://samtools.github.io/hts-specs/VCFv4.2.pdf
+################################################################
+name: vcf
+extension: vcf
+description: Format used to represent genomics variants.
+secondary_formats:
+  - vcf_idx
+file_types:
+  - FileProcessed
+  - FileReference
+  - FileSubmitted
+uuid: fcc2647d-301b-4888-8d9d-83ea4270309c
+
+---
+
+################################################################
+# Compressed VCF vcf_gz_tbi
+################################################################
+name: vcf_gz_tbi
+extension: vcf.gz.tbi
+description: Companion format to compressed VCF. |
+             Format used to represent the index of a compressed VCF file (Tabix generated).
+file_types:
+  - FileProcessed
+  - FileReference
+  - FileSubmitted
+uuid: f84f1922-7f4e-4afc-922f-bec620969bf1
+
+---
+
+################################################################
+# Compressed VCF
+################################################################
+name: vcf_gz
+extension: vcf.gz
+description: Compressed version of a VCF file. |
+             Format used to represent genomics variants.
+secondary_formats:
+  - vcf_gz_tbi
+file_types:
+  - FileProcessed
+  - FileReference
+  - FileSubmitted
+uuid: 1b8f525f-aecb-4211-9ae5-a2c998b05599
+
+---
+
+################################################################
+# Archive VCF
+################################################################
+name: vcf_tar
+extension: vcf.tar
+description: Format used to represent an archive of compressed VCF files.
+file_types:
+  - FileReference
+uuid: 3d140fc3-fd0e-4d09-8294-4536e388e665
+
+---
+
+################################################################
+# GVCF
+#   https://gatk.broadinstitute.org/hc/en-us/articles/360035531812-GVCF-Genomic-Variant-Call-Format
+################################################################
+name: gvcf
+extension: gvcf
+description: Format used to represent genomics variant sites, |
+             GVCF has records for all sites (whether there is a variant call there or not).
+file_types:
+  - FileProcessed
+uuid: f592a45e-3b8a-4bad-bfd4-52acf9fd663d
+
+---
+
+################################################################
+# Compressed GVCF gvcf_gz_tbi
+################################################################
+name: gvcf_gz_tbi
+extension: gvcf.gz.tbi
+description: Companion format to compressed GVCF. |
+             Format used to represent the index of a compressed GVCF file (Tabix generated).
+file_types:
+  - FileProcessed
+uuid: b01ee86e-b2c7-4725-81d7-798718674485
+
+---
+
+################################################################
+# Compressed GVCF
+################################################################
+name: gvcf_gz
+extension: gvcf.gz
+description: Compressed version of a GVCF file. |
+             Format used to represent genomics variant sites.
+secondary_formats:
+  - gvcf_gz_tbi
+file_types:
+  - FileProcessed
+uuid: ad47d469-4561-4234-bce2-820f08f58e7c
+
+---
+
+#***************************************************************
+# ANNOTATION
+#***************************************************************
+################################################################
+# BED
+#   https://useast.ensembl.org/info/website/upload/bed.html
+################################################################
+name: bed
+extension: bed
+description: BED (Browser Extensible Data) format is a text file format |
+             used to store genomic regions as coordinates and associated annotations.
+uuid: 4c04f6de-89a7-4477-8dc4-811b50c67401
+
+---
+
+################################################################
+# Compressed BED bed_gz_tbi
+################################################################
+name: bed_gz_tbi
+extension: bed.gz.tbi
+description: Companion format to compressed BED. |
+             Format used to represent the index of a compressed BED file (Tabix generated).
+uuid: 40346690-6359-4436-97ff-562698ab4b31
+
+---
+
+################################################################
+# Compressed BED
+################################################################
+name: bed_gz
+extension: bed.gz
+description: Compressed version of a BED file. |
+             Format used to store genomic regions as coordinates and associated annotations.
+secondary_formats:
+  - bed_gz_tbi
+uuid: 4f074eca-29a0-4a49-b335-aef988e6cbd7
+
+---
+
+################################################################
+# BIG
+################################################################
+name: big
+extension: big
+description: Format used to represent a binary index for the genome.
+uuid: f66af4df-c107-44f0-bc94-227f1b4ccf72
+
+---
+
+################################################################
+# Wig (wiggle)
+#   https://genome.ucsc.edu/goldenPath/help/wiggle
+################################################################
+name: wig
+extension: wig
+description: Format used for display of dense continuous data with genomic coordinates.
+file_types:
+  - FileReference
+uuid: 19e290b5-2743-4311-a860-5dfca41858b1
+
+---
+
+################################################################
+# bigWig
+#   https://genome.ucsc.edu/goldenpath/help/bigWig
+################################################################
+name: bigWig
+extension: bw
+description: Binary version of a Wig file. |
+             Format used for display of dense continuous data with genomic coordinates.
+file_types:
+  - FileReference
+uuid: 33f30c42-d582-4163-af44-fecf586b9dd3
+
+---
+
+################################################################
+# chain
+#   https://genome.ucsc.edu/goldenPath/help/chain
+################################################################
+name: chain
+extension: chain.gz
+description: Format used to represent pairwise alignment that allow gaps in both sequences simultaneously, |
+             compressed.
+file_types:
+  - FileReference
+uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
+
+---
+
+################################################################
+# Compressed dbNSFP dbnsfp_gz_tbi
+################################################################
+name: dbnsfp_gz_tbi
+extension: dbnsfp.gz.tbi
+description: Companion format to compressed dbNSFP. |
+             Format used to represent the index of a compressed dbNSFP file (Tabix generated).
+file_types:
+  - FileReference
+uuid: 311ac7bf-e1d5-463f-af15-61ebfea29608
+
+---
+
+################################################################
+# Compressed dbNSFP dbnsfp_readme_txt
+################################################################
+name: dbnsfp_readme_txt
+extension: dbnsfp.readme.txt
+description: Companion format to compressed dbNSFP. |
+             Format used to store dbNSFP README as plain text.
+file_types:
+  - FileReference
+uuid: ac822ea4-d281-41e0-b9c9-f283c51f1c15
+
+---
+
+################################################################
+# Compressed dbNSFP
+################################################################
+name: dbnsfp_gz
+extension: dbnsfp.gz
+description: Format to represent the dbNSFP database as a compressed VCF.
+secondary_formats:
+  - dbnsfp_gz_tbi
+  - dbnsfp_readme_txt
+file_types:
+  - FileReference
+uuid: 65a2cca2-dae8-4ff2-ac8b-aa1e92f5416b
+
+---
+
+################################################################
+# MD5 List
+#   https://github.com/enasequence/cramtools
+################################################################
+name: md5_list
+extension: md5_list
+description: Format to represent the list of contigs MD5 produced by cramtools getref command.
+file_types:
+  - FileReference
+uuid: 1362126e-e6ee-4010-9fb8-06e9b39dbb83
+
+---
+
+################################################################
+# Archive VEP plugins_tar
+################################################################
+name: plugins_tar
+extension: plugins.tar.gz
+description: Companion format to VEP archive. |
+             Format used to represent VEP plugins as archive, |
+             compressed.
+file_types:
+  - FileReference
+uuid: 65ccbf65-80f9-41b4-b002-468500821c62
+
+---
+
+################################################################
+# Archive VEP
+#   https://useast.ensembl.org/info/docs/tools/vep/index.html
+################################################################
+name: vep_tar
+extension: vep.tar.gz
+description: Format to represent VEP datasource as archive, |
+             compressed.
+secondary_formats:
+  - plugins_tar
+file_types:
+  - FileReference
+uuid: d05f9688-0ee1-4a86-83f4-656e6e21352a
+
+---
+
+################################################################
+# RCK
+#   https://granite-suite.readthedocs.io/en/latest/fileformats.html
+################################################################
+name: rck
+extension: rck
+description: RCK (Read Count Keeper) format, |
+             used to store pileup read counts by strand and allele.
+uuid: 228190b1-4178-46ad-872e-9b8ca1931a31
+
+---
+
+################################################################
+# Compressed RCK rck_gz_tbi
+################################################################
+name: rck_gz_tbi
+extension: rck.gz.tbi
+description: Companion format to compressed RCK. |
+             Format used to represent the index of a compressed RCK file (Tabix generated).
+uuid: c55ace88-3289-49b0-a67a-c046e1004e5a
+
+---
+
+################################################################
+# Compressed RCK
+################################################################
+name: rck_gz
+extension: rck.gz
+description: Compressed version of RCK file. |
+             Format used to store pileup read counts by strand and allele.
+secondary_formats:
+  - rck_gz_tbi
+uuid: 20d4d3aa-5f1c-4b75-9e25-73f9f370fefa
+
+---
+
+################################################################
+# Archive RCK rck_tar_index
+################################################################
+name: rck_tar_index
+extension: rck.tar.index
+description: Companion format to RCK archive. |
+             Format used to represent the index of files in the archive.
+uuid: 1c7dc723-811c-4fcf-b8e5-d5e17a2013f7
+
+---
+
+################################################################
+# Archive RCK
+################################################################
+name: rck_tar
+extension: rck.tar
+description: Format used to represent an archive of compressed RCK files.
+secondary_formats:
+  - rck_tar_index
+uuid: 39f836d8-bbb1-46c7-80d4-e321d4a44204
+
+---
+
+################################################################
+# GFF3
+#   https://useast.ensembl.org/info/website/upload/gff3.html
+################################################################
+name: gff3
+extension: gff3
+description: GFF (General Feature Format) Version 3, |
+             used for storing genomic features as a text file.
+file_types:
+  - FileReference
+uuid: f87864e0-7d55-46bd-a67a-fb8753ce87db

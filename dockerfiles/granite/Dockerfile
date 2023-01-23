@@ -29,6 +29,10 @@ RUN pip install granite-suite==0.2.0 pytest==7.1.2
 COPY scripts/preprocess_liftover.py .
 RUN chmod +x preprocess_liftover.py
 
+## sanitize_vcf
+COPY scripts/sanitize_vcf.py .
+RUN chmod +x sanitize_vcf.py
+
 #######################################################################
 #     Setting env variables
 #######################################################################

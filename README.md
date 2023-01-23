@@ -2,21 +2,35 @@
 
 # CGAP Base Pipeline
 
-This repository contains base components for CGAP pipeline:
+This repository contains shared components for CGAP pipelines and general processing pipelines:
 
-  * CWL workflows
-  * CGAP Portal Workflows and MetaWorkflows objects
-  * ECR (Docker) source files, which allow for creation of public Docker images (using `docker build`) or private dynamically-generated ECR images (using [*cgap pipeline utils*](https://github.com/dbmi-bgm/cgap-pipeline-utils/) `deploy_pipeline`)
+  * CWL workflow descriptions
+  * CGAP Portal *Workflow* and *MetaWorkflow* objects
+  * CGAP Portal *Software*, *FileFormat*, and *FileReference* objects
+  * ECR (Docker) source files, which allow for creation of public Docker images (using `docker build`) or private dynamically-generated ECR images (using [*cgap pipeline utils*](https://github.com/dbmi-bgm/cgap-pipeline-utils/) `pipeline_deploy`)
 
-## Components
+## Pipelines
 
-General:
+General Processing:
 
-  - md5
-  - FastQC
+  - MD5 Hash
 
-Format manipulation:
+Quality Control:
 
-  - cram2fastq
+  - ``FastQC``
+
+Format Manipulation:
+
+  - ``cram`` to ``fastq``
+  - ``bam`` to ``fastq``
+
+Utilities:
+
+  - ``LiftoverVcf`` (GATK)
+  - ``merge`` (BCFtools)
 
 For more details check the [*documentation*](https://cgap-pipeline-main.readthedocs.io/en/latest/Pipelines/Base/index-base.html "base pipeline").
+
+## Other Components
+
+The respository also stores CGAP Portal objects that are shared by multiple pipelines.

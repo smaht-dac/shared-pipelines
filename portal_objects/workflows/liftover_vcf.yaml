@@ -1,0 +1,47 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: liftover_vcf
+description: Liftover coordinates for a VCF file.
+
+runner:
+  language: cwl
+  main: workflow_gatk_liftover.cwl
+  child:
+    - preprocess_liftover.cwl
+    - gatk_liftover.cwl
+
+software:
+  - GATK@4.2.6.1
+  - granite@0.2.0
+  - Picard@2.26.11
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  input_vcf:
+    argument_type: file.vcf_gz
+
+  reference:
+    argument_type: file.fa
+
+  chain:
+    argument_type: file.chain
+
+  sample_names:
+    argument_type: parameter.json
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  vcf_lifted:
+    argument_type: file.vcf_gz
+    secondary_files:
+      - vcf_gz_tbi
+
+  reject:
+    argument_type: file.vcf_gz
