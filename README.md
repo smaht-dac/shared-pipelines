@@ -1,6 +1,6 @@
 <img src="https://github.com/dbmi-bgm/cgap-pipeline/blob/master/docs/images/cgap_logo.png" width="200" align="right">
 
-# CGAP Base Pipeline
+# CGAP Base Pipelines and Shared Components
 
 This repository contains shared components for CGAP pipelines and general processing pipelines:
 
