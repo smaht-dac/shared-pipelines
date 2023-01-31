@@ -100,7 +100,7 @@ workflows:
     ####################################
     config:
         instance_type: t3.large
-        ebs_size: 1.1x
+        ebs_size: "1.1x"
         EBS_optimized: True
         spot_instance: True
         run_name: run_fastqc-r1
@@ -124,7 +124,7 @@ workflows:
     ####################################
     config:
         instance_type: t3.large
-        ebs_size: 1.1x
+        ebs_size: "1.1x"
         EBS_optimized: True
         spot_instance: True
         run_name: run_fastqc-r2

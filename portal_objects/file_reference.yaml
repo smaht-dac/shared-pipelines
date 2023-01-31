@@ -153,6 +153,19 @@ accession: GAPFI5MKCART
 
 ---
 
+################################################################
+# Genes available in CGAP in TSV format, 0.4.6
+################################################################
+name: cgap_genes
+description: Genes supported by CGAP. |
+             Build hg38/GRCh38.
+format: tsv_gz
+version: 0.4.6
+uuid: 335f7c0f-640e-44b9-a0da-bbe2728f782c
+accession: GAPFI6BQNY5O
+
+---
+
 #***************************************************************
 # ANNOTATION SOURCE
 #***************************************************************
@@ -450,3 +463,31 @@ secondary_files:
 # Required to enable sync with a reference bucket
 uuid: f0684716-6c8c-4197-b9c4-a1e287d834a5
 accession: GAPFILGA4UIX
+
+---
+
+################################################################
+# Hartwig gene panel for driver mutations, v09132022
+################################################################
+name: gene_panel_hartwig
+description: Genes to add to the driver catalog. |
+             From Hartwig Medical Foundation. |
+             Build hg38/GRCh38.
+format: tsv_gz
+version: "v09132022"
+uuid: bd334693-b83e-4709-9d96-d8cc3f524848
+accession: GAPFI6BNWA1O
+
+---
+
+################################################################
+# Catalog of somatic hotspot mutations, v09132022
+################################################################
+name: somatic_hotspot_mutations
+description: Somatic hotspot locations. |
+             From Hartwig Medical Foundation. |
+             Build hg38/GRCh38.
+format: vcf_gz
+version: "v09132022"
+uuid: 19f548db-5491-464c-babd-a9f4f0b2c8c4
+accession: GAPFI6BNWA90
