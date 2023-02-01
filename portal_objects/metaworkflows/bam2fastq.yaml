@@ -44,6 +44,7 @@ workflows:
         linkto_location:
           - Sample
         paired_end: "1"
+        s3_lifecycle_category: long_term_archive
 
       fastq2:
         description: reads (from .bam) in FASTQ format
@@ -51,6 +52,7 @@ workflows:
         linkto_location:
           - Sample
         paired_end: "2"
+        s3_lifecycle_category: long_term_archive
 
     ## EC2 Configuration to use ########
     ####################################

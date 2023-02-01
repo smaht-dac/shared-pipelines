@@ -49,6 +49,7 @@ workflows:
       cleaned_vcf:
         file_type: intermediate VCF
         description: output from sanitize step in VCF format
+        s3_lifecycle_category: no_storage
 
     ## EC2 Configuration to use ########
     ####################################
@@ -92,6 +93,7 @@ workflows:
         description: output from BCFtools merge in VCF format
         linkto_location:
           - SampleProcessing
+        s3_lifecycle_category: long_term_archive
 
     ## EC2 Configuration to use ########
     ####################################
