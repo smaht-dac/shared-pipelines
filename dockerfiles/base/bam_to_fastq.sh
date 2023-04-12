@@ -1,18 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Input Args
-input_bam=$1
+# Input arguments
+input_file_bam=$1
 nthreads=$2
-out_prefix=$3
+output_file_prefix=$3
 
-# Samtools command line
+# Command line options
 fastq_opt="-0 /dev/null -s /dev/null -n"
 
-samtools collate -@ $nthreads -O $input_bam | samtools fastq -1 $out_prefix.1.fastq -2 $out_prefix.2.fastq -@ $nthreads $fastq_opt - || { echo "Cannot convert bam to fastq."; exit 1; }
+# Run
+samtools collate -@ $nthreads -O $input_file_bam | samtools fastq -1 $output_file_prefix.1.fastq -2 $output_file_prefix.2.fastq -@ $nthreads $fastq_opt - || { echo "Cannot convert BAM to FASTQs"; exit 1; }
 
-# Save space
-rm -rf $input_bam
-
-# Compress fastqs
-pigz $out_prefix.1.fastq || { echo "Cannot compress $out_prefix.1.fastq"; exit 1; }
-pigz $out_prefix.2.fastq || { echo "Cannot compress $out_prefix.2.fastq"; exit 1; }
+# Compress FASTQs
+pigz $output_file_prefix.1.fastq || { echo "Cannot compress $output_file_prefix.1.fastq"; exit 1; }
+pigz $output_file_prefix.2.fastq || { echo "Cannot compress $output_file_prefix.2.fastq"; exit 1; }

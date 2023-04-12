@@ -32,7 +32,7 @@ uuid: c369d5d6-2861-47ab-bc39-99083cfe48bd
 ---
 
 ################################################################
-# Compressed TSV tsv_gz_tbi
+# Compressed TSV index
 ################################################################
 name: tsv_gz_tbi
 extension: tsv.gz.tbi
@@ -134,7 +134,7 @@ uuid: 3311fb05-a0df-43e5-b0af-234c82b6bee9
 ---
 
 ################################################################
-# BAM bai
+# BAM index
 #   TODO change it to bam_bai
 ################################################################
 name: bai
@@ -257,7 +257,7 @@ uuid: 813b0001-5f3f-4e28-9203-4cdf261e19c4
 ---
 
 ################################################################
-# FASTA fa_fai
+# FASTA index
 ################################################################
 name: fa_fai
 extension: fa.fai
@@ -300,7 +300,7 @@ uuid: 5ced774b-a73e-4d1b-8186-d7fbbde7a3c2
 # GENOMIC VARIANTS
 #***************************************************************
 ################################################################
-# VCF vcf_idx
+# VCF index
 ################################################################
 name: vcf_idx
 extension: vcf.idx
@@ -332,7 +332,7 @@ uuid: fcc2647d-301b-4888-8d9d-83ea4270309c
 ---
 
 ################################################################
-# Compressed VCF vcf_gz_tbi
+# Compressed VCF index
 ################################################################
 name: vcf_gz_tbi
 extension: vcf.gz.tbi
@@ -390,7 +390,7 @@ uuid: f592a45e-3b8a-4bad-bfd4-52acf9fd663d
 ---
 
 ################################################################
-# Compressed GVCF gvcf_gz_tbi
+# Compressed GVCF index
 ################################################################
 name: gvcf_gz_tbi
 extension: gvcf.gz.tbi
@@ -433,7 +433,7 @@ uuid: 4c04f6de-89a7-4477-8dc4-811b50c67401
 ---
 
 ################################################################
-# Compressed BED bed_gz_tbi
+# Compressed BED index
 ################################################################
 name: bed_gz_tbi
 extension: bed.gz.tbi
@@ -508,7 +508,7 @@ uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
 ---
 
 ################################################################
-# Compressed dbNSFP dbnsfp_gz_tbi
+# Compressed dbNSFP index
 ################################################################
 name: dbnsfp_gz_tbi
 extension: dbnsfp.gz.tbi
@@ -521,7 +521,7 @@ uuid: 311ac7bf-e1d5-463f-af15-61ebfea29608
 ---
 
 ################################################################
-# Compressed dbNSFP dbnsfp_readme_txt
+# Compressed dbNSFP readme
 ################################################################
 name: dbnsfp_readme_txt
 extension: dbnsfp.readme.txt
@@ -562,7 +562,7 @@ uuid: 1362126e-e6ee-4010-9fb8-06e9b39dbb83
 ---
 
 ################################################################
-# Archive VEP plugins_tar
+# Archive VEP plugins
 ################################################################
 name: plugins_tar
 extension: plugins.tar.gz
@@ -604,7 +604,7 @@ uuid: 228190b1-4178-46ad-872e-9b8ca1931a31
 ---
 
 ################################################################
-# Compressed RCK rck_gz_tbi
+# Compressed RCK index
 ################################################################
 name: rck_gz_tbi
 extension: rck.gz.tbi
@@ -628,7 +628,7 @@ uuid: 20d4d3aa-5f1c-4b75-9e25-73f9f370fefa
 ---
 
 ################################################################
-# Archive RCK rck_tar_index
+# Archive RCK index
 ################################################################
 name: rck_tar_index
 extension: rck.tar.index

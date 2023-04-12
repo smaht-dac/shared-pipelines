@@ -1,115 +1,71 @@
 #######################################################################
 #     Basic image
 #######################################################################
-FROM cgap/cgap-ubuntu2004-py-38:0.0.1
-MAINTAINER Michele Berselli (berselli.michele@gmail.com)
+FROM smaht/ubuntu2204-py38:0.0.1
+
+LABEL maintainers="Michele Berselli (berselli.michele@gmail.com), Dominika Maziec (dominika_maziec@hms.harvard.edu)"
 
 #######################################################################
 #     General updates & installing necessary Linux components
 #       - libncurses-dev, libbz2-dev, liblzma-dev used by samtools
-#       - yasm used by cramtools
-#       - autoconf, autogen, autotools-dev, automake used by pbgzip
 #######################################################################
 RUN apt-get update -y && apt-get install -y \
-    locales \
-    tabix \
-    libncurses-dev \
-    libbz2-dev \
-    liblzma-dev \
-    yasm \
-    autoconf \
-    autogen \
-    autotools-dev \
-    automake
+    locales=2.35-0ubuntu3.1 \
+    tabix=1.13+ds-2build1 \
+    libncurses-dev=6.3-2 \
+    libbz2-dev=1.0.8-5build1 \
+    liblzma-dev=5.2.5-2ubuntu1 \
+    --no-install-recommends \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 #######################################################################
-#     Setting working env
+#     Setting env
 #######################################################################
+## Set working directory
 WORKDIR /usr/local/bin
-
-#######################################################################
-#     Software
-#######################################################################
-## samtools
-RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
-    tar -xjf samtools-1.9.tar.bz2 && \
-    rm -rf samtools-1.9.tar.bz2 && \
-    cd samtools-1.9 && \
-    ./configure && \
-    make && \
-    cd .. && \
-    ln -s samtools-1.9 samtools
-
-## cramtools
-# the path is coded into cram_to_fastq.sh
-RUN git clone https://github.com/enasequence/cramtools && \
-    cd cramtools && \
-    git checkout 0b5c9ec && \
-    cd ..
-
-## bcftools
-RUN wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2 && \
-    tar -xjf bcftools-1.11.tar.bz2 && \
-    rm -rf bcftools-1.11.tar.bz2 && \
-    cd bcftools-1.11 && \
-    ./configure && \
-    make && \
-    cd .. && \
-    ln -s bcftools-1.11 bcftools
-
-## pigz
-RUN wget https://github.com/madler/pigz/archive/refs/tags/v2.6.tar.gz && \
-    tar -xzf v2.6.tar.gz && \
-    rm -rf v2.6.tar.gz && \
-    cd pigz-2.6 && \
-    make && \
-    cd .. && \
-    ln -s pigz-2.6 pigz
-
-## pbgzip
-RUN git clone https://github.com/nh13/pbgzip && \
-    mv pbgzip pbgzip-dir && \
-    cd pbgzip-dir && \
-    git checkout 2b09f97 && \
-    cd igzip && \
-    make && \
-    make install && \
-    cd .. && \
-    sh autogen.sh && \
-    ./configure --enable-igzip && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf pbgzip-dir
-
-#######################################################################
-#     Scripts
-#######################################################################
-## md5_to_fasta
-COPY scripts/md5_to_fasta.py .
-
-## cram2fastq
-COPY cram_to_fastq.sh .
-RUN chmod +x cram_to_fastq.sh
-
-## bam2fastq
-COPY bam_to_fastq.sh .
-RUN chmod +x bam_to_fastq.sh
-
-## bam integrity-check
-COPY integrity-check.sh .
-RUN chmod +x integrity-check.sh
-
-#######################################################################
-#     Setting env variables
-#######################################################################
-ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-ENV PATH=/usr/local/bin/samtools/:$PATH
-ENV PATH=/usr/local/bin/bcftools/:$PATH
-ENV PATH=/usr/local/bin/pigz/:$PATH
 
 ## Supporting UTF-8
 RUN locale-gen "en_US.UTF-8" && update-locale LC_ALL="en_US.UTF-8"
 ENV LC_ALL=en_US.UTF-8
+
+#######################################################################
+#     Software
+#######################################################################
+## Samtools install
+RUN wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2 && \
+    tar -xjf samtools-1.17.tar.bz2 && \
+    rm -rf samtools-1.17.tar.bz2
+
+WORKDIR /usr/local/bin/samtools-1.17
+RUN ./configure && \
+    make
+
+WORKDIR /usr/local/bin/
+RUN ln -s samtools-1.17 samtools
+
+## pigz install
+RUN wget https://github.com/madler/pigz/archive/refs/tags/v2.7.tar.gz && \
+    tar -xzf v2.7.tar.gz && \
+    rm -rf v2.7.tar.gz
+
+WORKDIR /usr/local/bin/pigz-2.7
+RUN make
+
+WORKDIR /usr/local/bin/
+RUN ln -s pigz-2.7 pigz
+
+#######################################################################
+#     Scripts
+#######################################################################
+## bam2fastq
+COPY bam_to_fastq.sh .
+RUN chmod +x bam_to_fastq.sh
+
+#######################################################################
+#     Update env
+#######################################################################
+ENV PATH=/usr/local/bin/samtools/:$PATH
+ENV PATH=/usr/local/bin/pigz/:$PATH
 
 CMD ["bash"]

@@ -1,8 +1,9 @@
 #######################################################################
 #     Basic image
 #######################################################################
-FROM cgap/cgap-ubuntu2004-py-38:0.0.1
-MAINTAINER Michele Berselli (berselli.michele@gmail.com)
+FROM smaht/ubuntu2204-py38:0.0.1
+
+LABEL maintainers="Michele Berselli (berselli.michele@gmail.com), Dominika Maziec (dominika_maziec@hms.harvard.edu)"
 
 #######################################################################
 #     Setting working env
@@ -10,16 +11,10 @@ MAINTAINER Michele Berselli (berselli.michele@gmail.com)
 WORKDIR /usr/local/bin
 
 #######################################################################
-#     Software
-#######################################################################
-COPY downloads.sh .
-RUN . downloads.sh
-
-#######################################################################
 #     Scripts
 #######################################################################
-## md5sum run
+## run.sh
 COPY run.sh .
 RUN chmod +x run.sh
 
-CMD ["run.sh"]
+CMD ["bash"]
