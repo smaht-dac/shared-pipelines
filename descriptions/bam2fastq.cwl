@@ -9,7 +9,7 @@ requirements:
 
 hints:
   - class: DockerRequirement
-    dockerPull: ACCOUNT/shared:VERSION
+    dockerPull: ACCOUNT/shared_utils:VERSION
 
 baseCommand: [bam_to_fastq.sh]
 
