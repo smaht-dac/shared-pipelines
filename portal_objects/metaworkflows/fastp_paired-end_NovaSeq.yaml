@@ -74,17 +74,14 @@ workflows:
 
       # File output
       output_file_r1_fastq_gz:
-        argument_type: file.fastq
         file_type: Read1 pre-processed FASTQ
         paired_end: "1"
 
       output_file_r2_fastq_gz:
-        argument_type: file.fastq
         file_type: Read2 pre-processed FASTQ
         paired_end: "2"
 
       output_file_json:
-        argument_type: file.json
         file_type: fastp summary JSON
 
     ## EC2 Configuration to use ########
