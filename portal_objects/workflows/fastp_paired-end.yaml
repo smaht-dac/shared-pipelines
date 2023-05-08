@@ -1,0 +1,70 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: fastp_paired_end
+description: Run fastp to pre-process paired-end data
+
+runner:
+  language: cwl
+  main: fastp_paired_end.cwl
+
+software:
+  - fastp@0.23.2
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Require file argument
+  input_file_r1_fastq_gz:
+    argument_type: file.fastq
+
+  input_file_r2_fastq_gz:
+    argument_type: file.fastq
+
+  # Optional paramters
+  trim_poly_g:
+    argument_type: parameter.boolean
+
+  disable_adapter_trimming:
+    argument_type: parameter.boolean
+
+  detect_adapter_for_pe:
+    argument_type: parameter.boolean
+
+  disable_length_filtering:
+    argument_type: parameter.boolean
+
+  length_required:
+    argument_type: parameter.integer
+
+  length_limit:
+    argument_type: parameter.integer
+
+  disable_quality_filtering:
+    argument_type: parameter.boolean
+
+  qualified_quality_phred:
+    argument_type: parameter.integer
+
+  unqualified_percent_limit:
+    argument_type: parameter.integer
+
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_r1_fastq_gz:
+    argument_type: file.fastq
+
+  output_file_r2_fastq_gz:
+    argument_type: file.fastq
+
+  output_file_json:
+    argument_type: file.json

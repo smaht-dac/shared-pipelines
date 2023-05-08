@@ -1,0 +1,98 @@
+## Pipeline information #####################################
+#     General information for the pipeline
+#############################################################
+name: fastp_paired-end_NovaSeq
+description: Run fastp to pre-process Illumina NextSeq/NovaSeq paired-end FASTQ files. |
+             Trim artifactual polyG tails and remove adapters. |
+             Default filters are applied for read length (>15bp) and PHRED score (>=15)
+
+## General arguments ########################################
+#     Pipeline input, reference files, and general arguments
+#       define all arguments for the pipeline here
+#############################################################
+input:
+
+  # Require file argument
+  input_files_r1_fastq_gz:
+    argument_type: file.fastq
+
+  input_files_r2_fastq_gz:
+    argument_type: file.fastq
+
+  # Argument paramters
+  trim_poly_g:
+    argument_type: parameter.boolean
+    value: True
+
+  detect_adapter_for_pe:
+    argument_type: parameter.boolean
+    value: True
+
+  nthreads:
+    argument_type: parameter.integer
+    value: "14"
+
+## Workflows and dependencies ###############################
+#     Information for the workflows and their dependencies
+#############################################################
+workflows:
+
+  ## Workflow definition #####################
+  #   fastp_paired-end
+  ############################################
+  fastp_paired-end:
+
+    ## Specific arguments ##############
+    ####################################
+    input:
+
+      # File argument
+      input_file_r1_fastq_gz:
+        argument_type: file.fastq
+        source_argument_name: input_files_r1_fastq_gz
+        scatter: 1
+
+      input_file_r2_fastq_gz:
+        argument_type: file.fastq
+        source_argument_name: input_files_r2_fastq_gz
+        scatter: 1
+
+      # Parameter argument
+      trim_poly_g:
+        argument_type: parameter.boolean
+
+      detect_adapter_for_pe:
+        argument_type: parameter.boolean
+
+      nthreads:
+        argument_type: parameter.integer
+
+    ## Output ##########################
+    #     Output files for the workflow
+    ####################################
+    output:
+
+      # File output
+      output_file_r1_fastq_gz:
+        argument_type: file.fastq
+        file_type: Read1 pre-processed FASTQ
+        paired_end: "1"
+
+      output_file_r2_fastq_gz:
+        argument_type: file.fastq
+        file_type: Read2 pre-processed FASTQ
+        paired_end: "2"
+
+      output_file_json:
+        argument_type: file.json
+        file_type: fastp summary JSON
+
+    ## EC2 Configuration to use ########
+    ####################################
+    config:
+      instance_type: r4.4xlarge
+      ebs_size: "3x"
+      EBS_optimized: True
+      spot_instance: True
+      run_name: run_fastp_paired_end
+      behavior_on_capacity_limit: wait_and_retry
