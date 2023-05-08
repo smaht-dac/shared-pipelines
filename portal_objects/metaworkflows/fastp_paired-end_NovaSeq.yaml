@@ -22,11 +22,11 @@ input:
   # Argument paramters
   trim_poly_g:
     argument_type: parameter.boolean
-    value: True
+    value: "True"
 
   detect_adapter_for_pe:
     argument_type: parameter.boolean
-    value: True
+    value: "True"
 
   nthreads:
     argument_type: parameter.integer
@@ -94,5 +94,5 @@ workflows:
       ebs_size: "3x"
       EBS_optimized: True
       spot_instance: True
-      run_name: run_fastp_paired_end
+      run_name: run_fastp_paired-end
       behavior_on_capacity_limit: wait_and_retry
