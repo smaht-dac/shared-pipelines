@@ -1,12 +1,12 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: fastp_paired_end
+name: fastp_paired-end
 description: Run fastp to pre-process paired-end data
 
 runner:
   language: cwl
-  main: fastp_paired_end.cwl
+  main: fastp_paired-end.cwl
 
 software:
   - fastp@0.23.2
