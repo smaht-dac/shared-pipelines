@@ -12,7 +12,7 @@ description: Run fastp to pre-process Illumina NextSeq/NovaSeq paired-end FASTQ 
 #############################################################
 input:
 
-  # Require file argument
+  # Required file argument
   fastqs_R1:
     argument_type: file.fastq
     dimensionality: 1
