@@ -78,10 +78,14 @@ workflows:
       output_file_r1_fastq_gz:
         file_type: Read1 pre-processed FASTQ
         paired_end: "1"
+        linkto_location:
+          - Sample
 
       output_file_r2_fastq_gz:
         file_type: Read2 pre-processed FASTQ
         paired_end: "2"
+        linkto_location:
+          - Sample
 
       output_file_json:
         file_type: fastp summary JSON
