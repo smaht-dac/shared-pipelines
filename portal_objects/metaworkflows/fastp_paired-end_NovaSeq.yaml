@@ -32,7 +32,7 @@ input:
 
   nthreads:
     argument_type: parameter.integer
-    value: "14"
+    value: "16"
 
 ## Workflows and dependencies ###############################
 #     Information for the workflows and their dependencies
