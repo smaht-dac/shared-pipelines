@@ -36,16 +36,16 @@ inputs:
         <output_file_prefix>.1.fastq.gz and <output_file_prefix>.2.fastq.gz
 
 outputs:
-  - id: output_file_1_fastq
+  - id: output_file_1_fastq_gz
     type: File
     outputBinding:
       glob: $(inputs.output_file_prefix + ".1.fastq.gz")
 
-  - id: output_file_2_fastq
+  - id: output_file_2_fastq_gz
     type: File
     outputBinding:
       glob: $(inputs.output_file_prefix + ".2.fastq.gz")
 
 doc: |
   Run bam_to_fastq.sh to convert a BAM file for paired-end alignment |
-  into two FASTQ files, one for each of the mate reads
+  into two compressed FASTQ files, one for each of the mate reads
