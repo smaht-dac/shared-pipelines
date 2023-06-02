@@ -19,7 +19,8 @@ inputs:
     inputBinding:
       position: 1
       prefix: -i
-    doc: Input file in BAM format
+    doc: Input file in BAM format.
+         Must be sorted by genomic coordinates
 
   - id: sample_name
     type: string
@@ -58,8 +59,10 @@ outputs:
     outputBinding:
       glob: $(inputs.input_file_bam.nameroot + "_rg.bam")
     secondaryFiles:
-        - .bai
+      - .bai
 
 doc: |
   Run AddReadGroups.py to mark and assign reads from input file in BAM format to new read groups. |
-  Create associated index file
+  Create associated index file. |
+  Input file must be sorted by genomic coordinates. |
+  The script expect standard illumina read names to extract information to build the read groups.

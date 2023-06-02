@@ -32,6 +32,11 @@ ENV LC_ALL=en_US.UTF-8
 #######################################################################
 #     Software
 #######################################################################
+## Conda install
+#- pysam required by AddReadGroups.py
+RUN conda install -c bioconda -y pysam==0.21.0 && \
+    conda clean -a -y -f
+
 ## Samtools install
 RUN wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2 && \
     tar -xjf samtools-1.17.tar.bz2 && \
@@ -43,6 +48,15 @@ RUN ./configure && \
 
 WORKDIR /usr/local/bin/
 RUN ln -s samtools-1.17 samtools
+
+## AddReadGroups install
+RUN git clone https://github.com/smaht-dac/pipelines-scripts.git
+
+WORKDIR pipelines-scripts
+RUN git checkout 6053fb1 && \
+    chmod +x processing-scripts/AddReadGroups.py
+
+WORKDIR /usr/local/bin/
 
 ## pigz install
 RUN wget https://github.com/madler/pigz/archive/refs/tags/v2.7.tar.gz && \
@@ -58,7 +72,7 @@ RUN ln -s pigz-2.7 pigz
 #######################################################################
 #     Scripts
 #######################################################################
-## bam2fastq
+## bam_to_fastq
 COPY bam_to_fastq.sh .
 RUN chmod +x bam_to_fastq.sh
 
@@ -67,5 +81,6 @@ RUN chmod +x bam_to_fastq.sh
 #######################################################################
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/pigz/:$PATH
+ENV PATH=/usr/local/bin/pipelines-scripts/processing-scripts/:$PATH
 
 CMD ["bash"]
