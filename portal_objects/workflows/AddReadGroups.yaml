@@ -1,0 +1,46 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: AddReadGroups
+description: Run AddReadGroups.py to mark and assign reads from input file in BAM format to new read groups. |
+             Create associated index file. |
+             Input file must be sorted by genomic coordinates. |
+             The script expect standard illumina read names to extract information to build the read groups.
+
+runner:
+  language: cwl
+  main: AddReadGroups.cwl
+
+software:
+  - AddReadGroups@6053fb1
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_file_bam:
+    argument_type: file.bam
+
+  # Required Parameter argument
+  sample_name:
+    argument_type: parameter.string
+
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
+
+  platform:
+    argument_type: parameter.string
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_bam:
+    argument_type: file.bam
+    secondary_files:
+      - bai

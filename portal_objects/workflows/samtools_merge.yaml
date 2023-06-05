@@ -1,0 +1,38 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: samtools_merge
+description: Run Samtools to merge multiple input files in BAM format. |
+             Merge @RG and @PG tag in the header. |
+             Create index for the output file
+
+runner:
+  language: cwl
+  main: samtools_merge.cwl
+
+software:
+  - Samtools@1.17
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_files_bam:
+    argument_type: file.bam
+
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_bam:
+    argument_type: file.bam
+    secondaryFiles:
+      - bai
