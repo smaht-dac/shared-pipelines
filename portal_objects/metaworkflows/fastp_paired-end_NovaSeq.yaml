@@ -13,11 +13,11 @@ description: Run fastp to pre-process Illumina NextSeq/NovaSeq paired-end FASTQ 
 input:
 
   # Required file argument
-  fastqs_R1:
+  input_files_r1_fastq_gz:
     argument_type: file.fastq
     dimensionality: 1
 
-  fastqs_R2:
+  input_files_r2_fastq_gz:
     argument_type: file.fastq
     dimensionality: 1
 
@@ -51,12 +51,12 @@ workflows:
       # File argument
       input_file_r1_fastq_gz:
         argument_type: file.fastq
-        source_argument_name: fastqs_R1
+        source_argument_name: input_files_r1_fastq_gz
         scatter: 1
 
       input_file_r2_fastq_gz:
         argument_type: file.fastq
-        source_argument_name: fastqs_R2
+        source_argument_name: input_files_r2_fastq_gz
         scatter: 1
 
       # Parameter argument
@@ -76,13 +76,13 @@ workflows:
 
       # File output
       output_file_r1_fastq_gz:
-        file_type: Read1 pre-processed FASTQ
+        file_type: Read 1 pre-processed FASTQ
         paired_end: "1"
         linkto_location:
           - Sample
 
       output_file_r2_fastq_gz:
-        file_type: Read2 pre-processed FASTQ
+        file_type: Read 2 pre-processed FASTQ
         paired_end: "2"
         linkto_location:
           - Sample

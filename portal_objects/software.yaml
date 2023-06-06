@@ -11,10 +11,10 @@ source_url: https://github.com/s-andrews/FastQC
 ---
 
 ################################################################
-# parseQCs, 7620b3d
+# parseQCs, 6053fb1
 ################################################################
 name: parseQCs
-version: 7620b3d
+version: 6053fb1
 source_url: https://github.com/smaht-dac/pipelines-scripts
 
 ---
@@ -55,6 +55,15 @@ source_url: https://github.com/OpenGene/fastp
 name: pigz
 version: v2.7
 source_url: https://zlib.net/pigz
+
+---
+
+################################################################
+# AddReadGroups, 6053fb1
+################################################################
+name: AddReadGroups
+version: 6053fb1
+source_url: https://github.com/smaht-dac/pipelines-scripts
 
 ---
 
