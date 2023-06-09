@@ -27,7 +27,7 @@
 name: complete-reference-fasta-no-alt-plus-hs38d1
 description: Complete genome reference sequence in FASTA format. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
-             Does NOT inclue ALT contigs. |
+             Does NOT include ALT contigs. |
              Include decoy sequences from hs38d1 (GCA_000786075.2)
 format: fa
 version: GCA_000001405.15_GRCh38
@@ -49,7 +49,7 @@ accession: SMAFI77E6X32
 name: complete-reference-bwt-no-alt-plus-hs38d1
 description: Complete genome reference BWT index. |
              Version GCA_000001405.15 for build hg38/GRCh38. |
-             Does NOT inclue ALT contigs. |
+             Does NOT include ALT contigs. |
              Include decoy sequences from hs38d1 (GCA_000786075.2)
 format: bwt
 version: GCA_000001405.15_GRCh38
