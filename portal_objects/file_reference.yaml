@@ -1,6 +1,69 @@
 #***************************************************************
-#
+#**********         hg38/GRCh38 Genome Build        ************
 #***************************************************************
+################################################################
+# Complete reference FASTA, GCA_000001405.15_GRCh38
+#
+## https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/
+#   seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz
+#
+# Contains FASTA format sequences for the following:
+# 1. Chromosomes from the GRCh38 Primary Assembly unit.
+#    Note: The two PAR regions on chrY have been hard-masked with Ns.
+#    The chromosome Y sequence provided therefore has the same
+#    coordinates as the GenBank sequence but it is not identical to the
+#    GenBank sequence. Similarly, duplicate copies of centromeric arrays
+#    and WGS on chromosomes 5, 14, 19, 21 & 22 have been hard-masked
+#    with Ns (locations of the unmasked copies are given below).
+# 2. Mitochondrial genome from the GRCh38 non-nuclear assembly unit.
+# 3. Unlocalized scaffolds from the GRCh38 Primary Assembly unit.
+# 4. Unplaced scaffolds from the GRCh38 Primary Assembly unit.
+# 5. Epstein-Barr virus (EBV) sequence
+#    Note: The EBV sequence is not part of the genome assembly but is
+#    included in the analysis set as a sink for alignment of reads that
+#    are often present in sequencing samples.
+# 6. Human decoy sequences from hs38d1 (GCA_000786075.2)
+################################################################
+name: complete-reference-fasta-no-alt-plus-hs38d1
+description: Complete genome reference sequence in FASTA format. |
+             Version GCA_000001405.15 for build hg38/GRCh38. |
+             Does NOT inclue ALT contigs. |
+             Include decoy sequences from hs38d1 (GCA_000786075.2)
+format: fa
+version: GCA_000001405.15_GRCh38
+secondary_files:
+  - dict
+  - fa_fai
+# Required to enable sync with a reference bucket
+uuid: ed72e7be-5276-4cda-b558-77cea6de00fe
+accession: SMAFI77E6X32
+
+---
+
+################################################################
+# Complete reference BWT index, GCA_000001405.15_GRCh38
+#
+## https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/
+#   seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.bwa_index.tar.gz
+################################################################
+name: complete-reference-bwt-no-alt-plus-hs38d1
+description: Complete genome reference BWT index. |
+             Version GCA_000001405.15 for build hg38/GRCh38. |
+             Does NOT inclue ALT contigs. |
+             Include decoy sequences from hs38d1 (GCA_000786075.2)
+format: bwt
+version: GCA_000001405.15_GRCh38
+secondary_files:
+  - ann
+  - amb
+  - sa
+  - pac
+# Required to enable sync with a reference bucket
+uuid: f033afe1-8954-4de2-85af-767bbca16d07
+accession: SMAFIAR252L9
+
+---
+
 ################################################################
 # Population allele frequencies for Mutect2 generated from gnomAD
 #   Released by Broad as part of GATK Best Practices resources
@@ -20,9 +83,6 @@ accession: GAP3EF5Y6TL1 #TODO -> replace with smaht accession when we have a for
 
 ---
 
-#***************************************************************
-#
-#***************************************************************
 ################################################################
 # Panel of normals for Mutect2 from 1000 Genomes
 #   Released by Broad as part of GATK Best Practices resources
@@ -39,3 +99,87 @@ secondary_files:
 # Required to enable sync with a reference bucket
 uuid: a5ae4fbd-3aa7-427c-b319-f6ac57d55ce2
 accession: GAPK23F4TR9Q #TODO -> replace with smaht accession when we have a format
+
+---
+
+#***************************************************************
+#**********         hg19/GRCh37 Genome Build        ************
+#***************************************************************
+################################################################
+# Complete reference FASTA, g1k_GRCh37
+#
+## https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/human_g1k_v37.fasta.gz
+## https://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/
+#   phase2_reference_assembly_sequence/hs37d5.fa.gz
+#
+# Integrated reference sequence from the GRCh37 primary
+# assembly (chromosomal plus unlocalized and unplaced contigs), the rCRS
+# mitochondrial sequence (AC:NC_012920), Human herpesvirus 4 type 1
+# (AC:NC_007605) and the concatenated decoy sequences (hs37d5cs.fa.gz)
+################################################################
+name: complete-reference-fasta-plus-hs37d5
+description: Complete genome reference sequence in FASTA format. |
+             Build hg19/GRCh37, 1000 Genomes. |
+             Include decoy sequences from hs37d5.
+format: fa
+version: g1k_GRCh37
+secondary_files:
+  - dict
+  - fa_fai
+# Required to enable sync with a reference bucket
+uuid: 6eb5ac2e-5aa2-42c5-8044-a3601bc46d04
+accession: SMAFI88E649X
+
+---
+
+################################################################
+# Complete reference BWT index, g1k_GRCh37
+#   Generated from corresponding FASTA sequences
+################################################################
+name: complete-reference-bwt-plus-hs37d5
+description: Complete genome reference BWT index. |
+             Build hg19/GRCh37, 1000 Genomes. |
+             Include decoy sequences from hs37d5.
+format: bwt
+version: g1k_GRCh37
+secondary_files:
+  - ann
+  - amb
+  - sa
+  - pac
+# Required to enable sync with a reference bucket
+uuid: 85886c89-b616-41d0-942f-794554cb8ed2
+accession: SMAFIQR85BJU
+
+---
+
+################################################################
+# Mills and 1000G Gold Standard indels
+################################################################
+name: mills-1000g-gold-standard-indel
+description: Mills and 1000G Gold Standard indels. |
+             Build hg19/GRCh37.
+format: vcf_gz
+version: hg19
+secondary_files:
+  - vcf_gz_tbi
+# Required to enable sync with a reference bucket
+uuid: f5113d4c-ab2f-4b8a-b8e4-adcb59eec037
+accession: SMAFIPDYJSIJ
+
+---
+
+################################################################
+# dbSNP version 138
+#   All variants
+################################################################
+name: dbsnp-all
+description: All variants from dbSNP version 138. |
+             Build hg19/GRCh37.
+format: vcf_gz
+version: 138_hg19
+secondary_files:
+  - vcf_gz_tbi
+# Required to enable sync with a reference bucket
+uuid: fa76350b-6eaa-4ff3-8897-b8dd37b9349f
+accession: SMAFITZ9D8UG
