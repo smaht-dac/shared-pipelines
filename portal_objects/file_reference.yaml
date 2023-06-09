@@ -72,7 +72,7 @@ accession: SMAFIAR252L9
 name: af-only-gnomad-mutect2
 description: Population allele frequencies for Mutect2 generated from gnomAD. |
              Released by Broad as part of GATK Best Practices resources. |
-             Build hg38/GRCh38.
+             Build hg38/GRCh38
 format: vcf_gz
 version: hg38
 secondary_files:
@@ -91,7 +91,7 @@ accession: GAP3EF5Y6TL1 #TODO -> replace with smaht accession when we have a for
 name: pon-1000g-mutect2
 description: Panel of normals for Mutect2 generated from 1000 Genomes project data. |
              Released by Broad as part of GATK Best Practices resources. |
-             Build hg38/GRCh38.
+             Build hg38/GRCh38
 format: vcf_gz
 version: hg38
 secondary_files:
@@ -120,7 +120,7 @@ accession: GAPK23F4TR9Q #TODO -> replace with smaht accession when we have a for
 name: complete-reference-fasta-plus-hs37d5
 description: Complete genome reference sequence in FASTA format. |
              Build hg19/GRCh37, 1000 Genomes. |
-             Include decoy sequences from hs37d5.
+             Include decoy sequences from hs37d5
 format: fa
 version: g1k_GRCh37
 secondary_files:
@@ -139,7 +139,7 @@ accession: SMAFI88E649X
 name: complete-reference-bwt-plus-hs37d5
 description: Complete genome reference BWT index. |
              Build hg19/GRCh37, 1000 Genomes. |
-             Include decoy sequences from hs37d5.
+             Include decoy sequences from hs37d5
 format: bwt
 version: g1k_GRCh37
 secondary_files:
@@ -158,7 +158,7 @@ accession: SMAFIQR85BJU
 ################################################################
 name: mills-1000g-gold-standard-indel
 description: Mills and 1000G Gold Standard indels. |
-             Build hg19/GRCh37.
+             Build hg19/GRCh37
 format: vcf_gz
 version: hg19
 secondary_files:
@@ -175,7 +175,7 @@ accession: SMAFIPDYJSIJ
 ################################################################
 name: dbsnp-all
 description: All variants from dbSNP version 138. |
-             Build hg19/GRCh37.
+             Build hg19/GRCh37
 format: vcf_gz
 version: 138_hg19
 secondary_files:
