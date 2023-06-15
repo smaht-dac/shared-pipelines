@@ -75,7 +75,7 @@ outputs:
   - id: output_file_bam
     type: File
     outputBinding:
-      glob: "out.bam"
+      glob: out.bam
     secondaryFiles:
       - .bai
 
