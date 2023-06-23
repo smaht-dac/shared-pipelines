@@ -65,6 +65,66 @@ accession: SMAFIAR252L9
 ---
 
 ################################################################
+# Complete reference FASTA, GCA_000001405.15_GRCh38_no_decoy
+#
+## https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/
+#   seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+#
+# Contains FASTA format sequences for the following:
+# 1. Chromosomes from the GRCh38 Primary Assembly unit.
+#    Note: The two PAR regions on chrY have been hard-masked with Ns.
+#    The chromosome Y sequence provided therefore has the same
+#    coordinates as the GenBank sequence but it is not identical to the
+#    GenBank sequence. Similarly, duplicate copies of centromeric arrays
+#    and WGS on chromosomes 5, 14, 19, 21 & 22 have been hard-masked
+#    with Ns (locations of the unmasked copies are given below).
+# 2. Mitochondrial genome from the GRCh38 non-nuclear assembly unit.
+# 3. Unlocalized scaffolds from the GRCh38 Primary Assembly unit.
+# 4. Unplaced scaffolds from the GRCh38 Primary Assembly unit.
+# 5. Epstein-Barr virus (EBV) sequence
+#    Note: The EBV sequence is not part of the genome assembly but is
+#    included in the analysis set as a sink for alignment of reads that
+#    are often present in sequencing samples.
+################################################################
+name: complete-reference-fasta-no-alt
+description: Complete genome reference sequence in FASTA format. |
+             Version GCA_000001405.15 for build hg38/GRCh38. |
+             Does NOT include ALT contigs
+format: fa
+version: GCA_000001405.15_GRCh38_no_decoy
+secondary_files:
+  - dict
+  - fa_fai
+# Required to enable sync with a reference bucket
+uuid: cca516c0-3931-4fbe-bc2c-c26fe9ba23fa
+accession: SMAFI23ELK2A
+
+---
+
+################################################################
+# Complete reference BWT index, GCA_000001405.15_GRCh38_no_decoy
+#
+## https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/
+#   seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bwa_index.tar.gz
+################################################################
+name: complete-reference-bwt-no-alt
+description: Complete genome reference BWT index. |
+             Version GCA_000001405.15 for build hg38/GRCh38. |
+             Does NOT include ALT contigs
+format: bwt
+version: GCA_000001405.15_GRCh38_no_decoy
+secondary_files:
+  - ann
+  - amb
+  - sa
+  - pac
+# Required to enable sync with a reference bucket
+uuid: f5ad62fa-5a76-4cf3-bf66-3b71d740be22
+accession: SMAFIA6PK1S1
+
+---
+
+################################################################
 # Population allele frequencies for Mutect2 generated from gnomAD
 #   Released by Broad as part of GATK Best Practices resources
 #   https://console.cloud.google.com/storage/browser/gatk-best-practices/somatic-hg38
@@ -74,12 +134,12 @@ description: Population allele frequencies for Mutect2 generated from gnomAD. |
              Released by Broad as part of GATK Best Practices resources. |
              Build hg38/GRCh38
 format: vcf_gz
-version: hg38
+version: GRCh38
 secondary_files:
   - vcf_gz_tbi
 # Required to enable sync with a reference bucket
-uuid: 1f7da8a9-1249-4824-820a-12485a4c1e7d
-accession: GAP3EF5Y6TL1 #TODO -> replace with smaht accession when we have a format
+uuid: 48ca21b0-1d18-4294-a326-5c29a982be4e
+accession: SMAFIF5Y6TL1
 
 ---
 
@@ -93,12 +153,12 @@ description: Panel of normals for Mutect2 generated from 1000 Genomes project da
              Released by Broad as part of GATK Best Practices resources. |
              Build hg38/GRCh38
 format: vcf_gz
-version: hg38
+version: GRCh38
 secondary_files:
   - vcf_gz_tbi
 # Required to enable sync with a reference bucket
-uuid: a5ae4fbd-3aa7-427c-b319-f6ac57d55ce2
-accession: GAPK23F4TR9Q #TODO -> replace with smaht accession when we have a format
+uuid: 872948d3-c669-41a4-a8b3-83bbe49f6bb6
+accession: SMAFI3F4TR9Q
 
 ---
 
