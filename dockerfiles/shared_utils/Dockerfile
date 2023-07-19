@@ -72,9 +72,9 @@ RUN ln -s pigz-2.7 pigz
 #######################################################################
 #     Scripts
 #######################################################################
-## bam_to_fastq
-COPY bam_to_fastq.sh .
-RUN chmod +x bam_to_fastq.sh
+## bam_to_fastq_paired-end
+COPY bam_to_fastq_paired-end.sh .
+RUN chmod +x bam_to_fastq_paired-end.sh
 
 #######################################################################
 #     Update env

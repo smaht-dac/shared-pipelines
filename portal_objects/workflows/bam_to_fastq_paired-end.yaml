@@ -1,18 +1,16 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: AddReadGroups
-description: Run AddReadGroups.py to mark and assign reads from input file in BAM format to new read groups. |
-             Create associated index file. |
-             Input file must be sorted by genomic coordinates. |
-             The script expect standard illumina read names to extract information to build the read groups
+name: bam_to_fastq_paired-end
+description: Convert a BAM file for paired-end alignment |
+             into two compressed FASTQ files, one for each of the mate reads
 
 runner:
   language: cwl
-  main: AddReadGroups.cwl
+  main: bam_to_fastq_paired-end.cwl
 
 software:
-  - AddReadGroups@6053fb1
+  - Samtools@1.17
 
 ## Input information ########################################
 #     Input files and parameters
@@ -23,16 +21,9 @@ input:
   input_file_bam:
     argument_type: file.bam
 
-  # Required Parameter argument
-  sample_name:
-    argument_type: parameter.string
-
   # Optional Parameter argument
   nthreads:
     argument_type: parameter.integer
-
-  platform:
-    argument_type: parameter.string
 
 ## Output information #######################################
 #     Output files and quality controls
@@ -40,7 +31,8 @@ input:
 output:
 
   # File output
-  output_file_bam:
-    argument_type: file.bam
-    secondary_files:
-      - bai
+  output_file_1_fastq_gz:
+    argument_type: file.fastq
+
+  output_file_2_fastq_gz:
+    argument_type: file.fastq

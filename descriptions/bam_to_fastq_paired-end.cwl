@@ -11,7 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: ACCOUNT/shared_utils:VERSION
 
-baseCommand: [bam_to_fastq.sh]
+baseCommand: [bam_to_fastq_paired-end.sh]
 
 inputs:
   - id: input_file_bam
@@ -47,5 +47,5 @@ outputs:
       glob: $(inputs.output_file_prefix + ".2.fastq.gz")
 
 doc: |
-  Run bam_to_fastq.sh to convert a BAM file for paired-end alignment |
+  Run bam_to_fastq_paired-end.sh to convert a BAM file for paired-end alignment |
   into two compressed FASTQ files, one for each of the mate reads
