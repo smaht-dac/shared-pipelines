@@ -80,5 +80,5 @@ outputs:
       - .bai
 
 doc: |
-  Run "samtools merge -@ nthreads --write-index -c -p out.bam##idx##out.bam.bai in1.bam in2.bam ..." |
+  Run "samtools merge [-@ nthreads] --write-index -c -p out.bam##idx##out.bam.bai in1.bam in2.bam ..." |
   Create index for the output file

@@ -19,7 +19,7 @@ input:
   # Argument paramters
   nthreads:
     argument_type: parameter.integer
-    value: "16"
+    value: "8"
 
 ## Workflows and dependencies ###############################
 #     Information for the workflows and their dependencies
@@ -65,9 +65,9 @@ workflows:
     ####################################
     config:
       instance_type:
-        - c5.4xlarge
-        - m5a.4xlarge
-      ebs_size: "10x"
+        - c5.2xlarge
+        - m5a.2xlarge
+      ebs_size: "3x"
       EBS_optimized: True
       spot_instance: False
       ebs_iops: 16000

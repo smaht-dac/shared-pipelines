@@ -4,7 +4,8 @@
 name: samtools_merge
 description: Run Samtools to merge multiple input files in BAM format. |
              Merge @RG and @PG tag in the header. |
-             Create index for the output file
+             Create index for the output file. |
+             Input files must be sorted by genomic coordinates
 
 runner:
   language: cwl
