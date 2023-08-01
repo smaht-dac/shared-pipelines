@@ -22,7 +22,7 @@
 #    Note: The EBV sequence is not part of the genome assembly but is
 #    included in the analysis set as a sink for alignment of reads that
 #    are often present in sequencing samples.
-# 6. Human decoy sequences from hs38d1 (GCA_000786075.2)
+# 6. Human decoy sequences from hs38d1 (GCA_000786075.2).
 ################################################################
 name: complete-reference-fasta-no-alt-plus-hs38d1
 description: Complete genome reference sequence in FASTA format. |
@@ -210,6 +210,23 @@ secondary_files:
 # Required to enable sync with a reference bucket
 uuid: 85886c89-b616-41d0-942f-794554cb8ed2
 accession: SMAFIQR85BJU
+
+---
+
+################################################################
+# Genomic regions, g1k_GRCh37
+#   Genomic regions divided by 16 shards to run sentieon distributed alignment.
+#   Each shard has a set of regions that cover 200M bases
+################################################################
+name: regions-200M-16shards
+description: Genomic regions divided by 16 shards to run sentieon distributed alignment. |
+             Each shard covers 200M bases. |
+             Build hg19/GRCh37
+format: txt
+version: g1k_GRCh37
+# Required to enable sync with a reference bucket
+uuid: 24304d8e-c318-46c1-9e00-73bd3e56ad71
+accession: SMAFIKJ9V82L
 
 ---
 
