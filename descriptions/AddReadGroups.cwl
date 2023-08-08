@@ -29,19 +29,27 @@ inputs:
       prefix: -s
     doc: Name of the sample
 
-  - id: platform
+  - id: library_id
     type: string
     default: null
     inputBinding:
       position: 3
+      prefix: -l
+    doc: Identifier for the sequencing library preparation [LIBRARY]
+
+  - id: platform
+    type: string
+    default: null
+    inputBinding:
+      position: 4
       prefix: -p
-    doc: Name of the sequencing platform [illumina]
+    doc: Name of the sequencing platform [ILLUMINA]
 
   - id: nthreads
     type: int
     default: null
     inputBinding:
-      position: 4
+      position: 5
       prefix: -t
     doc: Number of additional threads to use for compression/decompression [1]
 
@@ -49,7 +57,7 @@ inputs:
     type: boolean
     default: true
     inputBinding:
-      position: 5
+      position: 6
       prefix: --index
     doc: Create index for the output file
 

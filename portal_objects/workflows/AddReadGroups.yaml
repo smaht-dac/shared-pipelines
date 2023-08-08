@@ -34,6 +34,9 @@ input:
   platform:
     argument_type: parameter.string
 
+  library_id:
+    argument_type: parameter.string
+
 ## Output information #######################################
 #     Output files and quality controls
 #############################################################
