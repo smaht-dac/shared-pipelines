@@ -12,7 +12,7 @@ runner:
   main: AddReadGroups.cwl
 
 software:
-  - AddReadGroups@6053fb1
+  - AddReadGroups@7c4dbc2
 
 ## Input information ########################################
 #     Input files and parameters

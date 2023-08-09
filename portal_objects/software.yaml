@@ -11,10 +11,10 @@ source_url: https://github.com/s-andrews/FastQC
 ---
 
 ################################################################
-# parseQCs, 6053fb1
+# parseQCs, 7c4dbc2
 ################################################################
 name: parseQCs
-version: 6053fb1
+version: 7c4dbc2
 source_url: https://github.com/smaht-dac/pipelines-scripts
 
 ---
@@ -59,10 +59,10 @@ source_url: https://zlib.net/pigz
 ---
 
 ################################################################
-# AddReadGroups, 6053fb1
+# AddReadGroups, 7c4dbc2
 ################################################################
 name: AddReadGroups
-version: 6053fb1
+version: 7c4dbc2
 source_url: https://github.com/smaht-dac/pipelines-scripts
 
 ---

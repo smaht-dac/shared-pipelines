@@ -53,7 +53,7 @@ RUN ln -s samtools-1.17 samtools
 RUN git clone https://github.com/smaht-dac/pipelines-scripts.git
 
 WORKDIR pipelines-scripts
-RUN git checkout 6053fb1 && \
+RUN git checkout 7c4dbc2 && \
     chmod +x processing-scripts/AddReadGroups.py
 
 WORKDIR /usr/local/bin/
