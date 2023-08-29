@@ -76,6 +76,10 @@ RUN ln -s pigz-2.7 pigz
 COPY bam_to_fastq_paired-end.sh .
 RUN chmod +x bam_to_fastq_paired-end.sh
 
+## samtools_regions_to_lane
+COPY samtools_regions_to_lane.sh .
+RUN chmod +x samtools_regions_to_lane.sh
+
 #######################################################################
 #     Update env
 #######################################################################
