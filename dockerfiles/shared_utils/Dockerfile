@@ -80,6 +80,14 @@ RUN chmod +x bam_to_fastq_paired-end.sh
 COPY samtools_regions_to_lane.sh .
 RUN chmod +x samtools_regions_to_lane.sh
 
+## samtools_cat.sh
+COPY samtools_cat.sh .
+RUN chmod +x samtools_cat.sh
+
+## samtools_get_readgroups.sh
+COPY samtools_get_readgroups.sh .
+RUN chmod +x samtools_get_readgroups.sh
+
 #######################################################################
 #     Update env
 #######################################################################
