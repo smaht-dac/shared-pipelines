@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
 # *******************************************
-# Collect a list of BAM files sharded by regions
-# and extract the alignments for the read groups
-# specified in the header input BAM file.
-# The list of sharded BAM files to concatenate
-# need to be sorted by shards coordinates.
+# Extract from input BAM file the alignments
+# for the read groups specified in the header
+# of header BAM file.
 # *******************************************
 
 ## Command line arguments
@@ -44,8 +42,6 @@ python -c "$py_script" || exit 1
 
 # ******************************************
 # 2. Filter by read groups.
-# $@ stores all the input BAM files to cat together
-# in the corret order.
 # ******************************************
 samtools view -@ $nt --read-group-file READ_GROUPS -h -b -o readgroups.bam $input_bam || exit 1
 
@@ -55,7 +51,7 @@ samtools view -@ $nt --read-group-file READ_GROUPS -h -b -o readgroups.bam $inpu
 samtools index -@ $nt readgroups.bam || exit 1
 
 # ******************************************
-# 4. Check deduped BAM integrity.
+# 4. Check BAM integrity.
 # ******************************************
 py_script="
 import sys, os

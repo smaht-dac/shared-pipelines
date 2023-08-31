@@ -20,15 +20,10 @@ nt=$(nproc) # number of threads to use in computation,
 # $@ stores all the input BAM files to cat together
 # in the corret order.
 # ******************************************
-samtools cat -@ $nt -o cat.bam $@
+samtools cat -@ $nt -o cat.bam $@ || exit 1
 
 # ******************************************
-# 3. Index.
-# ******************************************
-samtools index -@ $nt cat.bam || exit 1
-
-# ******************************************
-# 4. Check deduped BAM integrity.
+# 2. Check BAM integrity.
 # ******************************************
 py_script="
 import sys, os

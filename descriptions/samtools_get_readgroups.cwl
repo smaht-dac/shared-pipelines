@@ -23,9 +23,7 @@ inputs:
         type: array
     inputBinding:
       position: 1
-    secondaryFiles:
-      - .bai
-    doc: Input file in BAM format with corresponding inde file
+    doc: Input file in BAM format with alignments
 
   - id: header_file_bam
     type: File

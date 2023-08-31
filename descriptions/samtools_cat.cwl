@@ -23,7 +23,7 @@ inputs:
       position: 1
     secondaryFiles:
       - .bai
-    doc: List of sharded input files in BAM format to collect. |
+    doc: List of sharded input files in BAM format to concatenate. |
          Input files must be sorted by genomic coordinates. |
          The list need to be sorted by shards coordinates
 
@@ -32,8 +32,6 @@ outputs:
     type: File
     outputBinding:
       glob: cat.bam
-    secondaryFiles:
-      - .bai
 
 doc: |
   Collect a list of BAM files sharded by regions |

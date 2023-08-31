@@ -27,7 +27,9 @@ inputs:
         type: array
     inputBinding:
       position: 2
-    doc: List of sharded input files in BAM format to collect. |
+    secondaryFiles:
+      - .bai
+    doc: List of sharded input files in BAM format to concatenate. |
          Input files must be sorted by genomic coordinates. |
          The list need to be sorted by shards coordinates
 

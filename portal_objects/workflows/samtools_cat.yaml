@@ -30,5 +30,3 @@ output:
   # File output
   output_file_bam:
     argument_type: file.bam
-    secondary_files:
-      - bai
