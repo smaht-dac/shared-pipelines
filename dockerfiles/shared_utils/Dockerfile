@@ -76,17 +76,9 @@ RUN ln -s pigz-2.7 pigz
 COPY bam_to_fastq_paired-end.sh .
 RUN chmod +x bam_to_fastq_paired-end.sh
 
-## samtools_regions_to_lane
-COPY samtools_regions_to_lane.sh .
-RUN chmod +x samtools_regions_to_lane.sh
-
-## samtools_cat.sh
-COPY samtools_cat.sh .
-RUN chmod +x samtools_cat.sh
-
-## samtools_get_readgroups.sh
-COPY samtools_get_readgroups.sh .
-RUN chmod +x samtools_get_readgroups.sh
+## shards_to_ReadGroups
+COPY shards_to_ReadGroups.sh .
+RUN chmod +x shards_to_ReadGroups.sh
 
 #######################################################################
 #     Update env

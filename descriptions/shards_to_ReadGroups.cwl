@@ -11,16 +11,22 @@ hints:
   - class: DockerRequirement
     dockerPull: ACCOUNT/shared_utils:VERSION
 
-baseCommand: [samtools_cat.sh]
+baseCommand: [shards_to_ReadGroups.sh]
 
 inputs:
+  - id: header_file_bam
+    type: File
+    inputBinding:
+      position: 1
+    doc: Input file in BAM format with the @RG identifiers to extract from the header
+
   - id: input_files_bam
     type:
       -
         items: File
         type: array
     inputBinding:
-      position: 1
+      position: 2
     secondaryFiles:
       - .bai
     doc: List of sharded input files in BAM format to concatenate. |
@@ -31,9 +37,12 @@ outputs:
   - id: output_file_bam
     type: File
     outputBinding:
-      glob: cat.bam
+      glob: readgroups.bam
+    secondaryFiles:
+      - .bai
 
 doc: |
   Collect a list of BAM files sharded by regions |
-  and concatenate them together. |
+  and extract the alignments for the read groups |
+  in the header of the input BAM file specified as header file. |
   Create index for the output file

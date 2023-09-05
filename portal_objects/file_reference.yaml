@@ -125,6 +125,56 @@ accession: SMAFIA6PK1S1
 ---
 
 ################################################################
+# Genomic regions, GCA_000001405.15_GRCh38_no_decoy
+#   Genomic regions divided by 16 shards to run sentieon distributed alignment.
+#   Each shard has a set of regions that cover 200M bases
+################################################################
+name: regions-200M-16shards
+description: Genomic regions divided by 16 shards to run sentieon distributed alignment. |
+             Each shard covers 200M bases. |
+             Build hg38/GRCh38
+format: txt
+version: GCA_000001405.15_GRCh38_no_decoy
+# Required to enable sync with a reference bucket
+uuid: f5cf19b3-df47-4b9b-a40f-87eff61bb148
+accession: SMAFI2R5HY0P
+
+---
+
+################################################################
+# Mills and 1000G Gold Standard indels
+################################################################
+name: mills-1000g-gold-standard-indel
+description: Mills and 1000G Gold Standard indels. |
+             Build hg38/GRCh38
+format: vcf_gz
+version: GRCh38
+secondary_files:
+  - vcf_gz_tbi
+# Required to enable sync with a reference bucket
+uuid: 4b672f38-50b1-47bb-a2f8-a7b6c6c62fb8
+accession: SMAFIPOL9T5R
+
+---
+
+################################################################
+# dbSNP version 138
+#   All variants
+################################################################
+name: dbsnp-all
+description: All variants from dbSNP version 138. |
+             Build hg38/GRCh38
+format: vcf_gz
+version: 138_GRCh38
+secondary_files:
+  - vcf_gz_tbi
+# Required to enable sync with a reference bucket
+uuid: 36359d3c-9ef1-47ef-9af9-65762955a0e2
+accession: SMAFIDR4T5HN
+
+---
+
+################################################################
 # Population allele frequencies for Mutect2 generated from gnomAD
 #   Released by Broad as part of GATK Best Practices resources
 #   https://console.cloud.google.com/storage/browser/gatk-best-practices/somatic-hg38

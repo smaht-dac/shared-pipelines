@@ -3,18 +3,18 @@
 # *******************************************
 # Collect a list of BAM files sharded by regions
 # and extract the alignments for the read groups
-# specified in the header of header BAM file.
+# in the header of the input BAM file specified as header file.
 # The list of sharded BAM files to concatenate
 # need to be sorted by shards coordinates.
 # Input files must be sorted by genomic coordinates.
 # *******************************************
 
 ## Command line arguments
-# BAM file with read groups to use
+# BAM file with read groups (@RG tags) to use
 header_bam=$1
 
 # Input BAM files
-shift 1 # $@ stores all the input BAM files
+shift 1 # $@ store all the input BAM files
 
 ## Other settings
 nt=$(nproc) # number of threads to use in computation,
@@ -45,10 +45,9 @@ python -c "$py_script" || exit 1
 
 # ******************************************
 # 2. Filter by read groups.
-# $@ stores all the input BAM files to cat together
-# in the corret order.
 # ******************************************
-samtools cat -@ $nt $@ | samtools view -@ $nt --read-group-file READ_GROUPS -h -b -o readgroups.bam - || exit 1
+samtools cat --no-PG -@ $nt $@ | \
+samtools view --no-PG -@ $nt --read-group-file READ_GROUPS -h -b -o readgroups.bam - || exit 1
 
 # ******************************************
 # 3. Index.
