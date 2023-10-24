@@ -11,11 +11,11 @@ source_url: https://github.com/s-andrews/FastQC
 ---
 
 ################################################################
-# parseQCs, 725318a
+# qc-parser, in_dev
 ################################################################
-name: parseQCs
-version: '725318a'
-source_url: https://github.com/smaht-dac/pipelines-scripts
+name: qc-parser
+version: in_dev
+source_url: https://github.com/smaht-dac/qc-parser
 
 ---
 
