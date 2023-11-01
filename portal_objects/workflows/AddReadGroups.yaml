@@ -14,6 +14,9 @@ runner:
 software:
   - AddReadGroups@725318a
 
+category:
+  - Feature Annotation
+
 ## Input information ########################################
 #     Input files and parameters
 #############################################################
@@ -46,4 +49,4 @@ output:
   output_file_bam:
     argument_type: file.bam
     secondary_files:
-      - bai
+      - bam_bai

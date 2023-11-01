@@ -4,6 +4,8 @@
 name: bam_to_fastq_paired-end
 description: Convert a BAM file for paired-end alignment |
              into two compressed FASTQ files, one for each of the mate reads
+category:
+  - Format Conversion
 
 ## General arguments ########################################
 #     Pipeline input, reference files, and general arguments
@@ -19,7 +21,7 @@ input:
   # Argument paramters
   nthreads:
     argument_type: parameter.integer
-    value: "8"
+    value: 8
 
 ## Workflows and dependencies ###############################
 #     Information for the workflows and their dependencies
@@ -49,17 +51,11 @@ workflows:
 
       output_file_1_fastq_gz:
         file_type: reads FASTQ (from BAM)
-        linkto_location:
-          - Sample
         paired_end: "1"
-        # s3_lifecycle_category: long_term_access_long_term_archive
 
       output_file_2_fastq_gz:
         file_type: reads FASTQ (from BAM)
-        linkto_location:
-          - Sample
         paired_end: "2"
-        # s3_lifecycle_category: long_term_access_long_term_archive
 
     ## EC2 Configuration to use ########
     ####################################

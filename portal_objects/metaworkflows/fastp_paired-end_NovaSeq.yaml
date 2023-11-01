@@ -5,6 +5,8 @@ name: fastp_paired-end_NovaSeq
 description: Run fastp to pre-process Illumina NextSeq/NovaSeq paired-end FASTQ files. |
              Trim artifactual polyG tails and remove adapters. |
              Default filters are applied for read length (>15bp) and PHRED score (>=15)
+category:
+  - Read Manipulation
 
 ## General arguments ########################################
 #     Pipeline input, reference files, and general arguments
@@ -14,25 +16,25 @@ input:
 
   # Required file argument
   input_files_r1_fastq_gz:
-    argument_type: file.fastq
+    argument_type: file.fastq_gz
     dimensionality: 1
 
   input_files_r2_fastq_gz:
-    argument_type: file.fastq
+    argument_type: file.fastq_gz
     dimensionality: 1
 
   # Argument paramters
   trim_poly_g:
     argument_type: parameter.boolean
-    value: "True"
+    value: True
 
   detect_adapter_for_pe:
     argument_type: parameter.boolean
-    value: "True"
+    value: True
 
   nthreads:
     argument_type: parameter.integer
-    value: "16"
+    value: 16
 
 ## Workflows and dependencies ###############################
 #     Information for the workflows and their dependencies
@@ -50,12 +52,12 @@ workflows:
 
       # File argument
       input_file_r1_fastq_gz:
-        argument_type: file.fastq
+        argument_type: file.fastq_gz
         source_argument_name: input_files_r1_fastq_gz
         scatter: 1
 
       input_file_r2_fastq_gz:
-        argument_type: file.fastq
+        argument_type: file.fastq_gz
         source_argument_name: input_files_r2_fastq_gz
         scatter: 1
 
@@ -78,14 +80,10 @@ workflows:
       output_file_r1_fastq_gz:
         file_type: Read 1 pre-processed FASTQ
         paired_end: "1"
-        linkto_location:
-          - Sample
 
       output_file_r2_fastq_gz:
         file_type: Read 2 pre-processed FASTQ
         paired_end: "2"
-        linkto_location:
-          - Sample
 
       output_file_json:
         file_type: fastp summary JSON
