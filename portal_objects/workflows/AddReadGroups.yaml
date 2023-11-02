@@ -15,7 +15,7 @@ software:
   - AddReadGroups@725318a
 
 category:
-  - Feature Annotation
+  - Annotation
 
 ## Input information ########################################
 #     Input files and parameters
