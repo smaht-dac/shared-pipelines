@@ -47,7 +47,7 @@ version: 3.0.0
 source_url: https://github.com/broadinstitute/picard
 category:
   - Alignment Manipulation
-  - Variant Manipulation
+  - Variants Manipulation
   - Quality Control
 
 ---
@@ -59,7 +59,7 @@ name: fastp
 version: 0.23.2
 source_url: https://github.com/OpenGene/fastp
 category:
-  - Read Manipulation
+  - Reads Manipulation
 
 ---
 
@@ -96,6 +96,6 @@ version: 4.4.0.0
 source_url: https://github.com/broadinstitute/gatk
 category:
   - Alignment Manipulation
-  - Variant Manipulation
+  - Variants Manipulation
   - Quality Control
   - Variant Calling

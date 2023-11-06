@@ -12,7 +12,7 @@ software:
   - fastp@0.23.2
 
 category:
-  - Read Manipulation
+  - Reads Manipulation
 
 ## Input information ########################################
 #     Input files and parameters

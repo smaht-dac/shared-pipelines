@@ -6,7 +6,7 @@ description: Run fastp to pre-process Illumina NextSeq/NovaSeq paired-end FASTQ 
              Trim artifactual polyG tails and remove adapters. |
              Default filters are applied for read length (>15bp) and PHRED score (>=15)
 category:
-  - Read Manipulation
+  - Reads Manipulation
 
 ## General arguments ########################################
 #     Pipeline input, reference files, and general arguments
@@ -78,15 +78,27 @@ workflows:
 
       # File output
       output_file_r1_fastq_gz:
-        file_type: Read 1 pre-processed FASTQ
-        paired_end: "1"
+        description: Read 1 pre-processed FASTQ,
+        data_category:
+          - Sequencing Reads
+        data_type:
+          - Unaligned Reads
+        # paired_end: "1"
 
       output_file_r2_fastq_gz:
-        file_type: Read 2 pre-processed FASTQ
-        paired_end: "2"
+        description: Read 2 pre-processed FASTQ
+        data_category:
+          - Sequencing Reads
+        data_type:
+          - Unaligned Reads
+        # paired_end: "2"
 
       output_file_json:
-        file_type: fastp summary JSON
+        description: fastp summary JSON
+        data_category:
+          - Quality Metrics
+        data_type:
+          - Unaligned Reads
 
     ## EC2 Configuration to use ########
     ####################################
@@ -99,7 +111,7 @@ workflows:
         - r5ad.4xlarge
         - r6i.4xlarge
       ebs_size: "3x"
-      EBS_optimized: True
+      ebs_optimized: True
       spot_instance: True
       run_name: run_fastp_paired-end
       behavior_on_capacity_limit: wait_and_retry
