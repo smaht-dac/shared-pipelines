@@ -162,6 +162,27 @@ accession: SMAFI2R5HY0P
 ---
 
 ################################################################
+# Genomic regions, GCA_000001405.15_GRCh38_no_decoy
+#   Genomic regions divided by 62 shards to run sentieon distributed variant calling.
+#   Each shard has a set of regions that cover 50M bases
+################################################################
+name: regions-50M-62shards
+description: Genomic regions divided by 62 shards to run sentieon distributed variant calling. |
+             Each shard covers 50M bases. |
+             Build hg38/GRCh38
+format: txt
+version: GCA_000001405.15_GRCh38_no_decoy
+category:
+  - Genome Regions
+type:
+  - Shards
+# Required to enable sync with a reference bucket
+uuid: b6c74b55-3753-48aa-8407-2c5942fb67e8
+accession: SMAFI025LKA6
+
+---
+
+################################################################
 # Mills and 1000G Gold Standard indels
 ################################################################
 name: mills-1000g-gold-standard-indel
