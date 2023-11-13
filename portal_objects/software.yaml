@@ -40,6 +40,19 @@ category:
 ---
 
 ################################################################
+# Bcftools, 1.17
+################################################################
+name: Bcftools
+version: '1.17'
+source_url: https://github.com/samtools/bcftools
+category:
+  - Variants Manipulation
+  - Format Conversion
+  - Quality Control
+
+---
+
+################################################################
 # Picard, 3.0.0
 ################################################################
 name: Picard

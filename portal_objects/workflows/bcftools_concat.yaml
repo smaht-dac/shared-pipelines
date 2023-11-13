@@ -1,0 +1,41 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: bcftools_concat
+description: Run Bcftools to concatenate multiple input files in VCF format. |
+             Create index for the output file. |
+             Input files must be listed and sorted by genomic coordinates
+
+runner:
+  language: cwl
+  main: bcftools_concat.cwl
+
+software:
+  - Bcftools@1.17
+
+category:
+  - Variants Manipulation
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_files_vcf_gz:
+    argument_type: file.vcf_gz
+
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_vcf_gz:
+    argument_type: file.vcf_gz
+    secondary_files:
+      - vcf_gz_tbi
