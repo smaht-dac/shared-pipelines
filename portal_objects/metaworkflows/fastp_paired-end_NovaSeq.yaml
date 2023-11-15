@@ -5,8 +5,9 @@ name: fastp_paired-end_NovaSeq
 description: Run fastp to pre-process Illumina NextSeq/NovaSeq paired-end FASTQ files. |
              Trim artifactual polyG tails and remove adapters. |
              Default filters are applied for read length (>15bp) and PHRED score (>=15)
+
 category:
-  - Reads Manipulation
+  - Read Manipulation
 
 ## General arguments ########################################
 #     Pipeline input, reference files, and general arguments

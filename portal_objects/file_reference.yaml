@@ -35,9 +35,9 @@ secondary_files:
   - dict
   - fa_fai
 category:
-  - Reference Genome Build
+  - Reference Genome
 type:
-  - Sequences
+  - Reference Sequence
 # Required to enable sync with a reference bucket
 uuid: ed72e7be-5276-4cda-b558-77cea6de00fe
 accession: SMAFI77E6X32
@@ -63,9 +63,9 @@ secondary_files:
   - sa
   - pac
 category:
-  - Reference Genome Build
+  - Reference Genome
 type:
-  - Sequences Index
+  - Index
 # Required to enable sync with a reference bucket
 uuid: f033afe1-8954-4de2-85af-767bbca16d07
 accession: SMAFIAR252L9
@@ -104,9 +104,9 @@ secondary_files:
   - dict
   - fa_fai
 category:
-  - Reference Genome Build
+  - Reference Genome
 type:
-  - Sequences
+  - Reference Sequence
 # Required to enable sync with a reference bucket
 uuid: cca516c0-3931-4fbe-bc2c-c26fe9ba23fa
 accession: SMAFI23ELK2A
@@ -131,9 +131,9 @@ secondary_files:
   - sa
   - pac
 category:
-  - Reference Genome Build
+  - Reference Genome
 type:
-  - Sequences Index
+  - Index
 # Required to enable sync with a reference bucket
 uuid: f5ad62fa-5a76-4cf3-bf66-3b71d740be22
 accession: SMAFIA6PK1S1
@@ -152,9 +152,9 @@ description: Genomic regions divided by 16 shards to run sentieon distributed al
 format: txt
 version: GCA_000001405.15_GRCh38_no_decoy
 category:
-  - Genome Regions
+  - Genome Region
 type:
-  - Shards
+  - Sequence Interval
 # Required to enable sync with a reference bucket
 uuid: f5cf19b3-df47-4b9b-a40f-87eff61bb148
 accession: SMAFI2R5HY0P
@@ -173,9 +173,9 @@ description: Genomic regions divided by 62 shards to run sentieon distributed va
 format: txt
 version: GCA_000001405.15_GRCh38_no_decoy
 category:
-  - Genome Regions
+  - Genome Region
 type:
-  - Shards
+  - Sequence Interval
 # Required to enable sync with a reference bucket
 uuid: b6c74b55-3753-48aa-8407-2c5942fb67e8
 accession: SMAFI025LKA6
@@ -197,7 +197,7 @@ category:
 type:
   - Germline Variant Calls
 variant_type:
-  - Small Insertions-Deletions
+  - Insertion-deletion
 # Required to enable sync with a reference bucket
 uuid: 4b672f38-50b1-47bb-a2f8-a7b6c6c62fb8
 accession: SMAFIPOL9T5R
@@ -220,7 +220,7 @@ category:
 type:
   - Germline Variant Calls
 variant_type:
-  - Single Nucleotide Variants
+  - Single Nucleotide Variant
 # Required to enable sync with a reference bucket
 uuid: 36359d3c-9ef1-47ef-9af9-65762955a0e2
 accession: SMAFIDR4T5HN
@@ -245,8 +245,8 @@ category:
 type:
   - Germline Variant Calls
 variant_type:
-  - Single Nucleotide Variants
-  - Small Insertions-Deletions
+  - Single Nucleotide Variant
+  - Insertion-deletion
 # Required to enable sync with a reference bucket
 uuid: 48ca21b0-1d18-4294-a326-5c29a982be4e
 accession: SMAFIF5Y6TL1
@@ -271,8 +271,8 @@ category:
 type:
   - Germline Variant Calls
 variant_type:
-  - Single Nucleotide Variants
-  - Small Insertions-Deletions
+  - Single Nucleotide Variant
+  - Insertion-deletion
 # Required to enable sync with a reference bucket
 uuid: 872948d3-c669-41a4-a8b3-83bbe49f6bb6
 accession: SMAFI3F4TR9Q
@@ -304,9 +304,9 @@ secondary_files:
   - dict
   - fa_fai
 category:
-  - Reference Genome Build
+  - Reference Genome
 type:
-  - Sequences
+  - Reference Sequence
 # Required to enable sync with a reference bucket
 uuid: 6eb5ac2e-5aa2-42c5-8044-a3601bc46d04
 accession: SMAFI88E649X
@@ -329,9 +329,9 @@ secondary_files:
   - sa
   - pac
 category:
-  - Reference Genome Build
+  - Reference Genome
 type:
-  - Sequences Index
+  - Index
 # Required to enable sync with a reference bucket
 uuid: 85886c89-b616-41d0-942f-794554cb8ed2
 accession: SMAFIQR85BJU
@@ -350,9 +350,9 @@ description: Genomic regions divided by 16 shards to run sentieon distributed al
 format: txt
 version: g1k_GRCh37
 category:
-  - Genome Regions
+  - Genome Region
 type:
-  - Shards
+  - Sequence Interval
 # Required to enable sync with a reference bucket
 uuid: 24304d8e-c318-46c1-9e00-73bd3e56ad71
 accession: SMAFIKJ9V82L
@@ -374,7 +374,7 @@ category:
 type:
   - Germline Variant Calls
 variant_type:
-  - Small Insertions-Deletions
+  - Insertion-deletion
 # Required to enable sync with a reference bucket
 uuid: f5113d4c-ab2f-4b8a-b8e4-adcb59eec037
 accession: SMAFIPDYJSIJ
@@ -397,7 +397,7 @@ category:
 type:
   - Germline Variant Calls
 variant_type:
-  - Single Nucleotide Variants
+  - Single Nucleotide Variant
 # Required to enable sync with a reference bucket
 uuid: fa76350b-6eaa-4ff3-8897-b8dd37b9349f
 accession: SMAFITZ9D8UG

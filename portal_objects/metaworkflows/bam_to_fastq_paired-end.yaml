@@ -4,6 +4,7 @@
 name: bam_to_fastq_paired-end
 description: Convert a BAM file for paired-end alignment |
              into two compressed FASTQ files, one for each of the mate reads
+
 category:
   - Format Conversion
 

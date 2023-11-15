@@ -14,7 +14,7 @@ software:
   - Bcftools@1.17
 
 category:
-  - Variants Manipulation
+  - Variant Manipulation
 
 ## Input information ########################################
 #     Input files and parameters
