@@ -7,12 +7,15 @@
 # *******************************************
 
 # Input arguments
-nthreads=$1
-output_file_name=$2
+output_file_name=$1
 
 # Input VCF files
-shift 2 # $@ store all the input files
+shift 1 # $@ store all the input files
+
+## Other settings
+nt=$(nproc) # number of threads to use in computation,
+            # set to number of cores in the server
 
 # Concatenate and index the output VCF file
-bcftools concat --threads $nthreads -O z -o $output_file_name $@ || exit 1
-bcftools index --threads $nthreads --tbi $output_file_name || exit 1
+bcftools concat --threads $nt -a -D -O z -o $output_file_name $@ || exit 1
+bcftools index --threads $nt --tbi $output_file_name || exit 1

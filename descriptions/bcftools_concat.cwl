@@ -14,19 +14,11 @@ hints:
 baseCommand: [bcftools_concat.sh]
 
 inputs:
-  - id: nthreads
-    type: int
-    default: 1
-    # need a default to keep the argument order for the bash script
-    inputBinding:
-      position: 1
-    doc: Number of input/output compression threads to use in addition to main thread [0]
-
   - id: output_file_name
     type: string
     default: "output.vcf.gz"
     inputBinding:
-      position: 2
+      position: 1
     doc: Name of the output file in VCF format
 
   - id: input_files_vcf_gz
@@ -35,7 +27,9 @@ inputs:
         items: File
         type: array
     inputBinding:
-      position: 3
+      position: 2
+    secondaryFiles:
+      - .tbi
     doc: List of input files to concatenate in VCF format. |
          Input files must be listed and sorted by genomic coordinates
 
