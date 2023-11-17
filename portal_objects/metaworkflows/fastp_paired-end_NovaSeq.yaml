@@ -97,9 +97,9 @@ workflows:
       output_file_json:
         description: fastp summary JSON
         data_category:
-          - Quality Metrics
+          - Quality Control
         data_type:
-          - Unaligned Reads
+          - Statistics
 
     ## EC2 Configuration to use ########
     ####################################
