@@ -102,6 +102,6 @@ RUN chmod +x bcftools_concat.sh
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bcftools/:$PATH
 ENV PATH=/usr/local/bin/pigz/:$PATH
-ENV PATH=/usr/local/bin/pipelines-scripts/processing-scripts/:$PATH
+ENV PATH=/usr/local/bin/pipelines-scripts/processing_scripts/:$PATH
 
 CMD ["bash"]
