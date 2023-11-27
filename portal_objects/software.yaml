@@ -88,10 +88,10 @@ category:
 ---
 
 ################################################################
-# AddReadGroups, 725318a
+# AddReadGroups, 41c1675
 ################################################################
 name: AddReadGroups
-version: '725318a'
+version: '41c1675'
 source_url: https://github.com/smaht-dac/pipelines-scripts
 category:
   - Feature Annotation
