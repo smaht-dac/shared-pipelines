@@ -12,7 +12,7 @@ runner:
   main: AddReadGroups.cwl
 
 software:
-  - AddReadGroups@41c1675
+  - AddReadGroups@b1267b0
 
 category:
   - Annotation
