@@ -321,6 +321,18 @@ uuid: f84f1922-7f4e-4afc-922f-bec620969bf1
 ---
 
 ################################################################
+# Compressed VCF stats
+#   This is mostly used as intermediate file from Sentieon
+################################################################
+name: vcf_gz_stats
+extension: vcf.gz.stats
+description: Companion format to compressed VCF. |
+             Format used to collect metrics for a compressed VCF file
+uuid: ec465f66-f1ae-44e0-9885-a2b24e7ce268
+
+---
+
+################################################################
 # Compressed VCF
 ################################################################
 name: vcf_gz
@@ -329,6 +341,7 @@ description: Compressed version of a VCF file. |
              Format used to represent genomics variants
 secondary_formats:
   - vcf_gz_tbi
+  - vcf_gz_stats
 uuid: 1b8f525f-aecb-4211-9ae5-a2c998b05599
 
 ---
@@ -603,3 +616,25 @@ extension: gff3
 description: GFF (General Feature Format) Version 3, |
              used for storing genomic features as a text file
 uuid: f87864e0-7d55-46bd-a67a-fb8753ce87db
+
+---
+
+################################################################
+# Sentieon OrientationBias metrics
+################################################################
+name: priors
+extension: priors
+description: TXT format to report metrics generated |
+             by Sentieon OrientationBias algorithm
+uuid: c4f4538f-ff79-42f0-a3be-d416251475ae
+
+---
+
+################################################################
+# Sentieon ContaminationModel metrics
+################################################################
+name: contamination
+extension: contamination
+description: TXT format to report metrics generated |
+             by Sentieon ContaminationModel algorithm
+uuid: d0cba8b5-cd01-41f5-bfed-e5369293d2dd
