@@ -1,19 +1,20 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: bam_to_fastq_paired-end
-description: Convert a BAM file for paired-end alignment |
-             into two compressed FASTQ files, one for each of the mate reads
+name: bcftools_concat
+description: Run Bcftools to concatenate multiple input files in VCF format. |
+             Create index for the output file. |
+             Input files must be listed and sorted by genomic coordinates
 
 runner:
   language: cwl
-  main: bam_to_fastq_paired-end.cwl
+  main: bcftools_concat.cwl
 
 software:
-  - Samtools@1.17
+  - Bcftools@1.17
 
 category:
-  - Format Conversion
+  - Variant Manipulation
 
 ## Input information ########################################
 #     Input files and parameters
@@ -21,12 +22,8 @@ category:
 input:
 
   # Required file argument
-  input_file_bam:
-    argument_type: file.bam
-
-  # Optional Parameter argument
-  nthreads:
-    argument_type: parameter.integer
+  input_files_vcf_gz:
+    argument_type: file.vcf_gz
 
 ## Output information #######################################
 #     Output files and quality controls
@@ -34,8 +31,7 @@ input:
 output:
 
   # File output
-  output_file_1_fastq_gz:
-    argument_type: file.fastq_gz
-
-  output_file_2_fastq_gz:
-    argument_type: file.fastq_gz
+  output_file_vcf_gz:
+    argument_type: file.vcf_gz
+    secondary_files:
+      - vcf_gz_tbi

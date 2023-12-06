@@ -11,6 +11,9 @@ runner:
 software:
   - fastp@0.23.2
 
+category:
+  - Read Manipulation
+
 ## Input information ########################################
 #     Input files and parameters
 #############################################################
@@ -18,10 +21,10 @@ input:
 
   # Require file argument
   input_file_r1_fastq_gz:
-    argument_type: file.fastq
+    argument_type: file.fastq_gz
 
   input_file_r2_fastq_gz:
-    argument_type: file.fastq
+    argument_type: file.fastq_gz
 
   # Optional paramters
   trim_poly_g:
@@ -61,10 +64,10 @@ output:
 
   # File output
   output_file_r1_fastq_gz:
-    argument_type: file.fastq
+    argument_type: file.fastq_gz
 
   output_file_r2_fastq_gz:
-    argument_type: file.fastq
+    argument_type: file.fastq_gz
 
   output_file_json:
     argument_type: file.json

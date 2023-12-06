@@ -12,7 +12,10 @@ runner:
   main: AddReadGroups.cwl
 
 software:
-  - AddReadGroups@725318a
+  - AddReadGroups@b1267b0
+
+category:
+  - Annotation
 
 ## Input information ########################################
 #     Input files and parameters
@@ -46,4 +49,4 @@ output:
   output_file_bam:
     argument_type: file.bam
     secondary_files:
-      - bai
+      - bam_bai
