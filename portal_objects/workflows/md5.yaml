@@ -3,7 +3,7 @@
 #############################################################
 name: md5
 description: Calculate MD5 Hash Value for file. |
-             If the file is compressed, also calculate MD5 Hash Value for uncompressed file content.
+             If the file is compressed, also calculate MD5 Hash Value for uncompressed file content
 
 runner:
   language: cwl
