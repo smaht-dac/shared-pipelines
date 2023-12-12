@@ -79,20 +79,20 @@ workflows:
 
       # File output
       output_file_r1_fastq_gz:
-        description: Read 1 pre-processed FASTQ,
+        description: Read 1 pre-processed FASTQ
+        read_pair_number: "R1"
         data_category:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
-        # paired_end: "1"
 
       output_file_r2_fastq_gz:
         description: Read 2 pre-processed FASTQ
+        read_pair_number: "R2"
         data_category:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
-        # paired_end: "2"
 
       output_file_json:
         description: fastp summary JSON

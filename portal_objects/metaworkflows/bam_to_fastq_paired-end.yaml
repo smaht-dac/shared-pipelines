@@ -52,19 +52,19 @@ workflows:
 
       output_file_1_fastq_gz:
         description: reads FASTQ (from BAM)
+        read_pair_number: "R1"
         data_category:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
-        # paired_end: "1"
 
       output_file_2_fastq_gz:
         description: reads FASTQ (from BAM)
+        read_pair_number: "R2"
         data_category:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
-        # paired_end: "2"
 
     ## EC2 Configuration to use ########
     ####################################
