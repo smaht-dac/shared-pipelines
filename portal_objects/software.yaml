@@ -88,10 +88,21 @@ category:
 ---
 
 ################################################################
-# AddReadGroups, b1267b0
+# AddReadGroups, 2cde1f0
 ################################################################
 name: AddReadGroups
-version: 'b1267b0'
+version: '2cde1f0'
+source_url: https://github.com/smaht-dac/pipelines-scripts
+category:
+  - Feature Annotation
+
+---
+
+################################################################
+# ReplaceReadGroups, 2cde1f0
+################################################################
+name: ReplaceReadGroups
+version: '2cde1f0'
 source_url: https://github.com/smaht-dac/pipelines-scripts
 category:
   - Feature Annotation

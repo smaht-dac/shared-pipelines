@@ -73,4 +73,4 @@ doc: |
   Run AddReadGroups.py to mark and assign reads from input file in BAM format to new read groups. |
   Create associated index file. |
   Input file must be sorted by genomic coordinates. |
-  The script expect standard illumina read names to extract information to build the read groups.
+  The script expect standard illumina read names to extract information to build the read groups

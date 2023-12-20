@@ -1,18 +1,17 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: AddReadGroups
-description: Run AddReadGroups.py to mark and assign reads from input file in BAM format to new read groups. |
+name: ReplaceReadGroups
+description: Replace SM or SM and LB tags in read group (@RG) definitions. |
              Create associated index file. |
-             Input file must be sorted by genomic coordinates. |
-             The script expect standard illumina read names to extract information to build the read groups
+             Input file must be sorted by genomic coordinates
 
 runner:
   language: cwl
-  main: AddReadGroups.cwl
+  main: ReplaceReadGroups.cwl
 
 software:
-  - AddReadGroups@2cde1f0
+  - ReplaceReadGroups@2cde1f0
 
 category:
   - Annotation
@@ -31,12 +30,6 @@ input:
     argument_type: parameter.string
 
   # Optional Parameter argument
-  nthreads:
-    argument_type: parameter.integer
-
-  platform:
-    argument_type: parameter.string
-
   library_id:
     argument_type: parameter.string
 
