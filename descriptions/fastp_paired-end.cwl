@@ -11,7 +11,7 @@ hints:
   - class: DockerRequirement
     dockerPull: ACCOUNT/fastp:VERSION
 
-baseCommand: ['fastp', '--dont_eval_duplication']
+baseCommand: [fastp, --dont_eval_duplication]
 
 inputs:
   - id: input_file_r1_fastq_gz
@@ -113,24 +113,31 @@ inputs:
 
   - id: output_file_r1_name
     type: string
-    default: 'out.r1.fastq.gz'
+    default: "out.r1.fastq.gz"
     inputBinding:
       prefix: -o
     doc: Read1 output file name
 
   - id: output_file_r2_name
     type: string
-    default: 'out.r2.fastq.gz'
+    default: "out.r2.fastq.gz"
     inputBinding:
       prefix: -O
     doc: Read2 output file name
 
   - id: output_summary_name
     type: string
-    default: 'out.summary.json'
+    default: "out.summary.json"
     inputBinding:
       prefix: --json
     doc: Name for the summary file in JSON format
+
+  - id: output_file_failed_name
+    type: string
+    default: "out.failed.fastq.gz"
+    inputBinding:
+      prefix: --failed_out
+    doc: Failed reads output file name
 
 outputs:
   - id: output_file_r1_fastq_gz
@@ -147,6 +154,11 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output_summary_name)
+
+  - id: output_file_failed_fastq_gz
+    type: File
+    outputBinding:
+      glob: $(inputs.output_file_failed_name)
 
 doc: |
   Run fastp in paired-end mode

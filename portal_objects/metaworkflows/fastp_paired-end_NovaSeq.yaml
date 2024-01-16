@@ -26,12 +26,23 @@ input:
 
   # Argument paramters
   trim_poly_g:
+    # Force polyG tail trimming
     argument_type: parameter.boolean
     value: True
 
-  detect_adapter_for_pe:
+  disable_quality_filtering:
+    # If this option is specified, quality filtering is disabled
     argument_type: parameter.boolean
     value: True
+
+  disable_adapter_trimming:
+    # If this option is specified, adapter trimming is disabled
+    argument_type: parameter.boolean
+    value: True
+
+  length_required:
+    # Reads shorter than length_required will be discarded
+    argument_type: parameter.integer
 
   nthreads:
     argument_type: parameter.integer
@@ -66,8 +77,14 @@ workflows:
       trim_poly_g:
         argument_type: parameter.boolean
 
-      detect_adapter_for_pe:
+      disable_quality_filtering:
         argument_type: parameter.boolean
+
+      disable_adapter_trimming:
+        argument_type: parameter.boolean
+
+      length_required:
+        argument_type: parameter.integer
 
       nthreads:
         argument_type: parameter.integer
@@ -100,6 +117,13 @@ workflows:
           - Quality Control
         data_type:
           - Statistics
+
+      output_file_failed_fastq_gz:
+        description: Failed reads FASTQ
+        data_category:
+          - Sequencing Reads
+        data_type:
+          - Unaligned Reads
 
     ## EC2 Configuration to use ########
     ####################################
