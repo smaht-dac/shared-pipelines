@@ -71,3 +71,6 @@ output:
 
   output_file_json:
     argument_type: file.json
+
+  output_file_failed_fastq_gz:
+    argument_type: file.fastq_gz
