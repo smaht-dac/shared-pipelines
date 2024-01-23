@@ -72,6 +72,9 @@ workflows:
       instance_type:
         - c5.2xlarge
         - m5a.2xlarge
+        - m5.2xlarge
+        - m6i.2xlarge
+        - m6a.2xlarge
       ebs_size: "3x"
       ebs_optimized: True
       spot_instance: False
