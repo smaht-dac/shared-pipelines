@@ -1,0 +1,50 @@
+## Pipeline information #####################################
+#     General information for the pipeline
+#############################################################
+name: md5
+description: Calculate MD5 Hash Value for file. |
+             If the file is compressed, also calculate MD5 Hash Value for uncompressed file content
+
+category:
+  - Quality Control
+
+## General arguments ########################################
+#     Pipeline input, reference files, and general arguments
+#       define all arguments for the pipeline here
+#############################################################
+input:
+
+  # Required file argument
+  input_files:
+    argument_type: file.txt
+    dimensionality: 1
+
+## Workflows and dependencies ###############################
+#     Information for the workflows and their dependencies
+#############################################################
+workflows:
+
+  ## Workflow definition #####################
+  # md5
+  ############################################
+  md5:
+
+    ## Workflow arguments ##############
+    ####################################
+    input:
+
+      input_file:
+        argument_type: file.txt
+        source_argument_name: input_files
+        scatter: 1
+
+    ## EC2 Configuration to use ########
+    ####################################
+    config:
+      instance_type:
+        - t3.small
+      ebs_size: "1.1x"
+      ebs_optimized: True
+      spot_instance: True
+      run_name: run_md5
+      behavior_on_capacity_limit: wait_and_retry
