@@ -88,10 +88,10 @@ category:
 ---
 
 ################################################################
-# AddReadGroups, 2cde1f0
+# AddReadGroups, 8d7fd75
 ################################################################
 name: AddReadGroups
-version: '2cde1f0'
+version: '8d7fd75'
 source_url: https://github.com/smaht-dac/pipelines-scripts
 category:
   - Feature Annotation
@@ -99,22 +99,11 @@ category:
 ---
 
 ################################################################
-# ReplaceReadGroups, 2cde1f0
+# ReplaceReadGroups, 8d7fd75
 ################################################################
 name: ReplaceReadGroups
-version: '2cde1f0'
+version: '8d7fd75'
 source_url: https://github.com/smaht-dac/pipelines-scripts
-category:
-  - Feature Annotation
-
----
-
-################################################################
-# methylink, 0.6.0
-################################################################
-name: methylink
-version: 0.6.0
-source_url: https://github.com/projectoriented/methylink
 category:
   - Feature Annotation
 
