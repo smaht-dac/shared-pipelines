@@ -193,11 +193,9 @@ version: GRCh38
 secondary_files:
   - vcf_gz_tbi
 category:
-  - Variant Calls
-type:
   - Germline Variant Calls
-variant_type:
-  - Insertion-deletion
+type:
+  - Indel
 # Required to enable sync with a reference bucket
 uuid: 4b672f38-50b1-47bb-a2f8-a7b6c6c62fb8
 accession: SMAFIPOL9T5R
@@ -216,11 +214,9 @@ version: 138_GRCh38
 secondary_files:
   - vcf_gz_tbi
 category:
-  - Variant Calls
-type:
   - Germline Variant Calls
-variant_type:
-  - Single Nucleotide Variant
+type:
+  - SNV
 # Required to enable sync with a reference bucket
 uuid: 36359d3c-9ef1-47ef-9af9-65762955a0e2
 accession: SMAFIDR4T5HN
@@ -241,12 +237,10 @@ version: GRCh38
 secondary_files:
   - vcf_gz_tbi
 category:
-  - Variant Calls
-type:
   - Germline Variant Calls
-variant_type:
-  - Single Nucleotide Variant
-  - Insertion-deletion
+type:
+  - SNV
+  - Indel
 # Required to enable sync with a reference bucket
 uuid: 48ca21b0-1d18-4294-a326-5c29a982be4e
 accession: SMAFIF5Y6TL1
@@ -267,12 +261,10 @@ version: GRCh38
 secondary_files:
   - vcf_gz_tbi
 category:
-  - Variant Calls
-type:
   - Germline Variant Calls
-variant_type:
-  - Single Nucleotide Variant
-  - Insertion-deletion
+type:
+  - SNV
+  - Indel
 # Required to enable sync with a reference bucket
 uuid: 872948d3-c669-41a4-a8b3-83bbe49f6bb6
 accession: SMAFI3F4TR9Q
@@ -370,11 +362,9 @@ version: hg19
 secondary_files:
   - vcf_gz_tbi
 category:
-  - Variant Calls
-type:
   - Germline Variant Calls
-variant_type:
-  - Insertion-deletion
+type:
+  - Indel
 # Required to enable sync with a reference bucket
 uuid: f5113d4c-ab2f-4b8a-b8e4-adcb59eec037
 accession: SMAFIPDYJSIJ
@@ -393,11 +383,9 @@ version: 138_hg19
 secondary_files:
   - vcf_gz_tbi
 category:
-  - Variant Calls
-type:
   - Germline Variant Calls
-variant_type:
-  - Single Nucleotide Variant
+type:
+  - SNV
 # Required to enable sync with a reference bucket
 uuid: fa76350b-6eaa-4ff3-8897-b8dd37b9349f
 accession: SMAFITZ9D8UG

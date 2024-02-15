@@ -102,6 +102,7 @@ workflows:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
+        output_status: Final Output
 
       output_file_r2_fastq_gz:
         description: fastp pre-processed FASTQ
@@ -110,6 +111,7 @@ workflows:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
+        output_status: Final Output
 
       output_file_json:
         description: fastp summary JSON
