@@ -57,6 +57,7 @@ workflows:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
+        output_status: Final Output
 
       output_file_2_fastq_gz:
         description: reads FASTQ (from BAM)
@@ -65,6 +66,7 @@ workflows:
           - Sequencing Reads
         data_type:
           - Unaligned Reads
+        output_status: Final Output
 
     ## EC2 Configuration to use ########
     ####################################
