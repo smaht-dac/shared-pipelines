@@ -37,6 +37,8 @@ workflows:
         argument_type: file.txt
         source_argument_name: input_files
         scatter: 1
+        # Mounting is necessary for larger files
+        mount: True
 
     ## EC2 Configuration to use ########
     ####################################
