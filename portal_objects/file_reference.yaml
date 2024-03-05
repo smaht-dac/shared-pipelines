@@ -157,7 +157,7 @@ type:
   - Sequence Interval
 # Required to enable sync with a reference bucket
 uuid: f5cf19b3-df47-4b9b-a40f-87eff61bb148
-accession: SMAFI2R5HY0P
+accession: SMAFI2R5HYLP
 
 ---
 
@@ -178,7 +178,7 @@ type:
   - Sequence Interval
 # Required to enable sync with a reference bucket
 uuid: b6c74b55-3753-48aa-8407-2c5942fb67e8
-accession: SMAFI025LKA6
+accession: SMAFI925LKA6
 
 ---
 
