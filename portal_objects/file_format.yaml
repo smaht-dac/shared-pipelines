@@ -661,7 +661,7 @@ name: gtf
 extension: gtf
 description: GTF (General Transfer Format), |
              used for storing genomic features as a text file. |
-             GTF is identical to GFF version 2.
+             GTF is identical to GFF version 2
 uuid: 5abf0daa-4c39-4587-9636-523ad1bb0d5f
 
 ---
