@@ -160,6 +160,18 @@ uuid: d13d06c1-218e-4f61-aaf0-91f226248b3c
 ---
 
 ################################################################
+# PacBio BAM index
+################################################################
+name: bam_pbi
+extension: bam.pbi
+description: Companion format to BAM. |
+             Format used to represent the index of a BAM file. |
+             This format is specific to PacBio
+uuid: 9941b00d-fffe-482b-b585-52e0b303e289
+
+---
+
+################################################################
 # BAM
 ################################################################
 name: bam
@@ -168,6 +180,7 @@ description: Binary version of a SAM file. |
              Format used to represent aligned sequences
 secondary_formats:
   - bam_bai
+  - bam_pbi
 uuid: d13d06cf-218e-4f61-aaf0-91f226248b3c
 file_types:
   - OutputFile
@@ -637,6 +650,19 @@ extension: gff3
 description: GFF (General Feature Format) Version 3, |
              used for storing genomic features as a text file
 uuid: f87864e0-7d55-46bd-a67a-fb8753ce87db
+
+---
+
+################################################################
+# GTF
+#   https://useast.ensembl.org/info/website/upload/gff.html
+################################################################
+name: gtf
+extension: gtf
+description: GTF (General Transfer Format), |
+             used for storing genomic features as a text file. |
+             GTF is identical to GFF version 2.
+uuid: 5abf0daa-4c39-4587-9636-523ad1bb0d5f
 
 ---
 
