@@ -1,0 +1,44 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: cram_to_fastq_paired-end
+description: Convert a CRAM file for paired-end alignment |
+             into two compressed FASTQ files, one for each of the mate reads
+
+runner:
+  language: cwl
+  main: cram_to_fastq_paired-end.cwl
+
+software:
+  - Samtools@1.17
+
+category:
+  - Format Conversion
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_file_cram:
+    argument_type: file.cram
+
+  genome_reference_fasta:
+    argument_type: file.fa
+
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_1_fastq_gz:
+    argument_type: file.fastq_gz
+
+  output_file_2_fastq_gz:
+    argument_type: file.fastq_gz

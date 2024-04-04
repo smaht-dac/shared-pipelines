@@ -97,6 +97,10 @@ RUN chmod +x shards_to_ReadGroups.sh
 COPY bcftools_concat.sh .
 RUN chmod +x bcftools_concat.sh
 
+## cram_to_fastq_paired-end
+COPY cram_to_fastq_paired-end.sh .
+RUN chmod +x cram_to_fastq_paired-end.sh
+
 #######################################################################
 #     Update env
 #######################################################################

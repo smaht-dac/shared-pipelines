@@ -1,0 +1,92 @@
+## Pipeline information #####################################
+#     General information for the pipeline
+#############################################################
+name: cram_to_fastq_paired-end
+description: Convert a CRAM file for paired-end alignment |
+             into two compressed FASTQ files, one for each of the mate reads
+
+category:
+  - Format Conversion
+
+## General arguments ########################################
+#     Pipeline input, reference files, and general arguments
+#       define all arguments for the pipeline here
+#############################################################
+input:
+
+  # Required file argument
+  input_files_cram:
+    argument_type: file.cram
+    dimensionality: 1
+
+  genome_reference_fasta:
+    argument_type: file.fa
+
+  # Argument paramters
+  nthreads:
+    argument_type: parameter.integer
+    value: 8
+
+## Workflows and dependencies ###############################
+#     Information for the workflows and their dependencies
+#############################################################
+workflows:
+
+  ## Workflow definition #####################
+  #   cram_to_fastq_paired-end
+  ############################################
+  cram_to_fastq_paired-end:
+
+    ## Workflow arguments ##############
+    ####################################
+    input:
+
+      input_file_cram:
+        argument_type: file.cram
+        source_argument_name: input_files_cram
+        scatter: 1
+
+      genome_reference_fasta:
+        argument_type: file.fa
+
+      nthreads:
+        argument_type: parameter.integer
+
+    ## Output ##########################
+    ####################################
+    output:
+
+      output_file_1_fastq_gz:
+        description: reads FASTQ (from CRAM)
+        read_pair_number: "R1"
+        data_category:
+          - Sequencing Reads
+        data_type:
+          - Unaligned Reads
+        output_status: Final Output
+
+      output_file_2_fastq_gz:
+        description: reads FASTQ (from CRAM)
+        read_pair_number: "R2"
+        data_category:
+          - Sequencing Reads
+        data_type:
+          - Unaligned Reads
+        output_status: Final Output
+
+    ## EC2 Configuration to use ########
+    ####################################
+    config:
+      instance_type:
+        - c5.2xlarge
+        - m5a.2xlarge
+        - m5.2xlarge
+        - m6i.2xlarge
+        - m6a.2xlarge
+      ebs_size: "3x"
+      ebs_optimized: True
+      spot_instance: False
+      ebs_iops: 16000
+      ebs_throughput: 1000
+      run_name: run_cram_to_fastq_paired-end
+      behavior_on_capacity_limit: wait_and_retry
