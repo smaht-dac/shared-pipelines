@@ -36,12 +36,12 @@ inputs:
         <output_file_prefix>.1.fastq.gz and <output_file_prefix>.2.fastq.gz
 
 outputs:
-  - id: output_file_1_fastq_gz
+  - id: output_file_r1_fastq_gz
     type: File
     outputBinding:
       glob: $(inputs.output_file_prefix + ".1.fastq.gz")
 
-  - id: output_file_2_fastq_gz
+  - id: output_file_r2_fastq_gz
     type: File
     outputBinding:
       glob: $(inputs.output_file_prefix + ".2.fastq.gz")

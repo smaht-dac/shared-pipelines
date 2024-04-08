@@ -58,7 +58,7 @@ workflows:
     ####################################
     output:
 
-      output_file_1_fastq_gz:
+      output_file_r1_fastq_gz:
         description: reads FASTQ (from CRAM)
         read_pair_number: "R1"
         data_category:
@@ -67,7 +67,7 @@ workflows:
           - Unaligned Reads
         output_status: Final Output
 
-      output_file_2_fastq_gz:
+      output_file_r2_fastq_gz:
         description: reads FASTQ (from CRAM)
         read_pair_number: "R2"
         data_category:

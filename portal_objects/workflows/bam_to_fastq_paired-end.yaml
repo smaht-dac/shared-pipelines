@@ -34,8 +34,8 @@ input:
 output:
 
   # File output
-  output_file_1_fastq_gz:
+  output_file_r1_fastq_gz:
     argument_type: file.fastq_gz
 
-  output_file_2_fastq_gz:
+  output_file_r2_fastq_gz:
     argument_type: file.fastq_gz
