@@ -7,7 +7,7 @@
 name: zip
 extension: zip
 description: Archive file format that supports lossless data compression
-uuid: '1125243b-3acd-4793-9264-4abd7d788e58'
+uuid: 1125243b-3acd-4793-9264-4abd7d788e58
 
 ---
 
@@ -124,7 +124,7 @@ name: html
 extension: html
 description: Standard markup language for documents |
              designed to be displayed in a web browser
-uuid: 'c9d6d780-2243-499e-a987-d0805ad7a978'
+uuid: c9d6d780-2243-499e-a987-d0805ad7a978
 
 ---
 
