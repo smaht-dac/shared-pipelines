@@ -271,6 +271,32 @@ accession: SMAFI3F4TR9Q
 
 ---
 
+################################################################
+# Resource files for VerifyBamID2
+#   Generated from 1000 Genomes project data and released by the authors
+#   as part of the software package, 1000g.phase3.100k.b38.vcf.gz.dat
+#   https://github.com/Griffan/VerifyBamID/tree/master/resource
+################################################################
+name: verifybamid2-resources-1000g-100k
+description: Resource files for VerifyBamID2 generated from 1000 Genomes project data. |
+             100k SNPs. |
+             Build hg38/GRCh38
+format: vb2
+version: GRCh38
+secondary_files:
+  - bed
+  - mu
+  - UD
+category:
+  - Germline Variant Calls
+type:
+  - Index
+# Required to enable sync with a reference bucket
+uuid: cf4dd12e-c997-45cc-969e-e868dacfca97
+accession: SMAFI3FA1R2L
+
+---
+
 #***************************************************************
 #**********         hg19/GRCh37 Genome Build        ************
 #***************************************************************
