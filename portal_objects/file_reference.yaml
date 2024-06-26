@@ -183,6 +183,25 @@ accession: SMAFI925LKA6
 ---
 
 ################################################################
+# Chr22 interval_list, GCA_000001405.15_GRCh38_no_decoy
+#   Chr22 region in Picard interval_list format
+################################################################
+name: picard-chr22-interval-list
+description: Chr22 region in Picard interval_list format. |
+             Build hg38/GRCh38
+format: interval_list
+version: GCA_000001405.15_GRCh38_no_decoy
+category:
+  - Genome Region
+type:
+  - Sequence Interval
+# Required to enable sync with a reference bucket
+uuid: 508efda6-4f13-4537-9c43-eab360bf3253
+accession: SMAFIMQ5S19L
+
+---
+
+################################################################
 # Mills and 1000G Gold Standard indels
 ################################################################
 name: mills-1000g-gold-standard-indel
