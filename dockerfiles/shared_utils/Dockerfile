@@ -89,6 +89,10 @@ RUN ln -s pigz-2.7 pigz
 COPY bam_to_fastq_paired-end.sh .
 RUN chmod +x bam_to_fastq_paired-end.sh
 
+## bam_to_fastq_single-end
+COPY bam_to_fastq_single-end.sh .
+RUN chmod +x bam_to_fastq_single-end.sh
+
 ## shards_to_ReadGroups
 COPY shards_to_ReadGroups.sh .
 RUN chmod +x shards_to_ReadGroups.sh

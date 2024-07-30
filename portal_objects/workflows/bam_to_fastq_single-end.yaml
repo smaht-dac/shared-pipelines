@@ -1,0 +1,38 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: bam_to_fastq_single-end
+description: Convert a BAM file for single-end alignment |
+             into a compressed FASTQ file
+
+runner:
+  language: cwl
+  main: bam_to_fastq_single-end.cwl
+
+software:
+  - Samtools@1.17
+
+category:
+  - Format Conversion
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_file_bam:
+    argument_type: file.bam
+
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_fastq_gz:
+    argument_type: file.fastq_gz
