@@ -7,4 +7,4 @@ output_file_prefix=$3
 
 # Run
 samtools fastq -n -@ $nthreads $input_file_bam | \
-bgzip -@ $nthreads > ${output_file_prefix}.fastq.gz || { echo "Cannot convert BAM to FASTQs"; exit 1; }
+bgzip -@ $nthreads > ${output_file_prefix}.fastq.gz || { echo "Cannot convert BAM to FASTQ"; exit 1; }
