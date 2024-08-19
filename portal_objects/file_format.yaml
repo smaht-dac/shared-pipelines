@@ -8,6 +8,8 @@ name: zip
 extension: zip
 description: Archive file format that supports lossless data compression
 uuid: 1125243b-3acd-4793-9264-4abd7d788e58
+file_types:
+  - SupplementaryFile
 
 ---
 
