@@ -9,6 +9,8 @@ extension: zip
 description: Archive file format that supports lossless data compression
 uuid: 1125243b-3acd-4793-9264-4abd7d788e58
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
@@ -321,6 +323,8 @@ secondary_formats:
   - fa_fai
 uuid: 5ced774b-a73e-4d1b-8186-d7fbbde7a3c2
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
@@ -458,6 +462,8 @@ description: BED (Browser Extensible Data) format is a text file format |
              used to store genomic regions as coordinates and associated annotations
 uuid: 4c04f6de-89a7-4477-8dc4-811b50c67401
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
@@ -529,6 +535,8 @@ description: Format used to represent pairwise alignment that allow gaps in both
              compressed
 uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
