@@ -11,7 +11,7 @@ runner:
   main: ReplaceReadGroups.cwl
 
 software:
-  - ReplaceReadGroups@2cde1f0
+  - ReplaceReadGroups@e379584
 
 category:
   - Annotation
