@@ -765,3 +765,14 @@ secondary_formats:
   - mu
   - UD
 uuid: 99bb833f-bf73-4abf-91e2-16d0522edd68
+
+---
+
+################################################################
+# somalier
+################################################################
+name: somalier
+extension: somalier
+description: Binary format to represent genotypes at variant positions |
+             used by Somalier
+uuid: bc0da3e5-86b8-4393-b034-c57572e4c446
