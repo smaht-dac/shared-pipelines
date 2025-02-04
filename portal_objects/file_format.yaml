@@ -46,6 +46,16 @@ uuid: 0cd4e777-a596-4927-95c8-b07716121aa3
 ---
 
 ################################################################
+# CSV
+################################################################
+name: csv
+extension: csv
+description: Format used to represent Comma-Separate Values (CSV)
+uuid: 8e23c46c-accc-4eb0-97d3-1aa83e7fb304
+
+---
+
+################################################################
 # TSV
 ################################################################
 name: tsv
@@ -453,6 +463,16 @@ uuid: ad47d469-4561-4234-bce2-820f08f58e7c
 # ANNOTATION
 #***************************************************************
 ################################################################
+# BED Pigeon index
+################################################################
+name: bed_pgi
+extension: bed.pgi
+description: Format used to represent the Pigeon index of a BED file
+uuid: 28d754e6-3b34-4432-89a2-1f11ec2f7d38
+
+---
+
+################################################################
 # BED
 #   https://useast.ensembl.org/info/website/upload/bed.html
 ################################################################
@@ -460,6 +480,8 @@ name: bed
 extension: bed
 description: BED (Browser Extensible Data) format is a text file format |
              used to store genomic regions as coordinates and associated annotations
+secondary_formats:
+  - bed_pgi
 uuid: 4c04f6de-89a7-4477-8dc4-811b50c67401
 file_types:
   - OutputFile
@@ -673,6 +695,30 @@ uuid: 39f836d8-bbb1-46c7-80d4-e321d4a44204
 ---
 
 ################################################################
+# GFF Pigeon index
+################################################################
+name: gff_pgi
+extension: gff.pgi
+description: Format used to represent the Pigeon index of a GFF file
+uuid: 3c1b58fc-5c9c-48f6-8125-b660cd356cbf
+
+---
+
+################################################################
+# GFF
+#   https://useast.ensembl.org/info/website/upload/gff.html
+################################################################
+name: gff
+extension: gff
+description: GFF (General Feature Format) Version 1, |
+             used for storing genomic features as a text file
+secondary_formats:
+  - gff_pgi
+uuid: c1890530-6809-42b9-9797-1d49ad810daa
+
+---
+
+################################################################
 # GFF3
 #   https://useast.ensembl.org/info/website/upload/gff3.html
 ################################################################
@@ -685,6 +731,16 @@ uuid: f87864e0-7d55-46bd-a67a-fb8753ce87db
 ---
 
 ################################################################
+# GTF Pigeon index
+################################################################
+name: gtf_pgi
+extension: gtf.pgi
+description: Format used to represent the Pigeon index of a GTF file
+uuid: 4a51bba8-b811-4618-8d0c-cd0ce5b14c2a
+
+---
+
+################################################################
 # GTF
 #   https://useast.ensembl.org/info/website/upload/gff.html
 ################################################################
@@ -693,6 +749,8 @@ extension: gtf
 description: GTF (General Transfer Format), |
              used for storing genomic features as a text file. |
              GTF is identical to GFF version 2
+secondary_formats:
+  - gtf_pgi
 uuid: 5abf0daa-4c39-4587-9636-523ad1bb0d5f
 
 ---

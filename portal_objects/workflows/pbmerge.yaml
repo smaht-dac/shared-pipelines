@@ -1,0 +1,37 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: pbmerge
+description: Run pbmerge to merge multiple PacBio input files in BAM format. |
+             Merge @RG and @PG tag in the header. |
+             Create PBI index for the output file
+
+runner:
+  language: cwl
+  main: pbmerge.cwl
+
+software:
+  - pbtk@3.4.0
+
+category:
+  - Alignment Manipulation
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_files_bam:
+    argument_type: file.bam
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_bam:
+    argument_type: file.bam
+    secondary_files:
+      - bam_pbi

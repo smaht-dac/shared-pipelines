@@ -63,6 +63,17 @@ category:
 ---
 
 ################################################################
+# pbtk (PacBio BAM Toolkit), 3.4.0
+################################################################
+name: pbtk
+version: "3.4.0"
+source_url: https://github.com/PacificBiosciences/pbtk
+category:
+  - Read Manipulation
+
+---
+
+################################################################
 # AddReadGroups, e379584
 ################################################################
 name: AddReadGroups
