@@ -85,6 +85,8 @@ workflows:
         - m5.2xlarge
         - m6i.2xlarge
         - m6a.2xlarge
+        - m7i.2xlarge
+        - m7a.2xlarge
       ebs_size: "7x"
       ebs_optimized: True
       spot_instance: False
