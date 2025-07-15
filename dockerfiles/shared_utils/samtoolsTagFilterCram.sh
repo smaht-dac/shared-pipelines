@@ -13,14 +13,15 @@
 # *******************************************
 usage() {
     cat <<EOF
-Usage: $0 -i <input_file> -o <output_file> [-r <reference_fasta>] [-t <tag1,tag2,...>] [-f <fmt>] [-h]
+Usage: $0 -i <input_file> -o <output_file> [-r <reference_fasta>] [-t <tag1,tag2,...>] [-f <fmt>] [-x] [-h]
 
 Arguments:
-  -i, --input        Input file (.bam or .cram, required)
+  -i, --input        Input file (.bam or .cram, required). Must be sorted by genomic coordinates.
   -o, --output       Output file (.bam or .cram, required)
   -r, --reference    Reference FASTA file (required for CRAM conversion)
   -t, --tags         Comma-separated list of tags to remove (e.g., BI,BD)
   -f, --fmt          Output format option for samtools view (e.g., level=6)
+  -x, --index        Create index for output file
   -h, --help         Show this help message
 EOF
     exit 1
@@ -37,6 +38,7 @@ input_file=""
 output_file=""
 reference_fasta=""
 tags_list=""
+index_output=false
 
 # *******************************************
 # Argument parser
@@ -62,6 +64,10 @@ while [[ $# -gt 0 ]]; do
         -f|--fmt)
             output_format_option="$2"
             shift 2
+            ;;
+        -x|--index)
+            index_output=true
+            shift 1
             ;;
         -h|--help)
             usage
@@ -143,6 +149,11 @@ fi
 # Check if tags need to be removed
 if [[ -n "$tags_list" ]]; then
     cmd+=(--remove-tag "$tags_list")
+fi
+
+# Build index if required
+if [[ "$index_output" == true ]]; then
+    cmd+=(--write-index)
 fi
 
 # Add input BAM file to the command

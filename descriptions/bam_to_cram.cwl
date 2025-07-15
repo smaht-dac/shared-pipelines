@@ -46,6 +46,13 @@ inputs:
       prefix: -t
     doc: Comma-separated list of tags to remove (e.g., BI,BD)
 
+  - id: index_output_file
+    type: boolean
+    default: true
+    inputBinding:
+      prefix: -x
+    doc: Create index for output file
+
 outputs:
   - id: output_file_cram
     type: File
