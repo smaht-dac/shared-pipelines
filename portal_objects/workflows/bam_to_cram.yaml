@@ -1,0 +1,45 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: bam_to_cram
+description: Converts a BAM file to CRAM format. |
+             Removes specified tags if provided
+
+runner:
+  language: cwl
+  main: bam_to_cram.cwl
+
+software:
+  - Samtools@1.17
+
+category:
+  - Format Conversion
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_file_bam:
+    argument_type: file.bam
+
+  genome_reference_fasta:
+    argument_type: file.fa
+
+  # Optional Parameter argument
+  tags_remove:
+    # Comma-separated list of tags to remove
+    # e.g., BI,BD
+    argument_type: parameter.string
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_cram:
+    argument_type: file.cram
+    secondary_files:
+      - cram_crai
