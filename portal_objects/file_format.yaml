@@ -217,12 +217,25 @@ file_types:
 ---
 
 ################################################################
+# CRAM index
+################################################################
+name: cram_crai
+extension: cram.crai
+description: Companion format to CRAM. |
+             Format used to represent the index of a CRAM file
+uuid: 71637d4f-e6cc-4c6d-afa5-413f0d166fe8
+
+---
+
+################################################################
 # CRAM
 ################################################################
 name: cram
 extension: cram
 description: Compressed version of a BAM file. |
              Format used to represent aligned sequences
+secondary_formats:
+  - cram_crai
 uuid: d363c5f9-7159-45b1-b516-e5ec433f9b86
 file_types:
   - OutputFile

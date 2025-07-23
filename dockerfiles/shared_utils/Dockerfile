@@ -105,6 +105,10 @@ RUN chmod +x bcftools_concat.sh
 COPY cram_to_fastq_paired-end.sh .
 RUN chmod +x cram_to_fastq_paired-end.sh
 
+## samtoolsTagFilterCram
+COPY samtoolsTagFilterCram.sh .
+RUN chmod +x samtoolsTagFilterCram.sh
+
 #######################################################################
 #     Update env
 #######################################################################
