@@ -82,7 +82,5 @@ workflows:
       ebs_size: "3x"
       ebs_optimized: True
       spot_instance: False
-      ebs_iops: 16000
-      ebs_throughput: 1000
       run_name: run_bam_to_fastq_paired-end
       behavior_on_capacity_limit: wait_and_retry
