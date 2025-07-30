@@ -65,7 +65,7 @@ RUN ln -s bcftools-1.17 bcftools
 RUN git clone https://github.com/smaht-dac/pipelines-scripts.git
 
 WORKDIR pipelines-scripts
-RUN git checkout e379584 && \
+RUN git checkout b271dd4 && \
     chmod +x processing_scripts/AddReadGroups.py && \
     chmod +x processing_scripts/ReplaceReadGroups.sh
 
