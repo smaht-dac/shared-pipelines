@@ -11,7 +11,7 @@ runner:
   main: ReplaceReadGroups.cwl
 
 software:
-  - ReplaceReadGroups@e379584
+  - ReplaceReadGroups@b271dd4
 
 category:
   - Annotation
@@ -30,6 +30,9 @@ input:
     argument_type: parameter.string
 
   # Optional Parameter argument
+  genome_reference_fasta:
+    argument_type: file.fa
+
   library_id:
     argument_type: parameter.string
 
