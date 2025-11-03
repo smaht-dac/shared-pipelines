@@ -1,0 +1,45 @@
+## Workflow information #####################################
+#     General information for the workflow
+#############################################################
+name: samtools_merge_cram
+description: Run Samtools to merge multiple input files in CRAM format. |
+             It is possible to merge @RG and @PG tag in the header. |
+             Create index for the output file. |
+             Input files must be sorted by genomic coordinates
+
+runner:
+  language: cwl
+  main: samtools_merge_cram.cwl
+
+software:
+  - Samtools@1.17
+
+category:
+  - Alignment Manipulation
+
+## Input information ########################################
+#     Input files and parameters
+#############################################################
+input:
+
+  # Required file argument
+  input_files_cram:
+    argument_type: file.cram
+
+  genome_reference_fasta:
+    argument_type: file.fa
+
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
+
+## Output information #######################################
+#     Output files and quality controls
+#############################################################
+output:
+
+  # File output
+  output_file_cram:
+    argument_type: file.cram
+    secondary_files:
+      - cram_crai
