@@ -847,3 +847,14 @@ extension: somalier
 description: Binary format to represent genotypes at variant positions |
              used by Somalier
 uuid: bc0da3e5-86b8-4393-b034-c57572e4c446
+
+---
+
+################################################################
+# bundle
+################################################################
+name: bundle
+extension: bundle
+description: Format to represent a Sentieon model bundle |
+             used by Sentieon variant calling algorithms
+uuid: 1bb4b446-9204-4464-a514-600390baeda8

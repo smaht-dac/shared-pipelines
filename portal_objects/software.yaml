@@ -28,6 +28,19 @@ category:
 ---
 
 ################################################################
+# Bedtools, v2.31.1
+################################################################
+name: Bedtools
+version: 'v2.31.1'
+source_url: https://github.com/arq5x/bedtools2
+category:
+  - Variant Manipulation
+  - Read Manipulation
+  - Feature Annotation
+
+---
+
+################################################################
 # Picard, 3.0.0
 ################################################################
 name: Picard
