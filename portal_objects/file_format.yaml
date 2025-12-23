@@ -565,10 +565,25 @@ uuid: 33f30c42-d582-4163-af44-fecf586b9dd3
 #   https://genome.ucsc.edu/goldenPath/help/chain
 ################################################################
 name: chain
+extension: chain
+description: Format used to represent pairwise alignment that allow gaps in both sequences simultaneously
+uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
+file_types:
+  - OutputFile
+  - ReferenceFile
+  - SupplementaryFile
+
+---
+
+################################################################
+# Compressed chain
+#   https://genome.ucsc.edu/goldenPath/help/chain
+################################################################
+name: chain_gz
 extension: chain.gz
 description: Format used to represent pairwise alignment that allow gaps in both sequences simultaneously, |
              compressed
-uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
+uuid: a550a5b8-f68f-4109-9b25-57a133133149
 file_types:
   - OutputFile
   - ReferenceFile
