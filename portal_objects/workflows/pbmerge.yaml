@@ -1,20 +1,20 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: ReplaceReadGroups
-description: Replace SM or SM and LB tags in read group (@RG) definitions. |
-             Create associated index file. |
-             Input file must be sorted by genomic coordinates
+name: pbmerge
+description: Run pbmerge to merge multiple PacBio input files in BAM format. |
+             Merge @RG and @PG tag in the header. |
+             Create PBI index for the output file
 
 runner:
   language: cwl
-  main: ReplaceReadGroups.cwl
+  main: pbmerge.cwl
 
 software:
-  - ReplaceReadGroups@b271dd4
+  - pbtk@3.4.0
 
 category:
-  - Annotation
+  - Alignment Manipulation
 
 ## Input information ########################################
 #     Input files and parameters
@@ -22,19 +22,8 @@ category:
 input:
 
   # Required file argument
-  input_file_bam:
+  input_files_bam:
     argument_type: file.bam
-
-  # Required Parameter argument
-  sample_name:
-    argument_type: parameter.string
-
-  # Optional Parameter argument
-  genome_reference_fasta:
-    argument_type: file.fa
-
-  library_id:
-    argument_type: parameter.string
 
 ## Output information #######################################
 #     Output files and quality controls
@@ -45,4 +34,4 @@ output:
   output_file_bam:
     argument_type: file.bam
     secondary_files:
-      - bam_bai
+      - bam_pbi

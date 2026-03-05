@@ -65,7 +65,7 @@ RUN ln -s bcftools-1.17 bcftools
 RUN git clone https://github.com/smaht-dac/pipelines-scripts.git
 
 WORKDIR pipelines-scripts
-RUN git checkout 8d7fd75 && \
+RUN git checkout b271dd4 && \
     chmod +x processing_scripts/AddReadGroups.py && \
     chmod +x processing_scripts/ReplaceReadGroups.sh
 
@@ -104,6 +104,10 @@ RUN chmod +x bcftools_concat.sh
 ## cram_to_fastq_paired-end
 COPY cram_to_fastq_paired-end.sh .
 RUN chmod +x cram_to_fastq_paired-end.sh
+
+## samtoolsTagFilterCram
+COPY samtoolsTagFilterCram.sh .
+RUN chmod +x samtoolsTagFilterCram.sh
 
 #######################################################################
 #     Update env

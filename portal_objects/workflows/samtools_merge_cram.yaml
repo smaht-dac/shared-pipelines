@@ -1,20 +1,21 @@
 ## Workflow information #####################################
 #     General information for the workflow
 #############################################################
-name: ReplaceReadGroups
-description: Replace SM or SM and LB tags in read group (@RG) definitions. |
-             Create associated index file. |
-             Input file must be sorted by genomic coordinates
+name: samtools_merge_cram
+description: Run Samtools to merge multiple input files in CRAM format. |
+             It is possible to merge @RG and @PG tag in the header. |
+             Create index for the output file. |
+             Input files must be sorted by genomic coordinates
 
 runner:
   language: cwl
-  main: ReplaceReadGroups.cwl
+  main: samtools_merge_cram.cwl
 
 software:
-  - ReplaceReadGroups@b271dd4
+  - Samtools@1.17
 
 category:
-  - Annotation
+  - Alignment Manipulation
 
 ## Input information ########################################
 #     Input files and parameters
@@ -22,19 +23,15 @@ category:
 input:
 
   # Required file argument
-  input_file_bam:
-    argument_type: file.bam
+  input_files_cram:
+    argument_type: file.cram
 
-  # Required Parameter argument
-  sample_name:
-    argument_type: parameter.string
-
-  # Optional Parameter argument
   genome_reference_fasta:
     argument_type: file.fa
 
-  library_id:
-    argument_type: parameter.string
+  # Optional Parameter argument
+  nthreads:
+    argument_type: parameter.integer
 
 ## Output information #######################################
 #     Output files and quality controls
@@ -42,7 +39,7 @@ input:
 output:
 
   # File output
-  output_file_bam:
-    argument_type: file.bam
+  output_file_cram:
+    argument_type: file.cram
     secondary_files:
-      - bam_bai
+      - cram_crai

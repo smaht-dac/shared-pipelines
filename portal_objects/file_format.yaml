@@ -9,6 +9,8 @@ extension: zip
 description: Archive file format that supports lossless data compression
 uuid: 1125243b-3acd-4793-9264-4abd7d788e58
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
   - OutputFile
 ---
@@ -40,6 +42,16 @@ name: txt
 extension: txt
 description: Format used to represent plain text
 uuid: 0cd4e777-a596-4927-95c8-b07716121aa3
+
+---
+
+################################################################
+# CSV
+################################################################
+name: csv
+extension: csv
+description: Format used to represent Comma-Separate Values (CSV)
+uuid: 8e23c46c-accc-4eb0-97d3-1aa83e7fb304
 
 ---
 
@@ -205,12 +217,25 @@ file_types:
 ---
 
 ################################################################
+# CRAM index
+################################################################
+name: cram_crai
+extension: cram.crai
+description: Companion format to CRAM. |
+             Format used to represent the index of a CRAM file
+uuid: 71637d4f-e6cc-4c6d-afa5-413f0d166fe8
+
+---
+
+################################################################
 # CRAM
 ################################################################
 name: cram
 extension: cram
 description: Compressed version of a BAM file. |
              Format used to represent aligned sequences
+secondary_formats:
+  - cram_crai
 uuid: d363c5f9-7159-45b1-b516-e5ec433f9b86
 file_types:
   - OutputFile
@@ -321,6 +346,8 @@ secondary_formats:
   - fa_fai
 uuid: 5ced774b-a73e-4d1b-8186-d7fbbde7a3c2
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
@@ -449,6 +476,16 @@ uuid: ad47d469-4561-4234-bce2-820f08f58e7c
 # ANNOTATION
 #***************************************************************
 ################################################################
+# BED Pigeon index
+################################################################
+name: bed_pgi
+extension: bed.pgi
+description: Format used to represent the Pigeon index of a BED file
+uuid: 28d754e6-3b34-4432-89a2-1f11ec2f7d38
+
+---
+
+################################################################
 # BED
 #   https://useast.ensembl.org/info/website/upload/bed.html
 ################################################################
@@ -456,8 +493,12 @@ name: bed
 extension: bed
 description: BED (Browser Extensible Data) format is a text file format |
              used to store genomic regions as coordinates and associated annotations
+secondary_formats:
+  - bed_pgi
 uuid: 4c04f6de-89a7-4477-8dc4-811b50c67401
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
@@ -524,11 +565,28 @@ uuid: 33f30c42-d582-4163-af44-fecf586b9dd3
 #   https://genome.ucsc.edu/goldenPath/help/chain
 ################################################################
 name: chain
+extension: chain
+description: Format used to represent pairwise alignment that allow gaps in both sequences simultaneously
+uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
+file_types:
+  - OutputFile
+  - ReferenceFile
+  - SupplementaryFile
+
+---
+
+################################################################
+# Compressed chain
+#   https://genome.ucsc.edu/goldenPath/help/chain
+################################################################
+name: chain_gz
 extension: chain.gz
 description: Format used to represent pairwise alignment that allow gaps in both sequences simultaneously, |
              compressed
-uuid: dd1ef82d-da5e-4680-bd5c-cf471a87eb5b
+uuid: a550a5b8-f68f-4109-9b25-57a133133149
 file_types:
+  - OutputFile
+  - ReferenceFile
   - SupplementaryFile
 
 ---
@@ -665,6 +723,30 @@ uuid: 39f836d8-bbb1-46c7-80d4-e321d4a44204
 ---
 
 ################################################################
+# GFF Pigeon index
+################################################################
+name: gff_pgi
+extension: gff.pgi
+description: Format used to represent the Pigeon index of a GFF file
+uuid: 3c1b58fc-5c9c-48f6-8125-b660cd356cbf
+
+---
+
+################################################################
+# GFF
+#   https://useast.ensembl.org/info/website/upload/gff.html
+################################################################
+name: gff
+extension: gff
+description: GFF (General Feature Format) Version 1, |
+             used for storing genomic features as a text file
+secondary_formats:
+  - gff_pgi
+uuid: c1890530-6809-42b9-9797-1d49ad810daa
+
+---
+
+################################################################
 # GFF3
 #   https://useast.ensembl.org/info/website/upload/gff3.html
 ################################################################
@@ -677,6 +759,16 @@ uuid: f87864e0-7d55-46bd-a67a-fb8753ce87db
 ---
 
 ################################################################
+# GTF Pigeon index
+################################################################
+name: gtf_pgi
+extension: gtf.pgi
+description: Format used to represent the Pigeon index of a GTF file
+uuid: 4a51bba8-b811-4618-8d0c-cd0ce5b14c2a
+
+---
+
+################################################################
 # GTF
 #   https://useast.ensembl.org/info/website/upload/gff.html
 ################################################################
@@ -685,6 +777,8 @@ extension: gtf
 description: GTF (General Transfer Format), |
              used for storing genomic features as a text file. |
              GTF is identical to GFF version 2
+secondary_formats:
+  - gtf_pgi
 uuid: 5abf0daa-4c39-4587-9636-523ad1bb0d5f
 
 ---
@@ -757,3 +851,25 @@ secondary_formats:
   - mu
   - UD
 uuid: 99bb833f-bf73-4abf-91e2-16d0522edd68
+
+---
+
+################################################################
+# somalier
+################################################################
+name: somalier
+extension: somalier
+description: Binary format to represent genotypes at variant positions |
+             used by Somalier
+uuid: bc0da3e5-86b8-4393-b034-c57572e4c446
+
+---
+
+################################################################
+# bundle
+################################################################
+name: bundle
+extension: bundle
+description: Format to represent a Sentieon model bundle |
+             used by Sentieon variant calling algorithms
+uuid: 1bb4b446-9204-4464-a514-600390baeda8
