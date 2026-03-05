@@ -12,7 +12,7 @@ file_types:
   - OutputFile
   - ReferenceFile
   - SupplementaryFile
-  - OutputFile
+
 ---
 
 ################################################################
