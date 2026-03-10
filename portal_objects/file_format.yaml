@@ -381,6 +381,7 @@ file_types:
   - ReferenceFile
   - VariantCalls
   - SupplementaryFile
+  - ExternalOutputFile
 
 ---
 
@@ -423,6 +424,7 @@ file_types:
   - ReferenceFile
   - VariantCalls
   - SupplementaryFile
+  - ExternalOutputFile
 
 ---
 
